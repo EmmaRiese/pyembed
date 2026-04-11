@@ -1,0 +1,18 @@
+{
+  "title": "Fibonacci Sequence",
+  "description": "Generates N Fibonacci numbers and saves them to a file.",
+  "files": [
+    {
+      "name": "main.py",
+      "content": "from fibonacci import fibonacci\n\nn = int(input(\"How many Fibonacci numbers? \"))\nnums = fibonacci(n)\n\nprint(f\"First {n} Fibonacci numbers:\")\nprint(nums)\n\n# Save results to a text file\nwith open('results.txt', 'w') as f:\n    f.write(f'First {n} Fibonacci numbers:\\n')\n    f.write(', '.join(map(str, nums)) + '\\n')\n\nprint(\"\\nSaved to results.txt — click the file to see it!\")"
+    },
+    {
+      "name": "fibonacci.py",
+      "content": "def fibonacci(n):\n    \"\"\"Return a list of the first n Fibonacci numbers.\"\"\"\n    result = []\n    a, b = 0, 1\n    for _ in range(n):\n        result.append(a)\n        a, b = b, a + b\n    return result"
+    },
+    {
+      "name": "results.txt",
+      "content": ""
+    }
+  ]
+}

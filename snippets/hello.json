@@ -1,0 +1,10 @@
+{
+  "title": "Hello World",
+  "description": "Uses input() to greet the user by name.",
+  "files": [
+    {
+      "name": "main.py",
+      "content": "name = input(\"What's your name? \")\nprint(f\"Hello, {name}!\")\nprint(\"Python is running in your browser via WebAssembly.\")"
+    }
+  ]
+}

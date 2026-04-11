@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python Snippet Widget — Demo</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --green: #3fb950;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* ── Layout ── */
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+      padding: 20px 0;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── Header ── */
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo-icon {
+      font-size: 26px;
+    }
+
+    .badge {
+      font-size: 11px;
+      font-weight: 600;
+      background: var(--green);
+      color: #000;
+      padding: 1px 7px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 60px 0 48px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(26px, 5vw, 40px);
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+
+    .hero p {
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 28px;
+    }
+
+    .embed-code {
+      display: inline-block;
+      text-align: left;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 20px;
+      font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
+      font-size: 13px;
+      color: #c9d1d9;
+      max-width: 100%;
+      overflow-x: auto;
+    }
+
+    .embed-code .tag { color: #7ee787; }
+    .embed-code .attr { color: #79c0ff; }
+    .embed-code .val  { color: #a5d6ff; }
+
+    /* ── Sections ── */
+    .section {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .section h2 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: var(--text);
+    }
+
+    /* ── Snippet groups ── */
+    .snippet-group {
+      margin-bottom: 40px;
+    }
+
+    .snippet-group h3 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 8px;
+      letter-spacing: 0.3px;
+    }
+
+    /* py-snippet host elements */
+    .py-snippet {
+      display: block;
+    }
+
+    /* ── How to embed section ── */
+    .step {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 0 14px;
+      margin-bottom: 20px;
+      align-items: start;
+    }
+
+    .step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .step-body p {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    pre.code-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 12px 16px;
+      font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
+      font-size: 13px;
+      color: #c9d1d9;
+      overflow-x: auto;
+      white-space: pre;
+    }
+
+    /* ── Footer ── */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 0;
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .site-footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .site-footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <!-- ── Header ───────────────────────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="#">
+        <span class="logo-icon">🐍</span>
+        Python Snippet Widget
+      </a>
+      <span class="badge">Static</span>
+    </div>
+  </header>
+
+  <!-- ── Hero ─────────────────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="container">
+      <h1>Embed runnable Python snippets<br>on any webpage</h1>
+      <p>No backend, no database, no build step.
+         Python runs in the visitor's browser via WebAssembly (Pyodide).
+         Just two lines of HTML.</p>
+
+      <div class="embed-code">
+        <span class="tag">&lt;script</span> <span class="attr">src</span>=<span class="val">"https://USERNAME.github.io/REPO/embed.js"</span><span class="tag">&gt;&lt;/script&gt;</span><br>
+        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"py-snippet"</span> <span class="attr">data-src</span>=<span class="val">"https://USERNAME.github.io/REPO/snippets/hello.json"</span><span class="tag">&gt;&lt;/div&gt;</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Example snippets ──────────────────────────────────────────────────── -->
+  <section class="section">
+    <div class="container">
+      <p class="section-label">Live examples</p>
+      <h2>Try the widgets below</h2>
+      <p style="color:var(--muted);font-size:14px;margin-bottom:32px;">
+        Edit the code, click <strong style="color:var(--text)">▶ Run</strong> to execute it,
+        or <strong style="color:var(--text)">↓ Download</strong> to save the file.
+        Python loads once and is shared across all snippets on the page.
+      </p>
+
+      <div class="snippet-group">
+        <h3>Hello World</h3>
+        <div class="py-snippet" data-src="snippets/hello.json"></div>
+      </div>
+
+      <div class="snippet-group">
+        <h3>Fibonacci Sequence</h3>
+        <div class="py-snippet" data-src="snippets/fibonacci.json"></div>
+      </div>
+
+      <div class="snippet-group">
+        <h3>List Comprehensions</h3>
+        <div class="py-snippet" data-src="snippets/list_example.json"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── How to embed ──────────────────────────────────────────────────────── -->
+  <section class="section">
+    <div class="container">
+      <p class="section-label">Embedding</p>
+      <h2>Add a snippet to any website</h2>
+
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <p>Add the embed script once, anywhere in your page (ideally before <code>&lt;/body&gt;</code>):</p>
+          <pre class="code-block">&lt;script src="https://USERNAME.github.io/REPO/embed.js"&gt;&lt;/script&gt;</pre>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <p>Place a <code>&lt;div&gt;</code> wherever you want the widget to appear:</p>
+          <pre class="code-block">&lt;div class="py-snippet"
+     data-src="https://USERNAME.github.io/REPO/snippets/hello.json"&gt;
+&lt;/div&gt;</pre>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <p>That's it. You can place multiple widgets on the same page — Pyodide loads only once.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ────────────────────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container">
+      Powered by <a href="https://pyodide.org" target="_blank" rel="noopener">Pyodide</a>
+      and <a href="https://codemirror.net" target="_blank" rel="noopener">CodeMirror 6</a>.
+      No server required.
+    </div>
+  </footer>
+
+  <!-- ── Embed script (loads all widgets on this page) ─────────────────────── -->
+  <script src="embed.js"></script>
+</body>
+</html>

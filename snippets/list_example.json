@@ -1,0 +1,18 @@
+{
+  "title": "List Comprehensions",
+  "description": "Demonstrates Python list comprehensions with a CSV data file.",
+  "files": [
+    {
+      "name": "main.py",
+      "content": "# Read scores from data.csv\nscores = []\nwith open('data.csv') as f:\n    next(f)  # skip header\n    for line in f:\n        name, score = line.strip().split(',')\n        scores.append((name, int(score)))\n\n# List comprehension: students who passed (score >= 60)\npassed = [(name, score) for name, score in scores if score >= 60]\nfailed = [(name, score) for name, score in scores if score < 60]\n\nprint(f\"Total students: {len(scores)}\")\nprint(f\"Passed ({len(passed)}): {[n for n, _ in passed]}\")\nprint(f\"Failed ({len(failed)}): {[n for n, _ in failed]}\")\n\navg = sum(s for _, s in scores) / len(scores)\nprint(f\"Class average: {avg:.1f}\")\n\n# Save summary\nwith open('summary.txt', 'w') as f:\n    f.write(f'Results summary\\n')\n    f.write(f'Average score: {avg:.1f}\\n')\n    for name, score in sorted(scores, key=lambda x: -x[1]):\n        status = 'PASS' if score >= 60 else 'FAIL'\n        f.write(f'  {name}: {score} [{status}]\\n')\n\nprint(\"\\nFull summary saved to summary.txt\")"
+    },
+    {
+      "name": "data.csv",
+      "content": "name,score\nAlice,92\nBob,55\nCarol,78\nDave,43\nEve,88\nFrank,61\nGrace,39\nHenry,75"
+    },
+    {
+      "name": "summary.txt",
+      "content": ""
+    }
+  ]
+}

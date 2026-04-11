@@ -1,0 +1,14 @@
+/**
+ * embed.css — optional host-page styles for py-snippet widgets
+ *
+ * The widget itself is fully self-contained inside a Shadow DOM, so this file
+ * is NOT required for embedding. Include it if you want to control the outer
+ * spacing or max-width of the widget container.
+ */
+
+.py-snippet {
+  display: block;
+  margin: 1.25em 0;
+  /* Uncomment to constrain width: */
+  /* max-width: 800px; */
+}

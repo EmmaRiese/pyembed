@@ -1,0 +1,10 @@
+{
+  "title": "Greeting Calculator",
+  "description": "Asks your name and age, then tells you something fun.",
+  "files": [
+    {
+      "name": "main.py",
+      "content": "# title: Greeting Calculator\n# description: Asks your name and age, then tells you something fun.\n\nname = input(\"What's your name? \")\nage  = int(input(\"How old are you? \"))\nprint(f\"Hi {name}! In 10 years you'll be {age + 10}.\")\n"
+    }
+  ]
+}
