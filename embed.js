@@ -6,6 +6,9 @@
 (function () {
   'use strict';
 
+  // Capture script URL now — document.currentScript is only available during sync execution
+  const _embedScriptSrc = document.currentScript?.src || '';
+
   let _skulptPromise  = null;
   let _cmPromise      = null;
   let _widgetCounter  = 0;
@@ -83,8 +86,41 @@
 .${HOST_CLS} .pw-btn-dl:not(:disabled):hover    { background: #f3f4f6; border-color: #9a9da1; }
 .${HOST_CLS} .pw-btn-reset { background: #fff; color: #57606a; border-color: #d0d7de; }
 .${HOST_CLS} .pw-btn-reset:not(:disabled):hover { background: #fff8c5; border-color: #d4a72c; color: #24292e; }
+.${HOST_CLS} .pw-btn-embed { background: #fff; color: #0969da; border-color: #d0d7de; }
+.${HOST_CLS} .pw-btn-embed:hover { background: #dbeafe; border-color: #0969da; }
 .${HOST_CLS} .pw-hint     { font-size: 12px; color: #57606a; flex-shrink: 0; }
 .${HOST_CLS} .pw-hint-err { color: #cf222e; }
+
+/* ── Embed modal (appended to body, not scoped to widget) ── */
+.psw-modal-overlay {
+  position: fixed; inset: 0; z-index: 99999;
+  background: rgba(0,0,0,0.45);
+  display: flex; align-items: center; justify-content: center;
+}
+.psw-modal {
+  background: #fff; border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+  padding: 24px 28px; max-width: 560px; width: calc(100% - 40px);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+.psw-modal-title { font-size: 15px; font-weight: 600; color: #24292e; margin: 0 0 4px; }
+.psw-modal-sub   { font-size: 12px; color: #57606a; margin: 0 0 14px; }
+.psw-modal-code {
+  background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px;
+  padding: 12px 14px; font-family: Menlo, Monaco, 'Courier New', monospace;
+  font-size: 12px; line-height: 1.7; color: #24292e;
+  white-space: pre; overflow-x: auto; margin-bottom: 16px;
+}
+.psw-modal-actions { display: flex; justify-content: flex-end; gap: 10px; }
+.psw-modal-btn {
+  padding: 6px 16px; border-radius: 6px; border: 1px solid transparent;
+  font-size: 13px; font-weight: 500; cursor: pointer; font-family: inherit;
+  transition: background 0.15s;
+}
+.psw-modal-copy  { background: #0969da; color: #fff; border-color: #0969da; }
+.psw-modal-copy:hover  { background: #0860ca; }
+.psw-modal-close { background: #fff; color: #24292e; border-color: #d0d7de; }
+.psw-modal-close:hover { background: #f3f4f6; }
 
 /* ── Main area ── */
 .${HOST_CLS} .pw-main { display: flex; flex: 1; overflow: hidden; min-height: 0; }
@@ -272,8 +308,10 @@
     dlBtn.title = 'Download active file';
     const resetBtn = el('button', 'pw-btn pw-btn-reset', '↺ Reset');
     resetBtn.title = 'Restore all files to their original state';
+    const embedBtn = el('button', 'pw-btn pw-btn-embed', '</> Embed');
+    embedBtn.title = 'Get embed code for this snippet';
     const hint = el('span', 'pw-hint', 'Loading Python…');
-    toolbar.append(titleArea, runBtn, dlBtn, resetBtn, hint);
+    toolbar.append(titleArea, runBtn, dlBtn, resetBtn, embedBtn, hint);
     widget.appendChild(toolbar);
 
     // Main area
@@ -461,6 +499,50 @@
       currentFile = null;
       switchToFile(active ?? firstFile?.name);
       clearOutput();
+    });
+
+    embedBtn.addEventListener('click', () => {
+      const scriptTag = _embedScriptSrc
+        ? `<script src="${_embedScriptSrc}"><\/script>`
+        : `<script src="https://USERNAME.github.io/REPO/embed.js"><\/script>`;
+      const divTag = `<div class="py-snippet" data-src="${dataSrc}"></div>`;
+      const embedCode = scriptTag + '\n' + divTag;
+
+      const overlay = document.createElement('div');
+      overlay.className = 'psw-modal-overlay';
+      overlay.innerHTML = `
+        <div class="psw-modal" role="dialog" aria-modal="true">
+          <p class="psw-modal-title">Embed this snippet</p>
+          <p class="psw-modal-sub">Paste these two lines into any HTML page.</p>
+          <div class="psw-modal-code">${embedCode.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</div>
+          <div class="psw-modal-actions">
+            <button class="psw-modal-btn psw-modal-close">Close</button>
+            <button class="psw-modal-btn psw-modal-copy">Copy</button>
+          </div>
+        </div>`;
+      document.body.appendChild(overlay);
+
+      const closeModal = () => overlay.remove();
+      overlay.querySelector('.psw-modal-close').addEventListener('click', closeModal);
+      overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+
+      const copyBtn = overlay.querySelector('.psw-modal-copy');
+      copyBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(embedCode).then(() => {
+          copyBtn.textContent = 'Copied!';
+          setTimeout(() => { copyBtn.textContent = 'Copy'; }, 2000);
+        }).catch(() => {
+          // Fallback for non-HTTPS pages
+          const ta = document.createElement('textarea');
+          ta.value = embedCode;
+          ta.style.position = 'fixed'; ta.style.opacity = '0';
+          document.body.appendChild(ta); ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+          copyBtn.textContent = 'Copied!';
+          setTimeout(() => { copyBtn.textContent = 'Copy'; }, 2000);
+        });
+      });
     });
 
     // ── Skulpt: start loading immediately in background ───────────────────────

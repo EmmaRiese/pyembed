@@ -4,7 +4,7 @@
   "files": [
     {
       "name": "main.py",
-      "content": "name = input(\"What's your name? \")\nprint(f\"Hello, {name}!\")\nprint(\"Python is running in your browser via WebAssembly.\")"
+      "content": "name = input(\"What's your name? \")\nprint(f\"Hello, {name}!\")\nprint(\"Python is running in your browser via Skulpt.\")"
     }
   ]
 }
