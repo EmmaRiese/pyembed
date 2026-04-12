@@ -6,16 +6,31 @@ A lightweight, static, embeddable Python code runner styled after IDLE. Visitors
 
 ## How embedding works
 
-Add two lines of HTML to any page:
+The easiest way to embed a snippet on any page is with a single `<iframe>`:
+
+```html
+<iframe
+  src="https://USERNAME.github.io/REPO/viewer.html?src=https://USERNAME.github.io/REPO/snippets/hello.json"
+  width="100%"
+  height="540"
+  style="border:none;border-radius:8px;"
+  loading="lazy"
+></iframe>
+```
+
+- Replace `USERNAME` with your GitHub username and `REPO` with your repository name
+- Use the **</> Embed** button in any widget on the demo page to get a ready-to-paste iframe for that specific snippet
+
+### Alternative: script tag (multiple widgets on one page)
+
+If you want several widgets on the same page and prefer not to use iframes, add two lines instead:
 
 ```html
 <script src="https://USERNAME.github.io/REPO/embed.js"></script>
 <div class="py-snippet" data-src="https://USERNAME.github.io/REPO/snippets/hello.json"></div>
 ```
 
-- Replace `USERNAME` with your GitHub username
-- Replace `REPO` with your repository name
-- You can place as many `<div class="py-snippet">` elements as you like on one page — Skulpt loads only once and is shared across all widgets
+You can place as many `<div class="py-snippet">` elements as you like — Skulpt loads only once and is shared across all widgets.
 
 ---
 
