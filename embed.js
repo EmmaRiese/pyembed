@@ -80,8 +80,10 @@
   font-family: inherit;
 }
 .${HOST_CLS} .pw-btn:disabled { opacity: 0.4; cursor: not-allowed; }
-.${HOST_CLS} .pw-btn-run { background: #1f883d; color: #fff; border-color: #1f883d; }
-.${HOST_CLS} .pw-btn-run:not(:disabled):hover { background: #1a7f37; }
+.${HOST_CLS} .pw-btn-run  { background: #1f883d; color: #fff; border-color: #1f883d; }
+.${HOST_CLS} .pw-btn-run:not(:disabled):hover  { background: #1a7f37; }
+.${HOST_CLS} .pw-btn-stop { background: #cf222e; color: #fff; border-color: #cf222e; }
+.${HOST_CLS} .pw-btn-stop:hover { background: #b91c1c; }
 .${HOST_CLS} .pw-btn-dl    { background: #fff; color: #24292e; border-color: #d0d7de; }
 .${HOST_CLS} .pw-btn-dl:not(:disabled):hover    { background: #f3f4f6; border-color: #9a9da1; }
 .${HOST_CLS} .pw-btn-reset { background: #fff; color: #57606a; border-color: #d0d7de; }
@@ -190,18 +192,19 @@
 /* ── IDLE-style inline input ── */
 .${HOST_CLS} .pw-input-line {
   display: flex; align-items: baseline;
-  font-family: 'SF Mono','Fira Code',Consolas,'Courier New',monospace;
-  font-size: 12px; line-height: 1.6; color: #24292e;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px; line-height: 1.6; color: #24292e;
   white-space: pre;
 }
 .${HOST_CLS} .pw-input-field {
   flex: 1; min-width: 2px;
   background: transparent; border: none; outline: none;
-  color: #0550ae; caret-color: #0550ae;
-  font-family: inherit; font-size: inherit; line-height: inherit;
+  color: #24292e; caret-color: #24292e;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px; line-height: 1.6;
   padding: 0; margin: 0;
 }
-.${HOST_CLS} .pw-input-field::selection { background: #b6d6fd; }
+.${HOST_CLS} .pw-input-field::selection { background: #c0c0c0; }
 
 /* ── Loading/error overlay ── */
 .${HOST_CLS} .pw-state {
@@ -560,9 +563,23 @@
 
     runBtn.addEventListener('click', runCode);
 
+    // ── Stop support ──────────────────────────────────────────────────────────
+    let _stopRequested  = false;
+    let _dismissInput   = null;   // call to cancel a pending input() prompt
+
+    function requestStop() {
+      _stopRequested = true;
+      // Trigger Skulpt's built-in time-limit error (already exceeded)
+      try { window.Sk.execLimit = 1; } catch(_) {}
+      // Dismiss any waiting input field
+      if (_dismissInput) { _dismissInput(); _dismissInput = null; }
+    }
+
     // ── IDLE-style inline input ───────────────────────────────────────────────
     function showInlineInput(prompt) {
       return new Promise(resolve => {
+        if (_stopRequested) { resolve(''); return; }
+
         // Render: "prompt text" + invisible-background input field on same line
         const line  = el('div', 'pw-input-line');
         if (prompt) {
@@ -583,9 +600,8 @@
         outputBody.scrollTop = outputBody.scrollHeight;
         field.focus();
 
-        function confirm() {
-          const val = field.value;
-          // Replace the live input line with plain committed text
+        function commit(val) {
+          _dismissInput = null;
           const committed = el('span', '');
           committed.textContent = (prompt || '') + val + '\n';
           outputPre.replaceChild(committed, line);
@@ -593,16 +609,23 @@
           resolve(val);
         }
 
+        // Allow stop to dismiss the input field
+        _dismissInput = () => { line.remove(); resolve(''); };
+
         field.addEventListener('keydown', e => {
-          if (e.key === 'Enter') { e.preventDefault(); confirm(); }
+          if (e.key === 'Enter') { e.preventDefault(); commit(field.value); }
         });
       });
     }
 
     // ── Run code ──────────────────────────────────────────────────────────────
     async function runCode() {
-      runBtn.disabled = true;
-      runBtn.textContent = '⏳ Running…';
+      // Switch to Stop mode
+      _stopRequested = false;
+      runBtn.textContent = '⏹ Stop';
+      runBtn.classList.replace('pw-btn-run', 'pw-btn-stop');
+      runBtn.removeEventListener('click', runCode);
+      runBtn.addEventListener('click', requestStop, { once: true });
       clearOutput();
 
       const mainFile = files.find(f => f.name === 'main.py') ?? files.find(f => f.name.endsWith('.py'));
@@ -708,13 +731,20 @@ def open(name, mode='r', *args, **kwargs):
         }
 
       } catch (e) {
-        // Count preamble lines for accurate error line numbers
-        const preamble = (e._preambleLines) || 36;
-        const msg = formatSkulptError(e, preamble);
-        appendOut(msg, true);
+        if (_stopRequested || e.tp$name === 'TimeLimitError') {
+          appendOut('\n[Stopped]', false);
+        } else {
+          const preamble = (e._preambleLines) || 36;
+          appendOut(formatSkulptError(e, preamble), true);
+        }
       } finally {
-        runBtn.disabled   = false;
+        _stopRequested = false;
+        try { window.Sk.execLimit = undefined; } catch(_) {}
+        // Restore Run button
+        runBtn.removeEventListener('click', requestStop);
+        runBtn.classList.replace('pw-btn-stop', 'pw-btn-run');
         runBtn.textContent = '▶ Run';
+        runBtn.addEventListener('click', runCode);
       }
     }
   }
