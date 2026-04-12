@@ -123,6 +123,26 @@
 .psw-modal-copy:hover  { background: #0860ca; }
 .psw-modal-close { background: #fff; color: #24292e; border-color: #d0d7de; }
 .psw-modal-close:hover { background: #f3f4f6; }
+.psw-modal-dl    { background: #1f883d; color: #fff; border-color: #1f883d; }
+.psw-modal-dl:hover    { background: #1a7f37; }
+/* Tabs */
+.psw-modal-tabs  { display: flex; gap: 0; margin-bottom: 16px; border-bottom: 1px solid #d0d7de; }
+.psw-modal-tab   {
+  padding: 7px 16px; font-size: 13px; font-weight: 500; cursor: pointer;
+  background: none; border: none; border-bottom: 2px solid transparent;
+  color: #57606a; font-family: inherit; margin-bottom: -1px;
+}
+.psw-modal-tab:hover  { color: #24292e; }
+.psw-modal-tab.active { color: #0969da; border-bottom-color: #0969da; }
+/* JSON filename input */
+.psw-modal-filename {
+  width: 100%; padding: 7px 10px; border: 1px solid #d0d7de; border-radius: 6px;
+  font-size: 13px; font-family: Menlo, Monaco, 'Courier New', monospace;
+  color: #24292e; margin-bottom: 12px; outline: none;
+}
+.psw-modal-filename:focus { border-color: #0969da; box-shadow: 0 0 0 3px rgba(9,105,218,0.1); }
+.psw-modal-panel { display: none; }
+.psw-modal-panel.active { display: block; }
 
 /* ── Main area ── */
 .${HOST_CLS} .pw-main { display: flex; flex: 1; overflow: hidden; min-height: 0; }
@@ -505,42 +525,78 @@
     });
 
     embedBtn.addEventListener('click', () => {
-      // Build viewer URL — same origin as embed.js, or fall back to a placeholder
+      // ── iframe embed code ────────────────────────────────────────────────────
       const base = _embedScriptSrc
         ? _embedScriptSrc.replace(/\/embed\.js$/, '')
         : 'https://USERNAME.github.io/REPO';
-      // Strip the snippets/ prefix for a shorter src parameter
-      const shortSrc = dataSrc.replace(/^(https?:\/\/[^/]+\/[^/]+\/)?snippets\//, '');
+      const shortSrc  = dataSrc.replace(/^(https?:\/\/[^/]+\/[^/]+\/)?snippets\//, '');
       const viewerUrl = `${base}/viewer.html?src=${encodeURIComponent(shortSrc)}`;
-      const embedCode = `<iframe\n  src="${viewerUrl}"\n  width="100%"\n  height="540"\n  style="border:none;border-radius:8px;"\n  loading="lazy"\n  allowtransparency="true"\n></iframe>`;
+      const iframeCode = `<iframe\n  src="${viewerUrl}"\n  width="100%"\n  height="540"\n  style="border:none;border-radius:8px;"\n  loading="lazy"\n></iframe>`;
 
+      // ── Suggest a filename from the snippet title ────────────────────────────
+      const defaultFilename = (snippet.title || 'my_snippet')
+        .toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '') + '.json';
+
+      // ── Build modal ──────────────────────────────────────────────────────────
       const overlay = document.createElement('div');
       overlay.className = 'psw-modal-overlay';
       overlay.innerHTML = `
         <div class="psw-modal" role="dialog" aria-modal="true">
-          <p class="psw-modal-title">Embed this snippet</p>
-          <p class="psw-modal-sub">Paste this into any HTML page — no extra script tag needed.</p>
-          <div class="psw-modal-code">${embedCode.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</div>
-          <div class="psw-modal-actions">
-            <button class="psw-modal-btn psw-modal-close">Close</button>
-            <button class="psw-modal-btn psw-modal-copy">Copy</button>
+          <p class="psw-modal-title">Export / Embed</p>
+
+          <div class="psw-modal-tabs">
+            <button class="psw-modal-tab active" data-tab="iframe">iframe Embed</button>
+            <button class="psw-modal-tab"        data-tab="json">Create JSON file</button>
+          </div>
+
+          <!-- Tab: iframe -->
+          <div class="psw-modal-panel active" data-panel="iframe">
+            <p class="psw-modal-sub">Paste this into any HTML page — no extra script tag needed.</p>
+            <div class="psw-modal-code">${iframeCode.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</div>
+            <div class="psw-modal-actions">
+              <button class="psw-modal-btn psw-modal-close">Close</button>
+              <button class="psw-modal-btn psw-modal-copy">Copy</button>
+            </div>
+          </div>
+
+          <!-- Tab: JSON -->
+          <div class="psw-modal-panel" data-panel="json">
+            <p class="psw-modal-sub">Downloads the current editor contents as a JSON snippet file ready to upload to GitHub.</p>
+            <input class="psw-modal-filename" type="text" value="${defaultFilename}" spellcheck="false" />
+            <div class="psw-modal-actions">
+              <button class="psw-modal-btn psw-modal-close">Close</button>
+              <button class="psw-modal-btn psw-modal-dl">Download JSON</button>
+            </div>
           </div>
         </div>`;
       document.body.appendChild(overlay);
 
+      // ── Tab switching ────────────────────────────────────────────────────────
+      overlay.querySelectorAll('.psw-modal-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          overlay.querySelectorAll('.psw-modal-tab').forEach(t => t.classList.remove('active'));
+          overlay.querySelectorAll('.psw-modal-panel').forEach(p => p.classList.remove('active'));
+          tab.classList.add('active');
+          overlay.querySelector(`.psw-modal-panel[data-panel="${tab.dataset.tab}"]`).classList.add('active');
+        });
+      });
+
+      // ── Close ────────────────────────────────────────────────────────────────
       const closeModal = () => overlay.remove();
-      overlay.querySelector('.psw-modal-close').addEventListener('click', closeModal);
+      overlay.querySelectorAll('.psw-modal-close').forEach(btn => {
+        btn.addEventListener('click', closeModal);
+      });
       overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
 
+      // ── Copy iframe code ─────────────────────────────────────────────────────
       const copyBtn = overlay.querySelector('.psw-modal-copy');
       copyBtn.addEventListener('click', () => {
-        navigator.clipboard.writeText(embedCode).then(() => {
+        navigator.clipboard.writeText(iframeCode).then(() => {
           copyBtn.textContent = 'Copied!';
           setTimeout(() => { copyBtn.textContent = 'Copy'; }, 2000);
         }).catch(() => {
-          // Fallback for non-HTTPS pages
           const ta = document.createElement('textarea');
-          ta.value = embedCode;
+          ta.value = iframeCode;
           ta.style.position = 'fixed'; ta.style.opacity = '0';
           document.body.appendChild(ta); ta.select();
           document.execCommand('copy');
@@ -548,6 +604,27 @@
           copyBtn.textContent = 'Copied!';
           setTimeout(() => { copyBtn.textContent = 'Copy'; }, 2000);
         });
+      });
+
+      // ── Download JSON ────────────────────────────────────────────────────────
+      overlay.querySelector('.psw-modal-dl').addEventListener('click', () => {
+        // Build snippet JSON from current editor contents
+        const currentFiles = files.map(f => ({
+          name:    f.name,
+          content: getContent(f.name),
+        }));
+        const jsonSnippet = {
+          ...(snippet.title       ? { title:       snippet.title }       : {}),
+          ...(snippet.description ? { description: snippet.description } : {}),
+          files: currentFiles,
+        };
+        const jsonText = JSON.stringify(jsonSnippet, null, 2);
+        const filename = overlay.querySelector('.psw-modal-filename').value.trim() || defaultFilename;
+        const blob = new Blob([jsonText], { type: 'application/json' });
+        const url  = URL.createObjectURL(blob);
+        const a    = Object.assign(document.createElement('a'), { href: url, download: filename });
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        setTimeout(() => URL.revokeObjectURL(url), 500);
       });
     });
 
