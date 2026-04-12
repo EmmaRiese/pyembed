@@ -502,18 +502,19 @@
     });
 
     embedBtn.addEventListener('click', () => {
-      const scriptTag = _embedScriptSrc
-        ? `<script src="${_embedScriptSrc}"><\/script>`
-        : `<script src="https://USERNAME.github.io/REPO/embed.js"><\/script>`;
-      const divTag = `<div class="py-snippet" data-src="${dataSrc}"></div>`;
-      const embedCode = scriptTag + '\n' + divTag;
+      // Build viewer URL — same origin as embed.js, or fall back to a placeholder
+      const base = _embedScriptSrc
+        ? _embedScriptSrc.replace(/\/embed\.js$/, '')
+        : 'https://USERNAME.github.io/REPO';
+      const viewerUrl = `${base}/viewer.html?src=${encodeURIComponent(dataSrc)}`;
+      const embedCode = `<iframe\n  src="${viewerUrl}"\n  width="100%"\n  height="540"\n  style="border:none;border-radius:8px;"\n  loading="lazy"\n  allowtransparency="true"\n></iframe>`;
 
       const overlay = document.createElement('div');
       overlay.className = 'psw-modal-overlay';
       overlay.innerHTML = `
         <div class="psw-modal" role="dialog" aria-modal="true">
           <p class="psw-modal-title">Embed this snippet</p>
-          <p class="psw-modal-sub">Paste these two lines into any HTML page.</p>
+          <p class="psw-modal-sub">Paste this into any HTML page — no extra script tag needed.</p>
           <div class="psw-modal-code">${embedCode.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</div>
           <div class="psw-modal-actions">
             <button class="psw-modal-btn psw-modal-close">Close</button>

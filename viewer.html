@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python Snippet</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; background: transparent; }
+    body { display: flex; flex-direction: column; }
+    .py-snippet { flex: 1; }
+    /* Let the widget fill the iframe */
+    .psw .pw-widget { height: 100% !important; border-radius: 0 !important; border: none !important; }
+  </style>
+</head>
+<body>
+  <div class="py-snippet" id="widget"></div>
+  <script>
+    const src = new URLSearchParams(location.search).get('src');
+    const el = document.getElementById('widget');
+    if (src) {
+      el.dataset.src = src;
+    } else {
+      el.style.cssText = 'display:flex;align-items:center;justify-content:center;height:100%;font-family:sans-serif;color:#cf222e;font-size:13px;';
+      el.textContent = '⚠ No snippet specified. Add ?src=snippets/example.json to the URL.';
+    }
+  </script>
+  <script src="embed.js"></script>
+</body>
+</html>
