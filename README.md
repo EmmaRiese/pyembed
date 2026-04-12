@@ -85,7 +85,7 @@ python3 py_to_snippet.py myscript.py
 python3 py_to_snippet.py main.py helper.py data.csv
 
 # Override title/description and set output path
-python3 py_to_snippet.py main.py -t "My Title" -d "What it does" -o snippets/my_snippet.json
+python3 py_to_snippet.py main.py -t "My Title" -d "What it does" -o snippets/basic-examples/my_snippet.json
 ```
 
 Add metadata comments at the top of your `.py` file and they are picked up automatically:
@@ -101,19 +101,31 @@ print("Hello!")
 
 ## Adding a new snippet
 
-1. Create a new file in `snippets/`, e.g. `snippets/my_example.json`
-2. Commit and push:
+1. Place the JSON file in the appropriate subfolder:
+   - `snippets/basic-examples/` — standalone demos
+   - `snippets/lecture-examples/` — numbered lecture files (`01.json` … `17.json`)
+   - `snippets/mobius-material/` — numbered Möbius files (`01.json` … `06.json`)
+
+2. Add an entry to `snippets/index.json` under the matching category.
+
+3. Commit and push:
 
 ```bash
-git add snippets/my_example.json
-git commit -m "Add my_example snippet"
+git add snippets/
+git commit -m "Add new snippet"
 git push
 ```
 
-3. Embed it anywhere:
+4. Get the iframe embed code by clicking **</> Embed** on the demo page, or construct it manually:
 
 ```html
-<div class="py-snippet" data-src="https://USERNAME.github.io/REPO/snippets/my_example.json"></div>
+<iframe
+  src="https://USERNAME.github.io/REPO/viewer.html?src=https://USERNAME.github.io/REPO/snippets/basic-examples/my_example.json"
+  width="100%"
+  height="540"
+  style="border:none;border-radius:8px;"
+  loading="lazy"
+></iframe>
 ```
 
 ---
@@ -158,13 +170,21 @@ Any `git push` to `main` automatically redeploys within 30–60 seconds.
 ```
 /
 ├── index.html              ← demo page (GitHub Pages homepage)
-├── embed.js                ← the widget script (only file embedders need)
+├── viewer.html             ← single-snippet iframe host (used for embedding)
+├── embed.js                ← the widget script
 ├── embed.css               ← optional host-page spacing overrides
 ├── py_to_snippet.py        ← CLI tool to convert .py files to JSON snippets
 ├── snippets/
-│   ├── hello.json
-│   ├── fibonacci.json
-│   └── list_example.json
+│   ├── index.json          ← master list of all snippets by category
+│   ├── basic-examples/
+│   │   ├── hello.json
+│   │   ├── greet.json
+│   │   ├── fibonacci.json
+│   │   └── list_example.json
+│   ├── lecture-examples/
+│   │   ├── 01.json … 17.json
+│   └── mobius-material/
+│       ├── 01.json … 06.json
 ├── .nojekyll               ← disables Jekyll on GitHub Pages
 └── README.md
 ```

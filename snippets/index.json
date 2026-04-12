@@ -1,0 +1,49 @@
+{
+  "categories": [
+    {
+      "name": "Basic Examples",
+      "folder": "basic-examples",
+      "snippets": [
+        { "id": "hello",        "file": "basic-examples/hello.json",        "title": "Hello World" },
+        { "id": "greet",        "file": "basic-examples/greet.json",        "title": "Greet" },
+        { "id": "fibonacci",    "file": "basic-examples/fibonacci.json",    "title": "Fibonacci Sequence" },
+        { "id": "list_example", "file": "basic-examples/list_example.json", "title": "List Comprehensions" }
+      ]
+    },
+    {
+      "name": "Lecture Examples",
+      "folder": "lecture-examples",
+      "snippets": [
+        { "id": "lecture-01", "file": "lecture-examples/01.json", "title": "Lecture Example 1" },
+        { "id": "lecture-02", "file": "lecture-examples/02.json", "title": "Lecture Example 2" },
+        { "id": "lecture-03", "file": "lecture-examples/03.json", "title": "Lecture Example 3" },
+        { "id": "lecture-04", "file": "lecture-examples/04.json", "title": "Lecture Example 4" },
+        { "id": "lecture-05", "file": "lecture-examples/05.json", "title": "Lecture Example 5" },
+        { "id": "lecture-06", "file": "lecture-examples/06.json", "title": "Lecture Example 6" },
+        { "id": "lecture-07", "file": "lecture-examples/07.json", "title": "Lecture Example 7" },
+        { "id": "lecture-08", "file": "lecture-examples/08.json", "title": "Lecture Example 8" },
+        { "id": "lecture-09", "file": "lecture-examples/09.json", "title": "Lecture Example 9" },
+        { "id": "lecture-10", "file": "lecture-examples/10.json", "title": "Lecture Example 10" },
+        { "id": "lecture-11", "file": "lecture-examples/11.json", "title": "Lecture Example 11" },
+        { "id": "lecture-12", "file": "lecture-examples/12.json", "title": "Lecture Example 12" },
+        { "id": "lecture-13", "file": "lecture-examples/13.json", "title": "Lecture Example 13" },
+        { "id": "lecture-14", "file": "lecture-examples/14.json", "title": "Lecture Example 14" },
+        { "id": "lecture-15", "file": "lecture-examples/15.json", "title": "Lecture Example 15" },
+        { "id": "lecture-16", "file": "lecture-examples/16.json", "title": "Lecture Example 16" },
+        { "id": "lecture-17", "file": "lecture-examples/17.json", "title": "Lecture Example 17" }
+      ]
+    },
+    {
+      "name": "Möbius Material",
+      "folder": "mobius-material",
+      "snippets": [
+        { "id": "mobius-01", "file": "mobius-material/01.json", "title": "Möbius Material 1" },
+        { "id": "mobius-02", "file": "mobius-material/02.json", "title": "Möbius Material 2" },
+        { "id": "mobius-03", "file": "mobius-material/03.json", "title": "Möbius Material 3" },
+        { "id": "mobius-04", "file": "mobius-material/04.json", "title": "Möbius Material 4" },
+        { "id": "mobius-05", "file": "mobius-material/05.json", "title": "Möbius Material 5" },
+        { "id": "mobius-06", "file": "mobius-material/06.json", "title": "Möbius Material 6" }
+      ]
+    }
+  ]
+}
