@@ -506,7 +506,9 @@
       const base = _embedScriptSrc
         ? _embedScriptSrc.replace(/\/embed\.js$/, '')
         : 'https://USERNAME.github.io/REPO';
-      const viewerUrl = `${base}/viewer.html?src=${encodeURIComponent(dataSrc)}`;
+      // Strip the snippets/ prefix for a shorter src parameter
+      const shortSrc = dataSrc.replace(/^(https?:\/\/[^/]+\/[^/]+\/)?snippets\//, '');
+      const viewerUrl = `${base}/viewer.html?src=${encodeURIComponent(shortSrc)}`;
       const embedCode = `<iframe\n  src="${viewerUrl}"\n  width="100%"\n  height="540"\n  style="border:none;border-radius:8px;"\n  loading="lazy"\n  allowtransparency="true"\n></iframe>`;
 
       const overlay = document.createElement('div');

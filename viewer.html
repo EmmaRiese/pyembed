@@ -16,13 +16,15 @@
 <body>
   <div class="py-snippet" id="widget"></div>
   <script>
-    const src = new URLSearchParams(location.search).get('src');
+    const raw = new URLSearchParams(location.search).get('src');
     const el = document.getElementById('widget');
-    if (src) {
+    if (raw) {
+      // If src is already absolute (http/https) use it as-is; otherwise treat as relative to snippets/
+      const src = /^https?:\/\//.test(raw) ? raw : 'snippets/' + raw;
       el.dataset.src = src;
     } else {
       el.style.cssText = 'display:flex;align-items:center;justify-content:center;height:100%;font-family:sans-serif;color:#cf222e;font-size:13px;';
-      el.textContent = '⚠ No snippet specified. Add ?src=snippets/example.json to the URL.';
+      el.textContent = '⚠ No snippet specified. Add ?src=basic-examples/hello.json to the URL.';
     }
   </script>
   <script src="embed.js"></script>
