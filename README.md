@@ -10,7 +10,7 @@ The easiest way to embed a snippet on any page is with a single `<iframe>`:
 
 ```html
 <iframe
-  src="https://USERNAME.github.io/REPO/viewer.html?src=https://USERNAME.github.io/REPO/snippets/hello.json"
+  src="https://USERNAME.github.io/REPO/viewer.html?src=basic-examples/hello.json"
   width="100%"
   height="540"
   style="border:none;border-radius:8px;"
@@ -19,7 +19,20 @@ The easiest way to embed a snippet on any page is with a single `<iframe>`:
 ```
 
 - Replace `USERNAME` with your GitHub username and `REPO` with your repository name
+- The `src` parameter is relative to the `snippets/` folder — no need for a full URL
 - Use the **</> Embed** button in any widget on the demo page to get a ready-to-paste iframe for that specific snippet
+
+## Browsing snippets
+
+Three pages are available for navigating snippets:
+
+| URL | What it shows |
+|-----|---------------|
+| `gallery.html` | All categories as clickable cards |
+| `gallery.html?cat=basic-examples` | All snippets in a category |
+| `viewer.html?src=basic-examples/hello.json` | A single snippet, full-page |
+
+Category options: `basic-examples`, `lecture-examples`, `mobius-material`
 
 ### Alternative: script tag (multiple widgets on one page)
 
@@ -170,7 +183,8 @@ Any `git push` to `main` automatically redeploys within 30–60 seconds.
 ```
 /
 ├── index.html              ← demo page (GitHub Pages homepage)
-├── viewer.html             ← single-snippet iframe host (used for embedding)
+├── gallery.html            ← category browser (gallery.html?cat=basic-examples)
+├── viewer.html             ← single-snippet iframe host (viewer.html?src=…)
 ├── embed.js                ← the widget script
 ├── embed.css               ← optional host-page spacing overrides
 ├── py_to_snippet.py        ← CLI tool to convert .py files to JSON snippets
