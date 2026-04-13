@@ -226,6 +226,25 @@
 }
 .${HOST_CLS} .pw-input-field::selection { background: #c0c0c0; }
 
+/* ── Fullscreen button (toolbar) ── */
+.${HOST_CLS} .pw-fullscreen-btn {
+  padding: 5px 10px; border-radius: 6px; border: 1px solid #d0d7de;
+  background: #fff; color: #57606a; cursor: pointer; flex-shrink: 0;
+  font-size: 14px; line-height: 1; transition: background 0.15s, color 0.15s;
+  font-family: inherit;
+}
+.${HOST_CLS} .pw-fullscreen-btn:hover { background: #eaeef2; color: #24292e; }
+
+/* ── Fullscreen state ── */
+.${HOST_CLS}.pw-is-fullscreen {
+  position: fixed !important; inset: 0 !important;
+  z-index: 99998 !important; width: 100% !important; height: 100% !important;
+  border-radius: 0 !important; margin: 0 !important;
+}
+.${HOST_CLS}.pw-is-fullscreen .pw-widget {
+  height: 100% !important; border-radius: 0 !important; border: none !important;
+}
+
 /* ── Loading/error overlay ── */
 .${HOST_CLS} .pw-state {
   display: flex; align-items: center; justify-content: center;
@@ -333,8 +352,10 @@
     resetBtn.title = 'Restore all files to their original state';
     const embedBtn = el('button', 'pw-btn pw-btn-embed', '</> Embed');
     embedBtn.title = 'Get embed code for this snippet';
+    const fsBtn = el('button', 'pw-fullscreen-btn', '⛶');
+    fsBtn.title = 'Fullscreen';
     const hint = el('span', 'pw-hint', 'Loading Python…');
-    toolbar.append(titleArea, runBtn, dlBtn, resetBtn, embedBtn, hint);
+    toolbar.append(titleArea, runBtn, dlBtn, resetBtn, embedBtn, fsBtn, hint);
     widget.appendChild(toolbar);
 
     // Main area
@@ -494,6 +515,25 @@
 
     clearOutput();
     clearBtn.addEventListener('click', clearOutput);
+
+    // ── Fullscreen toggle ─────────────────────────────────────────────────────
+    function toggleFullscreen() {
+      const isFs = hostEl.classList.toggle('pw-is-fullscreen');
+      fsBtn.textContent = isFs ? '✕' : '⛶';
+      fsBtn.title       = isFs ? 'Exit fullscreen' : 'Fullscreen';
+      // Prevent body scroll when fullscreen
+      document.body.style.overflow = isFs ? 'hidden' : '';
+      // Refresh CodeMirror layout
+      editor.requestMeasure();
+    }
+
+    fsBtn.addEventListener('click', toggleFullscreen);
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && hostEl.classList.contains('pw-is-fullscreen')) {
+        toggleFullscreen();
+      }
+    });
 
     editorArea.addEventListener('keydown', e => {
       if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
