@@ -471,8 +471,9 @@
       { tag: tags.definition(tags.name),
         color: '#0000FF' },
       // Built-in functions: print, len, range, open, int, str, etc.
-      { tag: [tags.standard(tags.name), tags.standard(tags.variableName),
-              tags.function(tags.variableName)],
+      { tag: [tags.standard(tags.name),
+              tags.standard(tags.variableName),
+              tags.function(tags.standard(tags.variableName))],
         color: '#900090' },
       // Numbers
       { tag: [tags.number, tags.integer, tags.float],
