@@ -5,7 +5,7 @@
       "folder": "basic-examples",
       "snippets": [
         { "id": "hello",        "file": "basic-examples/hello.json",        "title": "Hello World" },
-        { "id": "greet",        "file": "basic-examples/greet.json",        "title": "Greet" },
+        { "id": "calculator",   "file": "basic-examples/calculator.json",   "title": "Simple Calculator" },
         { "id": "fibonacci",    "file": "basic-examples/fibonacci.json",    "title": "Fibonacci Sequence" },
         { "id": "list_example", "file": "basic-examples/list_example.json", "title": "List Comprehensions" }
       ]

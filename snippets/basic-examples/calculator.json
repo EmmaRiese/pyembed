@@ -1,0 +1,10 @@
+{
+  "title": "Simple Calculator",
+  "description": "A basic calculator using functions and a main() entry point.",
+  "files": [
+    {
+      "name": "main.py",
+      "content": "def calculate(num1, op, num2):\n    if op == \"+\":\n        return num1 + num2\n    elif op == \"-\":\n        return num1 - num2\n    elif op == \"*\":\n        return num1 * num2\n    elif op == \"/\":\n        if num2 == 0:\n            return \"Error: cannot divide by zero.\"\n        return num1 / num2\n    else:\n        return \"Unknown operator: \" + op\n\n\ndef main():\n    print(\"Simple Calculator\")\n    print(\"Supported operations: + - * /\")\n    print(\"\")\n\n    num1 = float(input(\"Enter first number: \"))\n    op   = input(\"Enter operator (+, -, *, /): \")\n    num2 = float(input(\"Enter second number: \"))\n\n    result = calculate(num1, op, num2)\n    print(str(num1) + \" \" + op + \" \" + str(num2) + \" = \" + str(result))\n\n\nmain()\n"
+    }
+  ]
+}
