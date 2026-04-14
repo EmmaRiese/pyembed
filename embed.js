@@ -44,8 +44,10 @@
       import('https://esm.sh/@codemirror/lang-python@6'),
       import('https://esm.sh/@codemirror/language@6'),
       import('https://esm.sh/@lezer/highlight@1'),
-    ]).then(([{ EditorView, basicSetup }, { EditorState }, { python }, { syntaxHighlighting, HighlightStyle }, { tags }]) => ({
+      import('https://esm.sh/@codemirror/view@6'),
+    ]).then(([{ EditorView, basicSetup }, { EditorState }, { python }, { syntaxHighlighting, HighlightStyle }, { tags }, { ViewPlugin, Decoration, MatchDecorator }]) => ({
       EditorView, basicSetup, EditorState, python, syntaxHighlighting, HighlightStyle, tags,
+      ViewPlugin, Decoration, MatchDecorator,
     }));
     return _cmPromise;
   }
@@ -203,6 +205,8 @@
   font-family: Menlo, Monaco, 'Courier New', Courier, monospace !important;
   overflow: auto !important;
 }
+/* Python built-in names — purple like IDLE */
+.${HOST_CLS} .pw-editor-area .cm-py-builtin { color: #900090; }
 /* Light editor tweaks */
 .${HOST_CLS} .pw-editor-area .cm-gutters       { background: #f6f8fa !important; border-right: 1px solid #d0d7de !important; color: #8c959f !important; }
 .${HOST_CLS} .pw-editor-area .cm-activeLine    { background: #f3f8ff !important; }
@@ -357,7 +361,19 @@
       return;
     }
 
-    const { EditorView, basicSetup, EditorState, python, syntaxHighlighting, HighlightStyle, tags } = cm;
+    const { EditorView, basicSetup, EditorState, python, syntaxHighlighting, HighlightStyle, tags,
+            ViewPlugin, Decoration, MatchDecorator } = cm;
+
+    // ── Python built-in highlighter (MatchDecorator) ──────────────────────────
+    // lezer-python cannot distinguish built-in calls from user-defined calls via
+    // syntax tags alone, so we explicitly match the known built-in names.
+    const PY_BUILTINS = /\b(abs|all|any|ascii|bin|bool|bytearray|bytes|callable|chr|classmethod|compile|complex|delattr|dict|dir|divmod|enumerate|eval|exec|filter|float|format|frozenset|getattr|globals|hasattr|hash|hex|id|input|int|isinstance|issubclass|iter|len|list|locals|map|max|memoryview|min|next|object|oct|open|ord|pow|print|property|range|repr|reversed|round|set|setattr|slice|sorted|staticmethod|str|sum|super|tuple|type|vars|zip)\b/g;
+    const builtinDeco      = Decoration.mark({ class: 'cm-py-builtin' });
+    const builtinDecorator = new MatchDecorator({ regexp: PY_BUILTINS, decoration: builtinDeco });
+    const builtinHighlighter = ViewPlugin.fromClass(class {
+      constructor(view) { this.decorations = builtinDecorator.createDeco(view); }
+      update(u)         { this.decorations = builtinDecorator.updateDeco(u, this.decorations); }
+    }, { decorations: v => v.decorations });
     const files = normalizeFiles(snippet);
 
     // ── Build UI ──────────────────────────────────────────────────────────────
@@ -470,11 +486,7 @@
         color: '#0000FF' },
       { tag: tags.definition(tags.name),
         color: '#0000FF' },
-      // Built-in functions: print, len, range, open, int, str, etc.
-      { tag: [tags.standard(tags.name),
-              tags.standard(tags.variableName),
-              tags.function(tags.standard(tags.variableName))],
-        color: '#900090' },
+      // Built-in names handled separately via builtinHighlighter (MatchDecorator)
       // Numbers
       { tag: [tags.number, tags.integer, tags.float],
         color: '#000000' },
@@ -490,6 +502,7 @@
           basicSetup,
           lightTheme,
           idleHighlight,
+          builtinHighlighter,
           ...(name.endsWith('.py') ? [python()] : []),
         ],
       });
