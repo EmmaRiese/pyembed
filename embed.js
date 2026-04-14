@@ -147,7 +147,7 @@
 /* ── Main area ── */
 .${HOST_CLS} .pw-main { display: flex; flex: 1; overflow: hidden; min-height: 0; }
 
-/* ── File panel ── */
+/* ── File panel (sidebar) ── */
 .${HOST_CLS} .pw-files {
   width: 148px; flex-shrink: 0; background: #f6f8fa;
   border-right: 1px solid #d0d7de; display: flex; flex-direction: column; overflow: hidden;
@@ -169,6 +169,31 @@
 .${HOST_CLS} .pw-file.active { background: #fff; color: #0969da; border-left-color: #0969da; }
 .${HOST_CLS} .pw-file-icon   { font-size: 11px; flex-shrink: 0; }
 .${HOST_CLS} .pw-file-name   { overflow: hidden; text-overflow: ellipsis; }
+
+/* ── File tabs (narrow/mobile — shown instead of sidebar) ── */
+.${HOST_CLS} .pw-file-tabs {
+  display: none; flex-shrink: 0; overflow-x: auto; white-space: nowrap;
+  background: #f6f8fa; border-bottom: 1px solid #d0d7de;
+  scrollbar-width: none;
+}
+.${HOST_CLS} .pw-file-tabs::-webkit-scrollbar { display: none; }
+.${HOST_CLS} .pw-file-tab {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 8px 14px; font-size: 12px; color: #57606a; cursor: pointer;
+  border-bottom: 2px solid transparent; user-select: none;
+  transition: color 0.1s;
+}
+.${HOST_CLS} .pw-file-tab:hover  { color: #24292e; }
+.${HOST_CLS} .pw-file-tab.active { color: #0969da; border-bottom-color: #0969da; background: #fff; }
+
+/* ── Narrow mode (set via ResizeObserver when width < 520px) ── */
+.${HOST_CLS}.pw-narrow .pw-toolbar { gap: 6px; padding: 8px 10px; flex-wrap: wrap; }
+.${HOST_CLS}.pw-narrow .pw-btn     { padding: 7px 10px; font-size: 13px; }
+.${HOST_CLS}.pw-narrow .pw-btn-dl-label    { display: none; }
+.${HOST_CLS}.pw-narrow .pw-btn-reset-label { display: none; }
+.${HOST_CLS}.pw-narrow .pw-btn-embed-label { display: none; }
+.${HOST_CLS}.pw-narrow .pw-files     { display: none; }
+.${HOST_CLS}.pw-narrow .pw-file-tabs { display: block; }
 
 /* ── Editor section ── */
 .${HOST_CLS} .pw-editor-section { flex: 1; display: flex; flex-direction: column; overflow: hidden; min-width: 0; }
@@ -346,12 +371,18 @@
     const runBtn = el('button', 'pw-btn pw-btn-run', '▶ Run');
     runBtn.disabled = true;
     runBtn.title = 'Run main.py  (Ctrl+Enter)';
-    const dlBtn    = el('button', 'pw-btn pw-btn-dl',    '↓ Download');
+
+    const dlBtn = el('button', 'pw-btn pw-btn-dl');
     dlBtn.title = 'Download active file';
-    const resetBtn = el('button', 'pw-btn pw-btn-reset', '↺ Reset');
+    dlBtn.innerHTML = '↓ <span class="pw-btn-dl-label">Download</span>';
+
+    const resetBtn = el('button', 'pw-btn pw-btn-reset');
     resetBtn.title = 'Restore all files to their original state';
-    const embedBtn = el('button', 'pw-btn pw-btn-embed', '</> Embed');
+    resetBtn.innerHTML = '↺ <span class="pw-btn-reset-label">Reset</span>';
+
+    const embedBtn = el('button', 'pw-btn pw-btn-embed');
     embedBtn.title = 'Get embed code for this snippet';
+    embedBtn.innerHTML = '</> <span class="pw-btn-embed-label">Embed</span>';
     const fsBtn = el('button', 'pw-fullscreen-btn', '⛶');
     fsBtn.title = 'Fullscreen';
     const hint = el('span', 'pw-hint', 'Loading Python…');
@@ -371,6 +402,8 @@
 
     // Editor section + output
     const editorSection = el('div', 'pw-editor-section');
+    const fileTabs      = el('div', 'pw-file-tabs');   // shown only in narrow mode
+    editorSection.appendChild(fileTabs);
     const editorArea    = el('div', 'pw-editor-area');
     editorSection.appendChild(editorArea);
 
@@ -474,14 +507,25 @@
       }
     }
 
+    const fileTabItems = new Map();
+
     for (const f of files) {
       fileStates.set(f.name, makeState(f.name, f.content ?? ''));
+
+      // Sidebar item
       const item = el('div', 'pw-file');
       item.title = f.name;
       item.innerHTML = `<span class="pw-file-icon">${fileIcon(f.name)}</span><span class="pw-file-name">${esc(f.name)}</span>`;
       item.addEventListener('click', () => switchToFile(f.name));
       fileList.appendChild(item);
       fileItems.set(f.name, item);
+
+      // Tab item (narrow mode)
+      const tab = el('div', 'pw-file-tab');
+      tab.innerHTML = `<span>${fileIcon(f.name)}</span><span>${esc(f.name)}</span>`;
+      tab.addEventListener('click', () => switchToFile(f.name));
+      fileTabs.appendChild(tab);
+      fileTabItems.set(f.name, tab);
     }
 
     const editor = new EditorView({
@@ -492,8 +536,10 @@
     function switchToFile(name) {
       if (currentFile) fileStates.set(currentFile, editor.state);
       fileItems.get(currentFile)?.classList.remove('active');
+      fileTabItems.get(currentFile)?.classList.remove('active');
       currentFile = name;
       fileItems.get(name)?.classList.add('active');
+      fileTabItems.get(name)?.classList.add('active');
       editor.setState(fileStates.get(name) ?? makeState(name, ''));
     }
 
@@ -667,6 +713,13 @@
         setTimeout(() => URL.revokeObjectURL(url), 500);
       });
     });
+
+    // ── Responsive: narrow mode via ResizeObserver ────────────────────────────
+    const ro = new ResizeObserver(entries => {
+      const width = entries[0].contentRect.width;
+      hostEl.classList.toggle('pw-narrow', width < 520);
+    });
+    ro.observe(hostEl);
 
     // ── Skulpt: start loading immediately in background ───────────────────────
     const skulptPromise = getSkulpt();
