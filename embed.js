@@ -382,7 +382,7 @@
 
     const embedBtn = el('button', 'pw-btn pw-btn-embed');
     embedBtn.title = 'Get embed code for this snippet';
-    embedBtn.innerHTML = '</> <span class="pw-btn-embed-label">Embed</span>';
+    embedBtn.innerHTML = '&lt;/&gt; <span class="pw-btn-embed-label">Embed</span>';
     const fsBtn = el('button', 'pw-fullscreen-btn', '⛶');
     fsBtn.title = 'Fullscreen';
     const hint = el('span', 'pw-hint', 'Loading Python…');
