@@ -69,22 +69,22 @@
         {
           "id": "lecture01-01",
           "file": "lecture-examples/lecture01/01.json",
-          "title": "1.1 – User Input and Output"
+          "title": "1.1 – Välkommen"
         },
         {
           "id": "lecture01-02",
           "file": "lecture-examples/lecture01/02.json",
-          "title": "1.2 – User Input and Output"
+          "title": "1.2 – Input och print"
         },
         {
           "id": "lecture01-03",
           "file": "lecture-examples/lecture01/03.json",
-          "title": "1.3 – User Input and Output"
+          "title": "1.3 – Operationer"
         },
         {
           "id": "lecture01-04",
           "file": "lecture-examples/lecture01/04.json",
-          "title": "1.4 – Example 4"
+          "title": "1.4 – Uppräkning"
         }
       ]
     },
