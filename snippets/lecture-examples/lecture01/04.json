@@ -1,0 +1,9 @@
+{
+  "title": "1.4 – Example 4",
+  "files": [
+    {
+      "name": "main.py",
+      "content": "print(\"Hej alla som läser DD1310\")"
+    }
+  ]
+}

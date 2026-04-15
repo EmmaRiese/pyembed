@@ -89,10 +89,14 @@
           const data = await fetch('snippets/index.json').then(r => r.json());
           state.remove();
           for (const cat of data.categories) {
-            const slug = cat.folder;
+            const isLecture = cat.folder.startsWith('lecture-examples/lecture');
+            const lectureN  = isLecture ? parseInt(cat.folder.replace('lecture-examples/lecture', ''), 10) : null;
+            const href      = isLecture
+              ? `lecture.html?n=${lectureN}`
+              : `gallery.html?cat=${cat.folder}`;
             const a = document.createElement('a');
             a.className = 'card';
-            a.href = `gallery.html?cat=${slug}`;
+            a.href = href;
             a.innerHTML = `
               <div class="card-title">${cat.name}</div>
               <div class="card-desc">${cat.snippets.length} snippet${cat.snippets.length !== 1 ? 's' : ''}</div>

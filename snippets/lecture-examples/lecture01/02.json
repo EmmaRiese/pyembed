@@ -1,0 +1,9 @@
+{
+  "title": "1.2 – User Input and Output",
+  "files": [
+    {
+      "name": "main.py",
+      "content": "tal = int(input(\"Tänk på ett tal\"))\ntal += 1 #Läger till ett\nprint(\"Nu har vi lagt till 1 så talet är:\", tal)"
+    }
+  ]
+}

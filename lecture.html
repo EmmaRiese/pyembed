@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lecture Examples</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --text: #e6edf3; --muted: #8b949e; --accent: #58a6ff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg); color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* ── Header ── */
+    .site-header {
+      border-bottom: 1px solid var(--border); background: var(--surface);
+      padding: 14px 0; position: sticky; top: 0; z-index: 100;
+    }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+    .header-inner { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .logo { font-size: 16px; font-weight: 700; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 6px; }
+    .lecture-title { font-size: 16px; font-weight: 700; color: var(--text); }
+    .lecture-nav { display: flex; align-items: center; gap: 6px; margin-left: auto; flex-wrap: wrap; }
+    .nav-btn {
+      padding: 5px 12px; border-radius: 6px; border: 1px solid var(--border);
+      background: var(--surface); color: var(--accent); font-size: 13px;
+      text-decoration: none; cursor: pointer; white-space: nowrap;
+    }
+    .nav-btn:hover { background: var(--border); }
+    .nav-btn.active { background: var(--accent); color: #000; border-color: var(--accent); }
+
+    /* ── Hero ── */
+    .hero { padding: 32px 0 24px; }
+    .hero h1 { font-size: 24px; font-weight: 700; margin-bottom: 6px; }
+    .hero p  { font-size: 14px; color: var(--muted); }
+
+    /* ── Snippet groups ── */
+    .snippet-group { margin-bottom: 40px; }
+    .snippet-label {
+      font-size: 13px; font-weight: 600; color: var(--muted);
+      margin-bottom: 10px; letter-spacing: 0.3px;
+    }
+    .py-snippet { display: block; }
+
+    /* ── States ── */
+    .state     { padding: 60px 0; text-align: center; color: var(--muted); font-size: 14px; }
+    .state-err { color: #cf222e; }
+
+    /* ── Footer ── */
+    .site-footer {
+      border-top: 1px solid var(--border); padding: 20px 0;
+      text-align: center; font-size: 13px; color: var(--muted);
+    }
+    .site-footer a { color: var(--accent); text-decoration: none; }
+    .site-footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a class="logo" href="index.html">🐍 DD1310</a>
+        <span class="lecture-title" id="header-title">Loading…</span>
+        <nav class="lecture-nav" id="lecture-nav">
+          <a class="nav-btn" href="gallery.html">All lectures</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="hero">
+      <h1 id="hero-title">Loading…</h1>
+      <p id="hero-desc"></p>
+    </div>
+    <div id="content"><div class="state" id="state">Loading…</div></div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      Powered by <a href="https://skulpt.org" target="_blank" rel="noopener">Skulpt</a>
+      and <a href="https://codemirror.net" target="_blank" rel="noopener">CodeMirror 6</a>.
+    </div>
+  </footer>
+
+  <script src="embed.js"></script>
+  <script>
+    const params   = new URLSearchParams(location.search);
+    const lectureN = parseInt(params.get('n') || '1', 10);
+    const catId    = 'lecture-examples/lecture' + String(lectureN).padStart(2, '0');
+
+    async function load() {
+      const state   = document.getElementById('state');
+      const content = document.getElementById('content');
+
+      try {
+        const index = await fetch('snippets/index.json').then(r => r.json());
+        const cat   = index.categories.find(c => c.folder === catId);
+        if (!cat) throw new Error('Lecture ' + lectureN + ' not found in index.json');
+
+        // ── Build lecture navigation ──────────────────────────────────────────
+        const nav       = document.getElementById('lecture-nav');
+        const lectures  = index.categories.filter(c => c.folder.startsWith('lecture-examples/lecture'));
+        const allBtn    = nav.querySelector('a');
+        nav.innerHTML   = '';
+        nav.appendChild(allBtn);
+
+        lectures.forEach(lc => {
+          const n    = parseInt(lc.folder.replace('lecture-examples/lecture', ''), 10);
+          const btn  = document.createElement('a');
+          btn.className = 'nav-btn' + (n === lectureN ? ' active' : '');
+          btn.href      = 'lecture.html?n=' + n;
+          btn.textContent = n;
+          nav.appendChild(btn);
+        });
+
+        // ── Page titles ───────────────────────────────────────────────────────
+        document.title = cat.name + ' — DD1310';
+        document.getElementById('header-title').textContent = cat.name;
+        document.getElementById('hero-title').textContent   = cat.name;
+        document.getElementById('hero-desc').textContent    =
+          cat.snippets.length + ' example' + (cat.snippets.length !== 1 ? 's' : '');
+
+        // ── Render widgets inline ─────────────────────────────────────────────
+        state.remove();
+
+        for (const s of cat.snippets) {
+          const group = document.createElement('div');
+          group.className = 'snippet-group';
+
+          const label = document.createElement('div');
+          label.className   = 'snippet-label';
+          label.textContent = s.title;
+          group.appendChild(label);
+
+          const widget = document.createElement('div');
+          widget.className      = 'py-snippet';
+          widget.dataset.src    = 'snippets/' + s.file;
+          group.appendChild(widget);
+
+          content.appendChild(group);
+        }
+
+        // Trigger widget initialisation after all divs are in the DOM
+        if (window._pySnippetInitAll) window._pySnippetInitAll();
+
+      } catch(e) {
+        state.className   = 'state state-err';
+        state.textContent = '⚠ ' + e.message;
+      }
+    }
+
+    load();
+  </script>
+</body>
+</html>

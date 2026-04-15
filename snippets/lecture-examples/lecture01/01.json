@@ -1,0 +1,9 @@
+{
+  "title": "1.1 – User Input and Output",
+  "files": [
+    {
+      "name": "main.py",
+      "content": "antal_husdjur = int(input(\"Hur många husdjur har du?\"))\nprint(\"Ok, det var ju inte så imponerande, jag har\", antal_husdjur + 1 , \" husdjur\")"
+    }
+  ]
+}

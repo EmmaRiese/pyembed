@@ -1,0 +1,9 @@
+{
+  "title": "15.2 – Example 2",
+  "files": [
+    {
+      "name": "main.py",
+      "content": "print('{} {}'.format('ett', 'två'))\nantal = 2\nprint('{}{}'.format('antal= ', antal))\n\n\n\n"
+    }
+  ]
+}

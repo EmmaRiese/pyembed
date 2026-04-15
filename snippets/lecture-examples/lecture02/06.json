@@ -1,0 +1,9 @@
+{
+  "title": "2.6 – if / elif / else",
+  "files": [
+    {
+      "name": "main.py",
+      "content": "antal_studenter = 150\nif antal_studenter < 147:\n\tprint(\"Alla är inte här\")\n\t\nelif antal_studenter > 147: #Annars om detta är sant\n\tprint(\"Det är fler närvarande här än vad som är registrerade\")\n\nelse:  # I alla andra fall\n\tprint(\"Alla är här\")\n"
+    }
+  ]
+}

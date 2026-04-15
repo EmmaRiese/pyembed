@@ -1,0 +1,9 @@
+{
+  "title": "3.2 – List Operations",
+  "files": [
+    {
+      "name": "main.py",
+      "content": "frukter=[\"äpple\",\"päron\",\"körsbär\",\"mango\"]\nfrukter.insert(1,\"banan\")\nfrukter.append(\"päron\")\n\n\nprint(frukter)\n"
+    }
+  ]
+}

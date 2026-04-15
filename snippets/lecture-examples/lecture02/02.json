@@ -1,0 +1,9 @@
+{
+  "title": "2.2 – While Loop with User Input",
+  "files": [
+    {
+      "name": "main.py",
+      "content": "fortsätt = \"ja\"\nwhile fortsätt == \"ja\":\n\tfortsätt = input(\"Vill du fortsätta? \")"
+    }
+  ]
+}

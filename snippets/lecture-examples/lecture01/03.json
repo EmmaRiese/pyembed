@@ -1,0 +1,9 @@
+{
+  "title": "1.3 – User Input and Output",
+  "files": [
+    {
+      "name": "main.py",
+      "content": "antal = 50\nprint(\"Antal :\" , antal)\nprint(\"Antal : \" + str(antal))\nantal = int(input(str(antal)+ \" var det innan. Nytt antal? \"))"
+    }
+  ]
+}

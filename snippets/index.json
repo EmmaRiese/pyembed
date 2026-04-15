@@ -4,45 +4,687 @@
       "name": "Basic Examples",
       "folder": "basic-examples",
       "snippets": [
-        { "id": "hello",        "file": "basic-examples/hello.json",        "title": "Hello World" },
-        { "id": "calculator",   "file": "basic-examples/calculator.json",   "title": "Simple Calculator" },
-        { "id": "fibonacci",    "file": "basic-examples/fibonacci.json",    "title": "Fibonacci Sequence" },
-        { "id": "list_example", "file": "basic-examples/list_example.json", "title": "List Comprehensions" }
-      ]
-    },
-    {
-      "name": "Lecture Examples",
-      "folder": "lecture-examples",
-      "snippets": [
-        { "id": "lecture-01", "file": "lecture-examples/01.json", "title": "Lecture Example 1" },
-        { "id": "lecture-02", "file": "lecture-examples/02.json", "title": "Lecture Example 2" },
-        { "id": "lecture-03", "file": "lecture-examples/03.json", "title": "Lecture Example 3" },
-        { "id": "lecture-04", "file": "lecture-examples/04.json", "title": "Lecture Example 4" },
-        { "id": "lecture-05", "file": "lecture-examples/05.json", "title": "Lecture Example 5" },
-        { "id": "lecture-06", "file": "lecture-examples/06.json", "title": "Lecture Example 6" },
-        { "id": "lecture-07", "file": "lecture-examples/07.json", "title": "Lecture Example 7" },
-        { "id": "lecture-08", "file": "lecture-examples/08.json", "title": "Lecture Example 8" },
-        { "id": "lecture-09", "file": "lecture-examples/09.json", "title": "Lecture Example 9" },
-        { "id": "lecture-10", "file": "lecture-examples/10.json", "title": "Lecture Example 10" },
-        { "id": "lecture-11", "file": "lecture-examples/11.json", "title": "Lecture Example 11" },
-        { "id": "lecture-12", "file": "lecture-examples/12.json", "title": "Lecture Example 12" },
-        { "id": "lecture-13", "file": "lecture-examples/13.json", "title": "Lecture Example 13" },
-        { "id": "lecture-14", "file": "lecture-examples/14.json", "title": "Lecture Example 14" },
-        { "id": "lecture-15", "file": "lecture-examples/15.json", "title": "Lecture Example 15" },
-        { "id": "lecture-16", "file": "lecture-examples/16.json", "title": "Lecture Example 16" },
-        { "id": "lecture-17", "file": "lecture-examples/17.json", "title": "Lecture Example 17" }
+        {
+          "id": "hello",
+          "file": "basic-examples/hello.json",
+          "title": "Hello World"
+        },
+        {
+          "id": "calculator",
+          "file": "basic-examples/calculator.json",
+          "title": "Simple Calculator"
+        },
+        {
+          "id": "fibonacci",
+          "file": "basic-examples/fibonacci.json",
+          "title": "Fibonacci Sequence"
+        },
+        {
+          "id": "list_example",
+          "file": "basic-examples/list_example.json",
+          "title": "List Comprehensions"
+        }
       ]
     },
     {
       "name": "Möbius Material",
       "folder": "mobius-material",
       "snippets": [
-        { "id": "mobius-01", "file": "mobius-material/01.json", "title": "Möbius Material 1" },
-        { "id": "mobius-02", "file": "mobius-material/02.json", "title": "Möbius Material 2" },
-        { "id": "mobius-03", "file": "mobius-material/03.json", "title": "Möbius Material 3" },
-        { "id": "mobius-04", "file": "mobius-material/04.json", "title": "Möbius Material 4" },
-        { "id": "mobius-05", "file": "mobius-material/05.json", "title": "Möbius Material 5" },
-        { "id": "mobius-06", "file": "mobius-material/06.json", "title": "Möbius Material 6" }
+        {
+          "id": "mobius-01",
+          "file": "mobius-material/01.json",
+          "title": "Möbius Material 1"
+        },
+        {
+          "id": "mobius-02",
+          "file": "mobius-material/02.json",
+          "title": "Möbius Material 2"
+        },
+        {
+          "id": "mobius-03",
+          "file": "mobius-material/03.json",
+          "title": "Möbius Material 3"
+        },
+        {
+          "id": "mobius-04",
+          "file": "mobius-material/04.json",
+          "title": "Möbius Material 4"
+        },
+        {
+          "id": "mobius-05",
+          "file": "mobius-material/05.json",
+          "title": "Möbius Material 5"
+        },
+        {
+          "id": "mobius-06",
+          "file": "mobius-material/06.json",
+          "title": "Möbius Material 6"
+        }
+      ]
+    },
+    {
+      "name": "Lecture 1",
+      "folder": "lecture-examples/lecture01",
+      "snippets": [
+        {
+          "id": "lecture01-01",
+          "file": "lecture-examples/lecture01/01.json",
+          "title": "1.1 – User Input and Output"
+        },
+        {
+          "id": "lecture01-02",
+          "file": "lecture-examples/lecture01/02.json",
+          "title": "1.2 – User Input and Output"
+        },
+        {
+          "id": "lecture01-03",
+          "file": "lecture-examples/lecture01/03.json",
+          "title": "1.3 – User Input and Output"
+        },
+        {
+          "id": "lecture01-04",
+          "file": "lecture-examples/lecture01/04.json",
+          "title": "1.4 – Example 4"
+        }
+      ]
+    },
+    {
+      "name": "Lecture 2",
+      "folder": "lecture-examples/lecture02",
+      "snippets": [
+        {
+          "id": "lecture02-01",
+          "file": "lecture-examples/lecture02/01.json",
+          "title": "2.1 – While Loop with Break"
+        },
+        {
+          "id": "lecture02-02",
+          "file": "lecture-examples/lecture02/02.json",
+          "title": "2.2 – While Loop with User Input"
+        },
+        {
+          "id": "lecture02-03",
+          "file": "lecture-examples/lecture02/03.json",
+          "title": "2.3 – While Loop"
+        },
+        {
+          "id": "lecture02-04",
+          "file": "lecture-examples/lecture02/04.json",
+          "title": "2.4 – if / elif / else"
+        },
+        {
+          "id": "lecture02-05",
+          "file": "lecture-examples/lecture02/05.json",
+          "title": "2.5 – if / else"
+        },
+        {
+          "id": "lecture02-06",
+          "file": "lecture-examples/lecture02/06.json",
+          "title": "2.6 – if / elif / else"
+        },
+        {
+          "id": "lecture02-07",
+          "file": "lecture-examples/lecture02/07.json",
+          "title": "2.7 – While Loop with User Input"
+        }
+      ]
+    },
+    {
+      "name": "Lecture 3",
+      "folder": "lecture-examples/lecture03",
+      "snippets": [
+        {
+          "id": "lecture03-01",
+          "file": "lecture-examples/lecture03/01.json",
+          "title": "3.1 – For Loop with range()"
+        },
+        {
+          "id": "lecture03-02",
+          "file": "lecture-examples/lecture03/02.json",
+          "title": "3.2 – List Operations"
+        },
+        {
+          "id": "lecture03-03",
+          "file": "lecture-examples/lecture03/03.json",
+          "title": "3.3 – Lists"
+        },
+        {
+          "id": "lecture03-04",
+          "file": "lecture-examples/lecture03/04.json",
+          "title": "3.4 – For Loop with range()"
+        },
+        {
+          "id": "lecture03-05",
+          "file": "lecture-examples/lecture03/05.json",
+          "title": "3.5 – For Loop"
+        },
+        {
+          "id": "lecture03-06",
+          "file": "lecture-examples/lecture03/06.json",
+          "title": "3.6 – For Loop with range()"
+        },
+        {
+          "id": "lecture03-07",
+          "file": "lecture-examples/lecture03/07.json",
+          "title": "3.7 – For Loop with range()"
+        },
+        {
+          "id": "lecture03-08",
+          "file": "lecture-examples/lecture03/08.json",
+          "title": "3.8 – For Loop with range()"
+        }
+      ]
+    },
+    {
+      "name": "Lecture 4",
+      "folder": "lecture-examples/lecture04",
+      "snippets": [
+        {
+          "id": "lecture04-01",
+          "file": "lecture-examples/lecture04/01.json",
+          "title": "4.1 – Set Operations"
+        },
+        {
+          "id": "lecture04-02",
+          "file": "lecture-examples/lecture04/02.json",
+          "title": "4.2 – For Loop with range()"
+        },
+        {
+          "id": "lecture04-03",
+          "file": "lecture-examples/lecture04/03.json",
+          "title": "4.3 – For Loop with range()"
+        },
+        {
+          "id": "lecture04-04",
+          "file": "lecture-examples/lecture04/04.json",
+          "title": "4.4 – For Loop with range()"
+        }
+      ]
+    },
+    {
+      "name": "Lecture 5",
+      "folder": "lecture-examples/lecture05",
+      "snippets": [
+        {
+          "id": "lecture05-01",
+          "file": "lecture-examples/lecture05/01.json",
+          "title": "5.1 – Recursion: addera()"
+        },
+        {
+          "id": "lecture05-02",
+          "file": "lecture-examples/lecture05/02.json",
+          "title": "5.2 – Recursion: addera()"
+        },
+        {
+          "id": "lecture05-03",
+          "file": "lecture-examples/lecture05/03.json",
+          "title": "5.3 – Recursion: skriva_ut_hej()"
+        },
+        {
+          "id": "lecture05-04",
+          "file": "lecture-examples/lecture05/04.json",
+          "title": "5.4 – Recursion: addera_subtrahera()"
+        },
+        {
+          "id": "lecture05-05",
+          "file": "lecture-examples/lecture05/05.json",
+          "title": "5.5 – Recursion: addition()"
+        },
+        {
+          "id": "lecture05-06",
+          "file": "lecture-examples/lecture05/06.json",
+          "title": "5.6 – Function: skriva_ut_hej()"
+        },
+        {
+          "id": "lecture05-07",
+          "file": "lecture-examples/lecture05/07.json",
+          "title": "5.7 – Recursion: skriva_ut_hej()"
+        }
+      ]
+    },
+    {
+      "name": "Lecture 6",
+      "folder": "lecture-examples/lecture06",
+      "snippets": [
+        {
+          "id": "lecture06-01",
+          "file": "lecture-examples/lecture06/01.json",
+          "title": "6.1 – Recursion: addera()"
+        },
+        {
+          "id": "lecture06-02",
+          "file": "lecture-examples/lecture06/02.json",
+          "title": "6.2 – Recursion: addera_subtrahera()"
+        },
+        {
+          "id": "lecture06-03",
+          "file": "lecture-examples/lecture06/03.json",
+          "title": "6.3 – Recursion: beräknaFakultet()"
+        },
+        {
+          "id": "lecture06-04",
+          "file": "lecture-examples/lecture06/04.json",
+          "title": "6.4 – Module Import: Tarning"
+        },
+        {
+          "id": "lecture06-05",
+          "file": "lecture-examples/lecture06/05.json",
+          "title": "6.5 – Random Numbers"
+        },
+        {
+          "id": "lecture06-06",
+          "file": "lecture-examples/lecture06/06.json",
+          "title": "6.6 – Recursion: vänd()"
+        },
+        {
+          "id": "lecture06-07",
+          "file": "lecture-examples/lecture06/07.json",
+          "title": "6.7 – Math Module"
+        },
+        {
+          "id": "lecture06-08",
+          "file": "lecture-examples/lecture06/08.json",
+          "title": "6.8 – Math Module"
+        },
+        {
+          "id": "lecture06-09",
+          "file": "lecture-examples/lecture06/09.json",
+          "title": "6.9 – Random Numbers"
+        },
+        {
+          "id": "lecture06-10",
+          "file": "lecture-examples/lecture06/10.json",
+          "title": "6.10 – Recursion: skapa_matris()"
+        }
+      ]
+    },
+    {
+      "name": "Lecture 7",
+      "folder": "lecture-examples/lecture07",
+      "snippets": [
+        {
+          "id": "lecture07-01",
+          "file": "lecture-examples/lecture07/01.json",
+          "title": "7.1 – Ett program som läser in produkter och priser"
+        },
+        {
+          "id": "lecture07-02",
+          "file": "lecture-examples/lecture07/02.json",
+          "title": "7.2 – Reading and Writing Files"
+        },
+        {
+          "id": "lecture07-03",
+          "file": "lecture-examples/lecture07/03.json",
+          "title": "7.3 – Ett program som läser in produkter och priser"
+        },
+        {
+          "id": "lecture07-04",
+          "file": "lecture-examples/lecture07/04.json",
+          "title": "7.4 – Reading and Writing Files"
+        },
+        {
+          "id": "lecture07-05",
+          "file": "lecture-examples/lecture07/05.json",
+          "title": "7.5 – Ett program som läser in produkter och priser"
+        },
+        {
+          "id": "lecture07-06",
+          "file": "lecture-examples/lecture07/06.json",
+          "title": "7.6 – Ett program som läser in produkter och priser"
+        },
+        {
+          "id": "lecture07-07",
+          "file": "lecture-examples/lecture07/07.json",
+          "title": "7.7 – Reading and Writing Files"
+        },
+        {
+          "id": "lecture07-08",
+          "file": "lecture-examples/lecture07/08.json",
+          "title": "7.8 – Reading and Writing Files"
+        }
+      ]
+    },
+    {
+      "name": "Lecture 8",
+      "folder": "lecture-examples/lecture08",
+      "snippets": [
+        {
+          "id": "lecture08-01",
+          "file": "lecture-examples/lecture08/01.json",
+          "title": "8.1 – Exception Handling: ValueError"
+        },
+        {
+          "id": "lecture08-02",
+          "file": "lecture-examples/lecture08/02.json",
+          "title": "8.2 – File I/O with Exception Handling"
+        },
+        {
+          "id": "lecture08-03",
+          "file": "lecture-examples/lecture08/03.json",
+          "title": "8.3 – Exception Handling: ValueError"
+        },
+        {
+          "id": "lecture08-04",
+          "file": "lecture-examples/lecture08/04.json",
+          "title": "8.4 – Exception Handling: ValueError"
+        },
+        {
+          "id": "lecture08-05",
+          "file": "lecture-examples/lecture08/05.json",
+          "title": "8.5 – Ett program som läser in produkter och priser"
+        },
+        {
+          "id": "lecture08-06",
+          "file": "lecture-examples/lecture08/06.json",
+          "title": "8.6 – Ett program som läser in bakverk och dess pris"
+        },
+        {
+          "id": "lecture08-07",
+          "file": "lecture-examples/lecture08/07.json",
+          "title": "8.7 – Recursion: meny()"
+        },
+        {
+          "id": "lecture08-08",
+          "file": "lecture-examples/lecture08/08.json",
+          "title": "8.8 – Exception Handling: TypeError"
+        },
+        {
+          "id": "lecture08-09",
+          "file": "lecture-examples/lecture08/09.json",
+          "title": "8.9 – Ett program som läser in produkter och priser"
+        },
+        {
+          "id": "lecture08-10",
+          "file": "lecture-examples/lecture08/10.json",
+          "title": "8.10 – File I/O with Exception Handling"
+        },
+        {
+          "id": "lecture08-11",
+          "file": "lecture-examples/lecture08/11.json",
+          "title": "8.11 – Try/Except: Exception Handling"
+        },
+        {
+          "id": "lecture08-12",
+          "file": "lecture-examples/lecture08/12.json",
+          "title": "8.12 – Recursion: meny()"
+        },
+        {
+          "id": "lecture08-13",
+          "file": "lecture-examples/lecture08/13.json",
+          "title": "8.13 – For Loop with range()"
+        }
+      ]
+    },
+    {
+      "name": "Lecture 9",
+      "folder": "lecture-examples/lecture09",
+      "snippets": [
+        {
+          "id": "lecture09-01",
+          "file": "lecture-examples/lecture09/01.json",
+          "title": "9.1 – Grupp Class"
+        },
+        {
+          "id": "lecture09-02",
+          "file": "lecture-examples/lecture09/02.json",
+          "title": "9.2 – Spelare Class"
+        },
+        {
+          "id": "lecture09-03",
+          "file": "lecture-examples/lecture09/03.json",
+          "title": "9.3 – Spelare Class"
+        },
+        {
+          "id": "lecture09-04",
+          "file": "lecture-examples/lecture09/04.json",
+          "title": "9.4 – Grupp Class"
+        },
+        {
+          "id": "lecture09-05",
+          "file": "lecture-examples/lecture09/05.json",
+          "title": "9.5 – Spelare Class"
+        },
+        {
+          "id": "lecture09-06",
+          "file": "lecture-examples/lecture09/06.json",
+          "title": "9.6 – Grupp Class"
+        },
+        {
+          "id": "lecture09-07",
+          "file": "lecture-examples/lecture09/07.json",
+          "title": "9.7 – Spelare Class"
+        },
+        {
+          "id": "lecture09-08",
+          "file": "lecture-examples/lecture09/08.json",
+          "title": "9.8 – Grupp Class"
+        }
+      ]
+    },
+    {
+      "name": "Lecture 10",
+      "folder": "lecture-examples/lecture10",
+      "snippets": [
+        {
+          "id": "lecture10-01",
+          "file": "lecture-examples/lecture10/01.json",
+          "title": "10.1 – Grupp Class"
+        },
+        {
+          "id": "lecture10-02",
+          "file": "lecture-examples/lecture10/02.json",
+          "title": "10.2 – Grupp Class"
+        },
+        {
+          "id": "lecture10-03",
+          "file": "lecture-examples/lecture10/03.json",
+          "title": "10.3 – Test Class"
+        },
+        {
+          "id": "lecture10-04",
+          "file": "lecture-examples/lecture10/04.json",
+          "title": "10.4 – Tal Class (multi-file)"
+        },
+        {
+          "id": "lecture10-05",
+          "file": "lecture-examples/lecture10/05.json",
+          "title": "10.5 – Grupp Class"
+        },
+        {
+          "id": "lecture10-06",
+          "file": "lecture-examples/lecture10/06.json",
+          "title": "10.6 – Hus Class (multi-file)"
+        },
+        {
+          "id": "lecture10-07",
+          "file": "lecture-examples/lecture10/07.json",
+          "title": "10.7 – Grupp Class"
+        },
+        {
+          "id": "lecture10-08",
+          "file": "lecture-examples/lecture10/08.json",
+          "title": "10.8 – Grupp Class"
+        }
+      ]
+    },
+    {
+      "name": "Lecture 11",
+      "folder": "lecture-examples/lecture11",
+      "snippets": [
+        {
+          "id": "lecture11-01",
+          "file": "lecture-examples/lecture11/01.json",
+          "title": "11.1 – Hus Class (multi-file)"
+        },
+        {
+          "id": "lecture11-02",
+          "file": "lecture-examples/lecture11/02.json",
+          "title": "11.2 – Långord Class with Menu"
+        },
+        {
+          "id": "lecture11-03",
+          "file": "lecture-examples/lecture11/03.json",
+          "title": "11.3 – Huvudprogrammet"
+        },
+        {
+          "id": "lecture11-04",
+          "file": "lecture-examples/lecture11/04.json",
+          "title": "11.4 – Rum Class (multi-file)"
+        },
+        {
+          "id": "lecture11-05",
+          "file": "lecture-examples/lecture11/05.json",
+          "title": "11.5 – Rum Class (multi-file)"
+        },
+        {
+          "id": "lecture11-06",
+          "file": "lecture-examples/lecture11/06.json",
+          "title": "11.6 – Inköpslista extends list"
+        },
+        {
+          "id": "lecture11-07",
+          "file": "lecture-examples/lecture11/07.json",
+          "title": "11.7 – Rum: Inheritance"
+        },
+        {
+          "id": "lecture11-08",
+          "file": "lecture-examples/lecture11/08.json",
+          "title": "11.8 – Sjutton extends Exception"
+        }
+      ]
+    },
+    {
+      "name": "Lecture 12",
+      "folder": "lecture-examples/lecture12",
+      "snippets": [
+        {
+          "id": "lecture12-01",
+          "file": "lecture-examples/lecture12/01.json",
+          "title": "12.1 – List Operations"
+        },
+        {
+          "id": "lecture12-02",
+          "file": "lecture-examples/lecture12/02.json",
+          "title": "12.2 – List Operations"
+        },
+        {
+          "id": "lecture12-03",
+          "file": "lecture-examples/lecture12/03.json",
+          "title": "12.3 – Frukt: Inheritance"
+        },
+        {
+          "id": "lecture12-04",
+          "file": "lecture-examples/lecture12/04.json",
+          "title": "12.4 – Tal Class"
+        },
+        {
+          "id": "lecture12-05",
+          "file": "lecture-examples/lecture12/05.json",
+          "title": "12.5 – Frukt Class (multi-file)"
+        },
+        {
+          "id": "lecture12-06",
+          "file": "lecture-examples/lecture12/06.json",
+          "title": "12.6 – Tal Class"
+        }
+      ]
+    },
+    {
+      "name": "Lecture 13",
+      "folder": "lecture-examples/lecture13",
+      "snippets": [
+        {
+          "id": "lecture13-01",
+          "file": "lecture-examples/lecture13/01.json",
+          "title": "13.1 – Ett program som läser in produkter och priser"
+        },
+        {
+          "id": "lecture13-02",
+          "file": "lecture-examples/lecture13/02.json",
+          "title": "13.2 – Exception Handling: ValueError"
+        },
+        {
+          "id": "lecture13-03",
+          "file": "lecture-examples/lecture13/03.json",
+          "title": "13.3 – Recursion: inmatning()"
+        },
+        {
+          "id": "lecture13-04",
+          "file": "lecture-examples/lecture13/04.json",
+          "title": "13.4 – Recursion: hitta_minsta()"
+        },
+        {
+          "id": "lecture13-05",
+          "file": "lecture-examples/lecture13/05.json",
+          "title": "13.5 – For Loop with range()"
+        },
+        {
+          "id": "lecture13-06",
+          "file": "lecture-examples/lecture13/06.json",
+          "title": "13.6 – For Loop"
+        },
+        {
+          "id": "lecture13-07",
+          "file": "lecture-examples/lecture13/07.json",
+          "title": "13.7 – Båt: Inheritance"
+        },
+        {
+          "id": "lecture13-08",
+          "file": "lecture-examples/lecture13/08.json",
+          "title": "13.8 – Ljusstake: Inheritance"
+        },
+        {
+          "id": "lecture13-09",
+          "file": "lecture-examples/lecture13/09.json",
+          "title": "13.9 – Exempel med bra kommentar"
+        },
+        {
+          "id": "lecture13-10",
+          "file": "lecture-examples/lecture13/10.json",
+          "title": "13.10 – Kakformer extends set"
+        }
+      ]
+    },
+    {
+      "name": "Lecture 14",
+      "folder": "lecture-examples/lecture14",
+      "snippets": [
+        {
+          "id": "lecture14-01",
+          "file": "lecture-examples/lecture14/01.json",
+          "title": "14.1 – Film Class"
+        },
+        {
+          "id": "lecture14-02",
+          "file": "lecture-examples/lecture14/02.json",
+          "title": "14.2 – Reading and Writing Files"
+        }
+      ]
+    },
+    {
+      "name": "Lecture 15",
+      "folder": "lecture-examples/lecture15",
+      "snippets": [
+        {
+          "id": "lecture15-01",
+          "file": "lecture-examples/lecture15/01.json",
+          "title": "15.1 – Reading and Writing Files"
+        },
+        {
+          "id": "lecture15-02",
+          "file": "lecture-examples/lecture15/02.json",
+          "title": "15.2 – Example 2"
+        },
+        {
+          "id": "lecture15-03",
+          "file": "lecture-examples/lecture15/03.json",
+          "title": "15.3 – For Loop with range()"
+        },
+        {
+          "id": "lecture15-04",
+          "file": "lecture-examples/lecture15/04.json",
+          "title": "15.4 – Reading and Writing Files"
+        }
       ]
     }
   ]

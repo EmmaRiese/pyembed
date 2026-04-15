@@ -1,0 +1,9 @@
+{
+  "title": "4.1 – Set Operations",
+  "files": [
+    {
+      "name": "main.py",
+      "content": "mängd1 = {12, 35, 45}\nmängd2 = {24, 45, 16}\n\nprint(\"Mängd 1:\", mängd1)\nprint(\"Mängd 2:\", mängd2)\n\nprint(\"Union\", mängd1.union(mängd2))\nprint(\"Snittet\", mängd1.intersection(mängd2))\nprint(\"Finns i mängd 1 men inte i mängd 2: \", mängd1.difference(mängd2))\n"
+    }
+  ]
+}

@@ -938,6 +938,9 @@ def open(name, mode='r', *args, **kwargs):
     document.querySelectorAll('.py-snippet[data-src]').forEach(el => initWidget(el));
   }
 
+  // Expose for pages that add widgets dynamically after DOMContentLoaded
+  window._pySnippetInitAll = initAll;
+
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initAll);
   else initAll();
 })();
