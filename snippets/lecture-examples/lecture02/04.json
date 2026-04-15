@@ -3,7 +3,7 @@
   "files": [
     {
       "name": "main.py",
-      "content": "fortsätt = \"ja\"\nwhile fortsätt == \"ja\":\n\tfortsätt = input(\"Vill du fortsätta? \")"
+      "content": "fortsatt = \"ja\"\nwhile fortsatt == \"ja\":\n\tfortsatt = input(\"Vill du fortsätta? \")"
     }
   ]
 }
