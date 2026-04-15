@@ -1,9 +1,9 @@
 {
-  "title": "1.4 – Example 4",
+  "title": "1.4 – Uppräkning",
   "files": [
     {
       "name": "main.py",
-      "content": "print(\"Hej alla som läser DD1310\")"
+      "content": "tal = int(input(\"Tänk på ett tal\"))\ntal += 1 #Läger till ett\nprint(\"Nu har vi lagt till 1 så talet är:\", tal)"
     }
   ]
 }
