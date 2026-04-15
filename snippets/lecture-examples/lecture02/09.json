@@ -1,0 +1,9 @@
+{
+  "title": "2.9 – While-slinga med meny (elif)",
+  "files": [
+    {
+      "name": "main.py",
+      "content": "val = input(\"Vad vill du göra ? Ange siffra 1-4\")\nwhile val != \"4\":\n\tif val == \"1\":\n\t\tprint(\"Du valde 1.\")\n\telif val == \"2\":\n\t\tprint(\"Du valde 2.\")\n\telif val == \"3\":\n\t\tprint(\"Du valde\", val)\n\telse:\n\t\tprint(\"Du valde inte en siffra 1-4.\")\n\t\n\tval = input(\"Vad vill du göra ? Ange siffra 1-4\")\nprint(\"Du valde 4. Hejdå!\")"
+    }
+  ]
+}

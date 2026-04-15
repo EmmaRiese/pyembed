@@ -126,6 +126,21 @@
           "id": "lecture02-07",
           "file": "lecture-examples/lecture02/07.json",
           "title": "2.7 – While slinga med räknare"
+        },
+        {
+          "id": "lecture02-08",
+          "file": "lecture-examples/lecture02/08.json",
+          "title": "2.8 – While-slinga med meny (if/else)"
+        },
+        {
+          "id": "lecture02-09",
+          "file": "lecture-examples/lecture02/09.json",
+          "title": "2.9 – While-slinga med meny (elif)"
+        },
+        {
+          "id": "lecture02-10",
+          "file": "lecture-examples/lecture02/10.json",
+          "title": "2.10 – Flyttalsprecision med while"
         }
       ]
     },

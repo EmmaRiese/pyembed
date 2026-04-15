@@ -1,0 +1,9 @@
+{
+  "title": "2.10 – Flyttalsprecision med while",
+  "files": [
+    {
+      "name": "main.py",
+      "content": "tal = 0.0\nwhile abs(tal - 1.0) > 0.000001:\n\tprint(tal)\n\ttal += 0.1"
+    }
+  ]
+}
