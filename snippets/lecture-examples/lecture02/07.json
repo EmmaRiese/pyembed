@@ -1,9 +1,9 @@
 {
-  "title": "2.7 – While Loop with User Input",
+  "title": "2.7 – While slinga med räknare",
   "files": [
     {
       "name": "main.py",
-      "content": "fortsätt = \"ja\"\nwhile fortsätt == \"ja\":\n\tfortsätt = input(\"Vill du fortsätta? \")\n\tfortsätt = fortsätt.lower()\n\t\nprint(\"avslutas\")"
+      "content": "tal = 1\nwhile tal < 5:\n\tprint(\"Varv: \", tal)\n\ttal += 1\n"
     }
   ]
 }

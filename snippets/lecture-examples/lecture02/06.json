@@ -1,9 +1,9 @@
 {
-  "title": "2.6 – if / elif / else",
+  "title": "2.6 – Oändlig slinga som bryts med break",
   "files": [
     {
       "name": "main.py",
-      "content": "antal_studenter = 150\nif antal_studenter < 147:\n\tprint(\"Alla är inte här\")\n\t\nelif antal_studenter > 147: #Annars om detta är sant\n\tprint(\"Det är fler närvarande här än vad som är registrerade\")\n\nelse:  # I alla andra fall\n\tprint(\"Alla är här\")\n"
+      "content": "while True:\n\tprint(\"Det här skrivs tills du skriver nej\")\n\tfortsätt = input(\"Vill du fortsätta? \")\n\tif fortsätt == \"nej\":\n\t\tbreak\n\t\t"
     }
   ]
 }
