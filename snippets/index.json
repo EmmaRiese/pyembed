@@ -151,42 +151,42 @@
         {
           "id": "lecture03-01",
           "file": "lecture-examples/lecture03/01.json",
-          "title": "3.1 – For Loop with range()"
+          "title": "3.1 – Listor"
         },
         {
           "id": "lecture03-02",
           "file": "lecture-examples/lecture03/02.json",
-          "title": "3.2 – List Operations"
+          "title": "3.2 – List operationer"
         },
         {
           "id": "lecture03-03",
           "file": "lecture-examples/lecture03/03.json",
-          "title": "3.3 – Lists"
+          "title": "3.3 – for-slingor och listor"
         },
         {
           "id": "lecture03-04",
           "file": "lecture-examples/lecture03/04.json",
-          "title": "3.4 – For Loop with range()"
+          "title": "3.4 – for-slingor med range()"
         },
         {
           "id": "lecture03-05",
           "file": "lecture-examples/lecture03/05.json",
-          "title": "3.5 – For Loop"
+          "title": "3.5 – Söka igenom en lista"
         },
         {
           "id": "lecture03-06",
           "file": "lecture-examples/lecture03/06.json",
-          "title": "3.6 – For Loop with range()"
+          "title": "3.6 – for-slinga med inmatning"
         },
         {
           "id": "lecture03-07",
           "file": "lecture-examples/lecture03/07.json",
-          "title": "3.7 – For Loop with range()"
+          "title": "3.7 – Nästlade for-slingor"
         },
         {
           "id": "lecture03-08",
           "file": "lecture-examples/lecture03/08.json",
-          "title": "3.8 – For Loop with range()"
+          "title": "3.8 – for-slingor med matriser"
         }
       ]
     },
