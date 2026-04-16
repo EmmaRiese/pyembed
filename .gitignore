@@ -2,3 +2,4 @@
 .claude/
 __pycache__/
 *.pyc
+generate_lecture_snippets.py
