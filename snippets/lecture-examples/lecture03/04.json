@@ -1,9 +1,9 @@
 {
-  "title": "3.4 – For Loop with range()",
+  "title": "3.4 – for-slingor med range()",
   "files": [
     {
       "name": "main.py",
-      "content": "ANTAL_BÖCKER = 4\ntitlar = []\nfor i in range(ANTAL_BÖCKER): \n    bok = input(\"Vad heter bok nr \" + str(i+1)+ \"? \")\n    titlar.append(bok)\nprint(titlar) #skriver ut listan när slinga är klar"
+      "content": "lista = [5, 2, 3, 1, 9]\nfor i in range(len(lista)):\n\tprint(\"På index\",i, \"finns värdet:\", lista[i], end =\" \")"
     }
   ]
 }
