@@ -21,11 +21,11 @@
     if (_skulptPromise) return _skulptPromise;
     _skulptPromise = new Promise((resolve, reject) => {
       const s1 = document.createElement('script');
-      s1.src = 'https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt.min.js';
+      s1.src = 'https://skulpt.org/js/skulpt.min.js';
       document.head.appendChild(s1);
       s1.onload = () => {
         const s2 = document.createElement('script');
-        s2.src = 'https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt-stdlib.js';
+        s2.src = 'https://skulpt.org/js/skulpt-stdlib.js';
         document.head.appendChild(s2);
         s2.onload  = () => resolve(window.Sk);
         s2.onerror = () => reject(new Error('Failed to load Skulpt stdlib'));
