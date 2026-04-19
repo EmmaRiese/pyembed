@@ -1,0 +1,9 @@
+{
+  "title": "3.11",
+  "files": [
+    {
+      "name": "main.py",
+      "content": "konstnärer_länder = {\n    'Leonardo da Vinci': 'Italien',\n    'Vincent van Gogh': 'Nederländerna',\n    'Frida Kahlo': 'Mexiko',\n    'Pablo Picasso': 'Spanien',\n    'Hokusai': 'Japan'\n}\n\nfor konstnär in konstnärer_länder.keys():\n  #Vad saknas här om du vill skriva ut varje nyckel och dess tillhörande värde?"
+    }
+  ]
+}

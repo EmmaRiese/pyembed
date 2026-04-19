@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lecture Examples</title>
+  <title>Examples</title>
   <style>
     :root {
       --bg: #0d1117; --surface: #161b22; --border: #30363d;
@@ -65,10 +65,10 @@
   <header class="site-header">
     <div class="container">
       <div class="header-inner">
-        <a class="logo" href="index.html">🐍 DD1310</a>
+        <a class="logo" href="index.html">🐍 Python Snippets</a>
         <span class="lecture-title" id="header-title">Loading…</span>
         <nav class="lecture-nav" id="lecture-nav">
-          <a class="nav-btn" href="gallery.html">All lectures</a>
+          <a class="nav-btn" href="gallery.html">← All courses</a>
         </nav>
       </div>
     </div>
@@ -91,9 +91,37 @@
 
   <script src="embed.js"></script>
   <script>
+    // ── Course configuration ────────────────────────────────────────────────
+    const COURSES = {
+      'lectures': {
+        folderPrefix: 'lecture-examples/lecture',
+        numFromFolder: function(f) { return parseInt(f.replace('lecture-examples/lecture', ''), 10); },
+        pageUrl:       function(n) { return 'lecture.html?course=lectures&n=' + n; },
+        courseTitle:   'DD1310 – Lecture Examples',
+        navLabel:      function(n) { return '' + n; }
+      },
+      'mobius-dd100n': {
+        folderPrefix: 'mobius-DD100N/lesson',
+        numFromFolder: function(f) { return parseInt(f.replace('mobius-DD100N/lesson', ''), 10); },
+        pageUrl:       function(n) { return 'lecture.html?course=mobius-dd100n&n=' + n; },
+        courseTitle:   'Möbius DD100N',
+        navLabel:      function(n) { return '' + n; }
+      },
+      'mobius-dd1310': {
+        folderPrefix: 'mobius-DD1310/lektion',
+        numFromFolder: function(f) { return parseInt(f.replace('mobius-DD1310/lektion', ''), 10); },
+        pageUrl:       function(n) { return 'lecture.html?course=mobius-dd1310&n=' + n; },
+        courseTitle:   'Möbius DD1310',
+        navLabel:      function(n) { return '' + n; }
+      }
+    };
+
     const params   = new URLSearchParams(location.search);
-    const lectureN = parseInt(params.get('n') || '1', 10);
-    const catId    = 'lecture-examples/lecture' + String(lectureN).padStart(2, '0');
+    // Support old ?n=N links (no course param) — default to lectures
+    const courseId = params.get('course') || 'lectures';
+    const lessonN  = parseInt(params.get('n') || '1', 10);
+    const course   = COURSES[courseId] || COURSES['lectures'];
+    const catFolder = course.folderPrefix + String(lessonN).padStart(2, '0');
 
     async function load() {
       const state   = document.getElementById('state');
@@ -101,33 +129,34 @@
 
       try {
         const index = await fetch('snippets/index.json').then(r => r.json());
-        const cat   = index.categories.find(c => c.folder === catId);
-        if (!cat) throw new Error('Lecture ' + lectureN + ' not found in index.json');
+        const cat   = index.categories.find(c => c.folder === catFolder);
+        if (!cat) throw new Error('Lesson ' + lessonN + ' not found for course ' + courseId);
 
-        // ── Build lecture navigation ──────────────────────────────────────────
-        const nav       = document.getElementById('lecture-nav');
-        const lectures  = index.categories.filter(c => c.folder.startsWith('lecture-examples/lecture'));
-        const allBtn    = nav.querySelector('a');
-        nav.innerHTML   = '';
+        // ── Build navigation ──────────────────────────────────────────────
+        const nav      = document.getElementById('lecture-nav');
+        const allBtn   = nav.querySelector('a');
+        nav.innerHTML  = '';
         nav.appendChild(allBtn);
 
-        lectures.forEach(lc => {
-          const n    = parseInt(lc.folder.replace('lecture-examples/lecture', ''), 10);
-          const btn  = document.createElement('a');
-          btn.className = 'nav-btn' + (n === lectureN ? ' active' : '');
-          btn.href      = 'lecture.html?n=' + n;
-          btn.textContent = n;
+        const lessons = index.categories.filter(c => c.folder.startsWith(course.folderPrefix));
+        lessons.forEach(function(lc) {
+          const n   = course.numFromFolder(lc.folder);
+          const btn = document.createElement('a');
+          btn.className   = 'nav-btn' + (n === lessonN ? ' active' : '');
+          btn.href        = course.pageUrl(n);
+          btn.textContent = course.navLabel(n);
           nav.appendChild(btn);
         });
 
-        // ── Page titles ───────────────────────────────────────────────────────
-        document.title = cat.name + ' — DD1310';
-        document.getElementById('header-title').textContent = cat.name;
-        document.getElementById('hero-title').textContent   = cat.name;
+        // ── Page titles ───────────────────────────────────────────────────
+        const catName = cat.name || cat.label || catFolder;
+        document.title = catName + ' — ' + course.courseTitle;
+        document.getElementById('header-title').textContent = catName;
+        document.getElementById('hero-title').textContent   = catName;
         document.getElementById('hero-desc').textContent    =
           cat.snippets.length + ' example' + (cat.snippets.length !== 1 ? 's' : '');
 
-        // ── Render widgets inline ─────────────────────────────────────────────
+        // ── Render widgets inline ─────────────────────────────────────────
         state.remove();
 
         for (const s of cat.snippets) {
@@ -140,14 +169,13 @@
           group.appendChild(label);
 
           const widget = document.createElement('div');
-          widget.className      = 'py-snippet';
-          widget.dataset.src    = 'snippets/' + s.file;
+          widget.className   = 'py-snippet';
+          widget.dataset.src = 'snippets/' + s.file;
           group.appendChild(widget);
 
           content.appendChild(group);
         }
 
-        // Trigger widget initialisation after all divs are in the DOM
         if (window._pySnippetInitAll) window._pySnippetInitAll();
 
       } catch(e) {

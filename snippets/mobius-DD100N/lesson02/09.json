@@ -1,0 +1,9 @@
+{
+  "title": "2.9",
+  "files": [
+    {
+      "name": "main.py",
+      "content": "total = 0\nantal = 0\n\nwhile True:\n    nummer = input(\"Ange ett nummer (eller 'sluta' för att avsluta): \")\n    if nummer == 'sluta':\n        break\n    else:\n        total += nummer\n        antal += 1\n\nmedelvärde = total / antal\nprint(\"Medelvärdet av de angivna numrerna är:\", medelvärde)\n"
+    }
+  ]
+}

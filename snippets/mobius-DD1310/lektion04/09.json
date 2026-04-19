@@ -1,0 +1,9 @@
+{
+  "title": "4.9",
+  "files": [
+    {
+      "name": "main.py",
+      "content": "månader = ((\"jan\", 31), (\"feb\", 28), (\"mar\", 31), (\"apr\", 30),\n(\"maj\",31), (\"jun\",30), (\"jul\",31), (\"aug\",31), (\"sep\", 30),\n(\"okt\", 31), (\"nov\", 30), (\"dec\",31)) \n\nvald_månad = input(\"Vilken månad vill du veta antalet dagar i?\")\n\nfor månad in månader:\n  if vald_månad == : #Här saknas en del av jämförelsen, lägg till koden som behövs för att få ut antal dagar för den valda månaden\n    print(vald_månad, \"har\", månad[1],\"dagar.\") \n    \n\nnummer_månad = input(\"Vilken nummer har månaden du vill du veta antalet dagar i?\") #saknas något på den här raden\n\nprint(månader[nummer_månad][0], \"har\", månader[nummer_månad][1],\"dagar.\") #Index börjar på 0, här är det något som blir konstigt"
+    }
+  ]
+}

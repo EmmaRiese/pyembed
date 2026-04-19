@@ -1,0 +1,9 @@
+{
+  "title": "1.1",
+  "files": [
+    {
+      "name": "main.py",
+      "content": "ålder = input(\"Hur gamal är du? \")\n\nprint(\"Då fyller du snart\", ålder + 1, \"år.\")"
+    }
+  ]
+}

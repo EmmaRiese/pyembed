@@ -1,0 +1,9 @@
+{
+  "title": "3.9",
+  "files": [
+    {
+      "name": "main.py",
+      "content": "# Målet med programmet är att hitta det minsta värdet i en lista med en slinga\n\nvärden = [14, 8, 27, 3, 11, 5, 20]\n\n# Anta att det första värdet i listan är det minsta, lagra det i variabeln minsta\nminsta = \n\nfor nummer in värden:\n    if : #här saknas villkoret, hur ska vi veta om vi hittat ett mindre värde?\n      minsta =  nummer # Om vi hittat ett mindre värde, uppdatera minsta till det värdet.\n\nprint(\"Det minsta värdet i listan är\", minsta) # Skriv ut resultatet"
+    }
+  ]
+}

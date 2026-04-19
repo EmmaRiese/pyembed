@@ -1,0 +1,9 @@
+{
+  "title": "3.14",
+  "files": [
+    {
+      "name": "main.py",
+      "content": "namelist = [\"David\", \"Peter\", \"Julia\"]\nfor name in namelist:\n    print(name)"
+    }
+  ]
+}

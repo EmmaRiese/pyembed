@@ -1,0 +1,9 @@
+{
+  "title": "3.9",
+  "files": [
+    {
+      "name": "main.py",
+      "content": "namnlista = 3*[None]\nålderlista = 3*[None]\nfor i in range(3):\n    namnlista[i] = input(\"Namn på person nummer \" + str(i+1)+ \": \")\n    ålderlista[i] = int(input(\"Ålder på peson nummer\" + str(i+1)+\": \"))\n\nprint(namnlista)\nprint(ålderlista)"
+    }
+  ]
+}

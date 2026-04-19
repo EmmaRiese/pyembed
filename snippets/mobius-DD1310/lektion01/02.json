@@ -1,0 +1,9 @@
+{
+  "title": "1.2",
+  "files": [
+    {
+      "name": "main.py",
+      "content": "int(input(\"Hur många föreläsningar är det? \"))\nGENOMFÖRDA = 2\nprint(\"Då är det \", antal - GENOMFÖRDA, \"kvar.\")"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "title": "3.10",
+  "files": [
+    {
+      "name": "main.py",
+      "content": "for i in range(): #fyll i range här\n  for j in range(): #fyll i range här\n    print(i*j, end =\" \")\n  print()"
+    }
+  ]
+}

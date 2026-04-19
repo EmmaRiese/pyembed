@@ -701,6 +701,1272 @@
           "title": "15.4 – Reading and Writing Files"
         }
       ]
+    },
+    {
+      "id": "mobius-dd100n-01",
+      "name": "Möbius DD100N – Lesson 1",
+      "folder": "mobius-DD100N/lesson01",
+      "snippets": [
+        {
+          "id": "mobius-dd100n-01-01",
+          "file": "mobius-DD100N/lesson01/01.json",
+          "title": "1.1 – Exempel 2 - Heltal och flyttal"
+        },
+        {
+          "id": "mobius-dd100n-01-02",
+          "file": "mobius-DD100N/lesson01/02.json",
+          "title": "1.2 – Exempel 1 - Strängar"
+        },
+        {
+          "id": "mobius-dd100n-01-03",
+          "file": "mobius-DD100N/lesson01/03.json",
+          "title": "1.3"
+        },
+        {
+          "id": "mobius-dd100n-01-04",
+          "file": "mobius-DD100N/lesson01/04.json",
+          "title": "1.4"
+        }
+      ]
+    },
+    {
+      "id": "mobius-dd100n-02",
+      "name": "Möbius DD100N – Lesson 2",
+      "folder": "mobius-DD100N/lesson02",
+      "snippets": [
+        {
+          "id": "mobius-dd100n-02-01",
+          "file": "mobius-DD100N/lesson02/01.json",
+          "title": "2.1"
+        },
+        {
+          "id": "mobius-dd100n-02-02",
+          "file": "mobius-DD100N/lesson02/02.json",
+          "title": "2.2"
+        },
+        {
+          "id": "mobius-dd100n-02-03",
+          "file": "mobius-DD100N/lesson02/03.json",
+          "title": "2.3"
+        },
+        {
+          "id": "mobius-dd100n-02-04",
+          "file": "mobius-DD100N/lesson02/04.json",
+          "title": "2.4"
+        },
+        {
+          "id": "mobius-dd100n-02-05",
+          "file": "mobius-DD100N/lesson02/05.json",
+          "title": "2.5"
+        },
+        {
+          "id": "mobius-dd100n-02-06",
+          "file": "mobius-DD100N/lesson02/06.json",
+          "title": "2.6"
+        },
+        {
+          "id": "mobius-dd100n-02-07",
+          "file": "mobius-DD100N/lesson02/07.json",
+          "title": "2.7"
+        },
+        {
+          "id": "mobius-dd100n-02-08",
+          "file": "mobius-DD100N/lesson02/08.json",
+          "title": "2.8"
+        },
+        {
+          "id": "mobius-dd100n-02-09",
+          "file": "mobius-DD100N/lesson02/09.json",
+          "title": "2.9"
+        }
+      ]
+    },
+    {
+      "id": "mobius-dd100n-03",
+      "name": "Möbius DD100N – Lesson 3",
+      "folder": "mobius-DD100N/lesson03",
+      "snippets": [
+        {
+          "id": "mobius-dd100n-03-01",
+          "file": "mobius-DD100N/lesson03/01.json",
+          "title": "3.1"
+        },
+        {
+          "id": "mobius-dd100n-03-02",
+          "file": "mobius-DD100N/lesson03/02.json",
+          "title": "3.2"
+        },
+        {
+          "id": "mobius-dd100n-03-03",
+          "file": "mobius-DD100N/lesson03/03.json",
+          "title": "3.3"
+        },
+        {
+          "id": "mobius-dd100n-03-04",
+          "file": "mobius-DD100N/lesson03/04.json",
+          "title": "3.4"
+        },
+        {
+          "id": "mobius-dd100n-03-05",
+          "file": "mobius-DD100N/lesson03/05.json",
+          "title": "3.5 – Näst-näst sista namnet i listan är"
+        },
+        {
+          "id": "mobius-dd100n-03-06",
+          "file": "mobius-DD100N/lesson03/06.json",
+          "title": "3.6"
+        },
+        {
+          "id": "mobius-dd100n-03-07",
+          "file": "mobius-DD100N/lesson03/07.json",
+          "title": "3.7"
+        },
+        {
+          "id": "mobius-dd100n-03-08",
+          "file": "mobius-DD100N/lesson03/08.json",
+          "title": "3.8"
+        },
+        {
+          "id": "mobius-dd100n-03-09",
+          "file": "mobius-DD100N/lesson03/09.json",
+          "title": "3.9"
+        },
+        {
+          "id": "mobius-dd100n-03-10",
+          "file": "mobius-DD100N/lesson03/10.json",
+          "title": "3.10"
+        },
+        {
+          "id": "mobius-dd100n-03-11",
+          "file": "mobius-DD100N/lesson03/11.json",
+          "title": "3.11"
+        },
+        {
+          "id": "mobius-dd100n-03-12",
+          "file": "mobius-DD100N/lesson03/12.json",
+          "title": "3.12"
+        },
+        {
+          "id": "mobius-dd100n-03-13",
+          "file": "mobius-DD100N/lesson03/13.json",
+          "title": "3.13"
+        },
+        {
+          "id": "mobius-dd100n-03-14",
+          "file": "mobius-DD100N/lesson03/14.json",
+          "title": "3.14"
+        }
+      ]
+    },
+    {
+      "id": "mobius-dd100n-04",
+      "name": "Möbius DD100N – Lesson 4",
+      "folder": "mobius-DD100N/lesson04",
+      "snippets": [
+        {
+          "id": "mobius-dd100n-04-01",
+          "file": "mobius-DD100N/lesson04/01.json",
+          "title": "4.1"
+        },
+        {
+          "id": "mobius-dd100n-04-02",
+          "file": "mobius-DD100N/lesson04/02.json",
+          "title": "4.2"
+        },
+        {
+          "id": "mobius-dd100n-04-03",
+          "file": "mobius-DD100N/lesson04/03.json",
+          "title": "4.3"
+        },
+        {
+          "id": "mobius-dd100n-04-04",
+          "file": "mobius-DD100N/lesson04/04.json",
+          "title": "4.4"
+        },
+        {
+          "id": "mobius-dd100n-04-05",
+          "file": "mobius-DD100N/lesson04/05.json",
+          "title": "4.5"
+        },
+        {
+          "id": "mobius-dd100n-04-06",
+          "file": "mobius-DD100N/lesson04/06.json",
+          "title": "4.6"
+        },
+        {
+          "id": "mobius-dd100n-04-07",
+          "file": "mobius-DD100N/lesson04/07.json",
+          "title": "4.7"
+        },
+        {
+          "id": "mobius-dd100n-04-08",
+          "file": "mobius-DD100N/lesson04/08.json",
+          "title": "4.8"
+        },
+        {
+          "id": "mobius-dd100n-04-09",
+          "file": "mobius-DD100N/lesson04/09.json",
+          "title": "4.9"
+        },
+        {
+          "id": "mobius-dd100n-04-10",
+          "file": "mobius-DD100N/lesson04/10.json",
+          "title": "4.10"
+        },
+        {
+          "id": "mobius-dd100n-04-11",
+          "file": "mobius-DD100N/lesson04/11.json",
+          "title": "4.11"
+        },
+        {
+          "id": "mobius-dd100n-04-12",
+          "file": "mobius-DD100N/lesson04/12.json",
+          "title": "4.12"
+        },
+        {
+          "id": "mobius-dd100n-04-13",
+          "file": "mobius-DD100N/lesson04/13.json",
+          "title": "4.13"
+        },
+        {
+          "id": "mobius-dd100n-04-14",
+          "file": "mobius-DD100N/lesson04/14.json",
+          "title": "4.14"
+        },
+        {
+          "id": "mobius-dd100n-04-15",
+          "file": "mobius-DD100N/lesson04/15.json",
+          "title": "4.15"
+        },
+        {
+          "id": "mobius-dd100n-04-16",
+          "file": "mobius-DD100N/lesson04/16.json",
+          "title": "4.16"
+        },
+        {
+          "id": "mobius-dd100n-04-17",
+          "file": "mobius-DD100N/lesson04/17.json",
+          "title": "4.17"
+        },
+        {
+          "id": "mobius-dd100n-04-18",
+          "file": "mobius-DD100N/lesson04/18.json",
+          "title": "4.18"
+        }
+      ]
+    },
+    {
+      "id": "mobius-dd100n-05",
+      "name": "Möbius DD100N – Lesson 5",
+      "folder": "mobius-DD100N/lesson05",
+      "snippets": [
+        {
+          "id": "mobius-dd100n-05-01",
+          "file": "mobius-DD100N/lesson05/01.json",
+          "title": "5.1"
+        },
+        {
+          "id": "mobius-dd100n-05-02",
+          "file": "mobius-DD100N/lesson05/02.json",
+          "title": "5.2"
+        },
+        {
+          "id": "mobius-dd100n-05-03",
+          "file": "mobius-DD100N/lesson05/03.json",
+          "title": "5.3"
+        },
+        {
+          "id": "mobius-dd100n-05-04",
+          "file": "mobius-DD100N/lesson05/04.json",
+          "title": "5.4"
+        },
+        {
+          "id": "mobius-dd100n-05-05",
+          "file": "mobius-DD100N/lesson05/05.json",
+          "title": "5.5"
+        },
+        {
+          "id": "mobius-dd100n-05-06",
+          "file": "mobius-DD100N/lesson05/06.json",
+          "title": "5.6"
+        },
+        {
+          "id": "mobius-dd100n-05-07",
+          "file": "mobius-DD100N/lesson05/07.json",
+          "title": "5.7"
+        },
+        {
+          "id": "mobius-dd100n-05-08",
+          "file": "mobius-DD100N/lesson05/08.json",
+          "title": "5.8"
+        }
+      ]
+    },
+    {
+      "id": "mobius-dd100n-06",
+      "name": "Möbius DD100N – Lesson 6",
+      "folder": "mobius-DD100N/lesson06",
+      "snippets": [
+        {
+          "id": "mobius-dd100n-06-01",
+          "file": "mobius-DD100N/lesson06/01.json",
+          "title": "6.1"
+        },
+        {
+          "id": "mobius-dd100n-06-02",
+          "file": "mobius-DD100N/lesson06/02.json",
+          "title": "6.2"
+        },
+        {
+          "id": "mobius-dd100n-06-03",
+          "file": "mobius-DD100N/lesson06/03.json",
+          "title": "6.3"
+        },
+        {
+          "id": "mobius-dd100n-06-04",
+          "file": "mobius-DD100N/lesson06/04.json",
+          "title": "6.4"
+        },
+        {
+          "id": "mobius-dd100n-06-05",
+          "file": "mobius-DD100N/lesson06/05.json",
+          "title": "6.5"
+        }
+      ]
+    },
+    {
+      "id": "mobius-dd100n-07",
+      "name": "Möbius DD100N – Lesson 7",
+      "folder": "mobius-DD100N/lesson07",
+      "snippets": [
+        {
+          "id": "mobius-dd100n-07-01",
+          "file": "mobius-DD100N/lesson07/01.json",
+          "title": "7.1"
+        }
+      ]
+    },
+    {
+      "id": "mobius-dd1310-01",
+      "name": "Möbius DD1310 – Lektion 1",
+      "folder": "mobius-DD1310/lektion01",
+      "snippets": [
+        {
+          "id": "mobius-dd1310-01-01",
+          "file": "mobius-DD1310/lektion01/01.json",
+          "title": "1.1"
+        },
+        {
+          "id": "mobius-dd1310-01-02",
+          "file": "mobius-DD1310/lektion01/02.json",
+          "title": "1.2"
+        },
+        {
+          "id": "mobius-dd1310-01-03",
+          "file": "mobius-DD1310/lektion01/03.json",
+          "title": "1.3 – Exempel 2 - Heltal och flyttal"
+        },
+        {
+          "id": "mobius-dd1310-01-04",
+          "file": "mobius-DD1310/lektion01/04.json",
+          "title": "1.4"
+        },
+        {
+          "id": "mobius-dd1310-01-05",
+          "file": "mobius-DD1310/lektion01/05.json",
+          "title": "1.5 – Exempel 1 - Strängar"
+        },
+        {
+          "id": "mobius-dd1310-01-06",
+          "file": "mobius-DD1310/lektion01/06.json",
+          "title": "1.6"
+        }
+      ]
+    },
+    {
+      "id": "mobius-dd1310-10",
+      "name": "Möbius DD1310 – Lektion 10",
+      "folder": "mobius-DD1310/lektion10",
+      "snippets": [
+        {
+          "id": "mobius-dd1310-10-01",
+          "file": "mobius-DD1310/lektion10/01.json",
+          "title": "10.1"
+        }
+      ]
+    },
+    {
+      "id": "mobius-dd1310-11",
+      "name": "Möbius DD1310 – Lektion 11",
+      "folder": "mobius-DD1310/lektion11",
+      "snippets": [
+        {
+          "id": "mobius-dd1310-11-01",
+          "file": "mobius-DD1310/lektion11/01.json",
+          "title": "11.1"
+        }
+      ]
+    },
+    {
+      "id": "mobius-dd1310-12",
+      "name": "Möbius DD1310 – Lektion 12",
+      "folder": "mobius-DD1310/lektion12",
+      "snippets": [
+        {
+          "id": "mobius-dd1310-12-01",
+          "file": "mobius-DD1310/lektion12/01.json",
+          "title": "12.1"
+        }
+      ]
+    },
+    {
+      "id": "mobius-dd1310-02",
+      "name": "Möbius DD1310 – Lektion 2",
+      "folder": "mobius-DD1310/lektion02",
+      "snippets": [
+        {
+          "id": "mobius-dd1310-02-01",
+          "file": "mobius-DD1310/lektion02/01.json",
+          "title": "2.1"
+        },
+        {
+          "id": "mobius-dd1310-02-02",
+          "file": "mobius-DD1310/lektion02/02.json",
+          "title": "2.2"
+        },
+        {
+          "id": "mobius-dd1310-02-03",
+          "file": "mobius-DD1310/lektion02/03.json",
+          "title": "2.3"
+        },
+        {
+          "id": "mobius-dd1310-02-04",
+          "file": "mobius-DD1310/lektion02/04.json",
+          "title": "2.4"
+        },
+        {
+          "id": "mobius-dd1310-02-05",
+          "file": "mobius-DD1310/lektion02/05.json",
+          "title": "2.5"
+        },
+        {
+          "id": "mobius-dd1310-02-06",
+          "file": "mobius-DD1310/lektion02/06.json",
+          "title": "2.6"
+        },
+        {
+          "id": "mobius-dd1310-02-07",
+          "file": "mobius-DD1310/lektion02/07.json",
+          "title": "2.7"
+        }
+      ]
+    },
+    {
+      "id": "mobius-dd1310-03",
+      "name": "Möbius DD1310 – Lektion 3",
+      "folder": "mobius-DD1310/lektion03",
+      "snippets": [
+        {
+          "id": "mobius-dd1310-03-01",
+          "file": "mobius-DD1310/lektion03/01.json",
+          "title": "3.1"
+        },
+        {
+          "id": "mobius-dd1310-03-02",
+          "file": "mobius-DD1310/lektion03/02.json",
+          "title": "3.2"
+        },
+        {
+          "id": "mobius-dd1310-03-03",
+          "file": "mobius-DD1310/lektion03/03.json",
+          "title": "3.3"
+        },
+        {
+          "id": "mobius-dd1310-03-04",
+          "file": "mobius-DD1310/lektion03/04.json",
+          "title": "3.4"
+        },
+        {
+          "id": "mobius-dd1310-03-05",
+          "file": "mobius-DD1310/lektion03/05.json",
+          "title": "3.5 – Näst-näst sista namnet i listan är"
+        },
+        {
+          "id": "mobius-dd1310-03-06",
+          "file": "mobius-DD1310/lektion03/06.json",
+          "title": "3.6"
+        },
+        {
+          "id": "mobius-dd1310-03-07",
+          "file": "mobius-DD1310/lektion03/07.json",
+          "title": "3.7"
+        },
+        {
+          "id": "mobius-dd1310-03-08",
+          "file": "mobius-DD1310/lektion03/08.json",
+          "title": "3.8"
+        },
+        {
+          "id": "mobius-dd1310-03-09",
+          "file": "mobius-DD1310/lektion03/09.json",
+          "title": "3.9"
+        },
+        {
+          "id": "mobius-dd1310-03-10",
+          "file": "mobius-DD1310/lektion03/10.json",
+          "title": "3.10"
+        },
+        {
+          "id": "mobius-dd1310-03-11",
+          "file": "mobius-DD1310/lektion03/11.json",
+          "title": "3.11"
+        },
+        {
+          "id": "mobius-dd1310-03-12",
+          "file": "mobius-DD1310/lektion03/12.json",
+          "title": "3.12"
+        }
+      ]
+    },
+    {
+      "id": "mobius-dd1310-04",
+      "name": "Möbius DD1310 – Lektion 4",
+      "folder": "mobius-DD1310/lektion04",
+      "snippets": [
+        {
+          "id": "mobius-dd1310-04-01",
+          "file": "mobius-DD1310/lektion04/01.json",
+          "title": "4.1"
+        },
+        {
+          "id": "mobius-dd1310-04-02",
+          "file": "mobius-DD1310/lektion04/02.json",
+          "title": "4.2"
+        },
+        {
+          "id": "mobius-dd1310-04-03",
+          "file": "mobius-DD1310/lektion04/03.json",
+          "title": "4.3"
+        },
+        {
+          "id": "mobius-dd1310-04-04",
+          "file": "mobius-DD1310/lektion04/04.json",
+          "title": "4.4"
+        },
+        {
+          "id": "mobius-dd1310-04-05",
+          "file": "mobius-DD1310/lektion04/05.json",
+          "title": "4.5"
+        },
+        {
+          "id": "mobius-dd1310-04-06",
+          "file": "mobius-DD1310/lektion04/06.json",
+          "title": "4.6 – Unionen - snittet:"
+        },
+        {
+          "id": "mobius-dd1310-04-07",
+          "file": "mobius-DD1310/lektion04/07.json",
+          "title": "4.7"
+        },
+        {
+          "id": "mobius-dd1310-04-08",
+          "file": "mobius-DD1310/lektion04/08.json",
+          "title": "4.8"
+        },
+        {
+          "id": "mobius-dd1310-04-09",
+          "file": "mobius-DD1310/lektion04/09.json",
+          "title": "4.9"
+        },
+        {
+          "id": "mobius-dd1310-04-10",
+          "file": "mobius-DD1310/lektion04/10.json",
+          "title": "4.10"
+        }
+      ]
+    },
+    {
+      "id": "mobius-dd1310-05",
+      "name": "Möbius DD1310 – Lektion 5",
+      "folder": "mobius-DD1310/lektion05",
+      "snippets": [
+        {
+          "id": "mobius-dd1310-05-01",
+          "file": "mobius-DD1310/lektion05/01.json",
+          "title": "5.1"
+        },
+        {
+          "id": "mobius-dd1310-05-02",
+          "file": "mobius-DD1310/lektion05/02.json",
+          "title": "5.2"
+        },
+        {
+          "id": "mobius-dd1310-05-03",
+          "file": "mobius-DD1310/lektion05/03.json",
+          "title": "5.3"
+        },
+        {
+          "id": "mobius-dd1310-05-04",
+          "file": "mobius-DD1310/lektion05/04.json",
+          "title": "5.4"
+        },
+        {
+          "id": "mobius-dd1310-05-05",
+          "file": "mobius-DD1310/lektion05/05.json",
+          "title": "5.5"
+        },
+        {
+          "id": "mobius-dd1310-05-06",
+          "file": "mobius-DD1310/lektion05/06.json",
+          "title": "5.6"
+        },
+        {
+          "id": "mobius-dd1310-05-07",
+          "file": "mobius-DD1310/lektion05/07.json",
+          "title": "5.7"
+        },
+        {
+          "id": "mobius-dd1310-05-08",
+          "file": "mobius-DD1310/lektion05/08.json",
+          "title": "5.8"
+        },
+        {
+          "id": "mobius-dd1310-05-09",
+          "file": "mobius-DD1310/lektion05/09.json",
+          "title": "5.9"
+        },
+        {
+          "id": "mobius-dd1310-05-10",
+          "file": "mobius-DD1310/lektion05/10.json",
+          "title": "5.10"
+        },
+        {
+          "id": "mobius-dd1310-05-11",
+          "file": "mobius-DD1310/lektion05/11.json",
+          "title": "5.11"
+        }
+      ]
+    },
+    {
+      "id": "mobius-dd1310-06",
+      "name": "Möbius DD1310 – Lektion 6",
+      "folder": "mobius-DD1310/lektion06",
+      "snippets": [
+        {
+          "id": "mobius-dd1310-06-01",
+          "file": "mobius-DD1310/lektion06/01.json",
+          "title": "6.1"
+        },
+        {
+          "id": "mobius-dd1310-06-02",
+          "file": "mobius-DD1310/lektion06/02.json",
+          "title": "6.2"
+        },
+        {
+          "id": "mobius-dd1310-06-03",
+          "file": "mobius-DD1310/lektion06/03.json",
+          "title": "6.3"
+        },
+        {
+          "id": "mobius-dd1310-06-04",
+          "file": "mobius-DD1310/lektion06/04.json",
+          "title": "6.4"
+        },
+        {
+          "id": "mobius-dd1310-06-05",
+          "file": "mobius-DD1310/lektion06/05.json",
+          "title": "6.5"
+        },
+        {
+          "id": "mobius-dd1310-06-06",
+          "file": "mobius-DD1310/lektion06/06.json",
+          "title": "6.6"
+        }
+      ]
+    },
+    {
+      "id": "mobius-dd1310-07",
+      "name": "Möbius DD1310 – Lektion 7",
+      "folder": "mobius-DD1310/lektion07",
+      "snippets": [
+        {
+          "id": "mobius-dd1310-07-01",
+          "file": "mobius-DD1310/lektion07/01.json",
+          "title": "7.1"
+        },
+        {
+          "id": "mobius-dd1310-07-02",
+          "file": "mobius-DD1310/lektion07/02.json",
+          "title": "7.2"
+        },
+        {
+          "id": "mobius-dd1310-07-03",
+          "file": "mobius-DD1310/lektion07/03.json",
+          "title": "7.3"
+        }
+      ]
+    },
+    {
+      "id": "mobius-dd1310-08",
+      "name": "Möbius DD1310 – Lektion 8",
+      "folder": "mobius-DD1310/lektion08",
+      "snippets": [
+        {
+          "id": "mobius-dd1310-08-01",
+          "file": "mobius-DD1310/lektion08/01.json",
+          "title": "8.1"
+        },
+        {
+          "id": "mobius-dd1310-08-02",
+          "file": "mobius-DD1310/lektion08/02.json",
+          "title": "8.2"
+        },
+        {
+          "id": "mobius-dd1310-08-03",
+          "file": "mobius-DD1310/lektion08/03.json",
+          "title": "8.3"
+        },
+        {
+          "id": "mobius-dd1310-08-04",
+          "file": "mobius-DD1310/lektion08/04.json",
+          "title": "8.4"
+        }
+      ]
+    },
+    {
+      "id": "mobius-dd1310-09",
+      "name": "Möbius DD1310 – Lektion 9",
+      "folder": "mobius-DD1310/lektion09",
+      "snippets": [
+        {
+          "id": "mobius-dd1310-09-01",
+          "file": "mobius-DD1310/lektion09/01.json",
+          "title": "9.1"
+        },
+        {
+          "id": "mobius-dd1310-09-02",
+          "file": "mobius-DD1310/lektion09/02.json",
+          "title": "9.2"
+        },
+        {
+          "id": "mobius-dd1310-09-03",
+          "file": "mobius-DD1310/lektion09/03.json",
+          "title": "9.3"
+        },
+        {
+          "id": "mobius-dd1310-09-04",
+          "file": "mobius-DD1310/lektion09/04.json",
+          "title": "9.4"
+        },
+        {
+          "id": "mobius-dd1310-09-05",
+          "file": "mobius-DD1310/lektion09/05.json",
+          "title": "9.5"
+        }
+      ]
+    },
+    {
+      "id": "lecture01",
+      "name": "Lecture 1",
+      "folder": "lecture-examples/lecture01",
+      "snippets": [
+        {
+          "id": "lecture01-01",
+          "file": "lecture-examples/lecture01/01.json",
+          "title": "1.1"
+        },
+        {
+          "id": "lecture01-02",
+          "file": "lecture-examples/lecture01/02.json",
+          "title": "1.2"
+        },
+        {
+          "id": "lecture01-03",
+          "file": "lecture-examples/lecture01/03.json",
+          "title": "1.3"
+        },
+        {
+          "id": "lecture01-04",
+          "file": "lecture-examples/lecture01/04.json",
+          "title": "1.4"
+        }
+      ]
+    },
+    {
+      "id": "lecture10",
+      "name": "Lecture 10",
+      "folder": "lecture-examples/lecture10",
+      "snippets": [
+        {
+          "id": "lecture10-01",
+          "file": "lecture-examples/lecture10/01.json",
+          "title": "10.1"
+        },
+        {
+          "id": "lecture10-02",
+          "file": "lecture-examples/lecture10/02.json",
+          "title": "10.2"
+        },
+        {
+          "id": "lecture10-03",
+          "file": "lecture-examples/lecture10/03.json",
+          "title": "10.3"
+        }
+      ]
+    },
+    {
+      "id": "lecture11",
+      "name": "Lecture 11",
+      "folder": "lecture-examples/lecture11",
+      "snippets": [
+        {
+          "id": "lecture11-01",
+          "file": "lecture-examples/lecture11/01.json",
+          "title": "11.1"
+        },
+        {
+          "id": "lecture11-02",
+          "file": "lecture-examples/lecture11/02.json",
+          "title": "11.2"
+        },
+        {
+          "id": "lecture11-03",
+          "file": "lecture-examples/lecture11/03.json",
+          "title": "11.3"
+        },
+        {
+          "id": "lecture11-04",
+          "file": "lecture-examples/lecture11/04.json",
+          "title": "11.4"
+        }
+      ]
+    },
+    {
+      "id": "lecture12",
+      "name": "Lecture 12",
+      "folder": "lecture-examples/lecture12",
+      "snippets": [
+        {
+          "id": "lecture12-01",
+          "file": "lecture-examples/lecture12/01.json",
+          "title": "12.1"
+        },
+        {
+          "id": "lecture12-02",
+          "file": "lecture-examples/lecture12/02.json",
+          "title": "12.2"
+        },
+        {
+          "id": "lecture12-03",
+          "file": "lecture-examples/lecture12/03.json",
+          "title": "12.3"
+        },
+        {
+          "id": "lecture12-04",
+          "file": "lecture-examples/lecture12/04.json",
+          "title": "12.4"
+        }
+      ]
+    },
+    {
+      "id": "lecture13",
+      "name": "Lecture 13",
+      "folder": "lecture-examples/lecture13",
+      "snippets": [
+        {
+          "id": "lecture13-01",
+          "file": "lecture-examples/lecture13/01.json",
+          "title": "13.1"
+        },
+        {
+          "id": "lecture13-02",
+          "file": "lecture-examples/lecture13/02.json",
+          "title": "13.2"
+        },
+        {
+          "id": "lecture13-03",
+          "file": "lecture-examples/lecture13/03.json",
+          "title": "13.3"
+        },
+        {
+          "id": "lecture13-04",
+          "file": "lecture-examples/lecture13/04.json",
+          "title": "13.4"
+        },
+        {
+          "id": "lecture13-05",
+          "file": "lecture-examples/lecture13/05.json",
+          "title": "13.5"
+        },
+        {
+          "id": "lecture13-06",
+          "file": "lecture-examples/lecture13/06.json",
+          "title": "13.6"
+        },
+        {
+          "id": "lecture13-07",
+          "file": "lecture-examples/lecture13/07.json",
+          "title": "13.7"
+        },
+        {
+          "id": "lecture13-08",
+          "file": "lecture-examples/lecture13/08.json",
+          "title": "13.8"
+        }
+      ]
+    },
+    {
+      "id": "lecture14",
+      "name": "Lecture 14",
+      "folder": "lecture-examples/lecture14",
+      "snippets": [
+        {
+          "id": "lecture14-01",
+          "file": "lecture-examples/lecture14/01.json",
+          "title": "14.1"
+        }
+      ]
+    },
+    {
+      "id": "lecture15",
+      "name": "Lecture 15",
+      "folder": "lecture-examples/lecture15",
+      "snippets": [
+        {
+          "id": "lecture15-01",
+          "file": "lecture-examples/lecture15/01.json",
+          "title": "15.1"
+        },
+        {
+          "id": "lecture15-02",
+          "file": "lecture-examples/lecture15/02.json",
+          "title": "15.2"
+        }
+      ]
+    },
+    {
+      "id": "lecture02",
+      "name": "Lecture 2",
+      "folder": "lecture-examples/lecture02",
+      "snippets": [
+        {
+          "id": "lecture02-01",
+          "file": "lecture-examples/lecture02/01.json",
+          "title": "2.1"
+        },
+        {
+          "id": "lecture02-02",
+          "file": "lecture-examples/lecture02/02.json",
+          "title": "2.2"
+        },
+        {
+          "id": "lecture02-03",
+          "file": "lecture-examples/lecture02/03.json",
+          "title": "2.3 – Du valde inte en siffra 1-4."
+        },
+        {
+          "id": "lecture02-04",
+          "file": "lecture-examples/lecture02/04.json",
+          "title": "2.4 – Du valde inte en siffra 1-4."
+        },
+        {
+          "id": "lecture02-05",
+          "file": "lecture-examples/lecture02/05.json",
+          "title": "2.5"
+        },
+        {
+          "id": "lecture02-06",
+          "file": "lecture-examples/lecture02/06.json",
+          "title": "2.6"
+        },
+        {
+          "id": "lecture02-07",
+          "file": "lecture-examples/lecture02/07.json",
+          "title": "2.7"
+        },
+        {
+          "id": "lecture02-08",
+          "file": "lecture-examples/lecture02/08.json",
+          "title": "2.8"
+        },
+        {
+          "id": "lecture02-09",
+          "file": "lecture-examples/lecture02/09.json",
+          "title": "2.9"
+        },
+        {
+          "id": "lecture02-10",
+          "file": "lecture-examples/lecture02/10.json",
+          "title": "2.10"
+        }
+      ]
+    },
+    {
+      "id": "lecture03",
+      "name": "Lecture 3",
+      "folder": "lecture-examples/lecture03",
+      "snippets": [
+        {
+          "id": "lecture03-01",
+          "file": "lecture-examples/lecture03/01.json",
+          "title": "3.1"
+        },
+        {
+          "id": "lecture03-02",
+          "file": "lecture-examples/lecture03/02.json",
+          "title": "3.2"
+        },
+        {
+          "id": "lecture03-03",
+          "file": "lecture-examples/lecture03/03.json",
+          "title": "3.3"
+        },
+        {
+          "id": "lecture03-04",
+          "file": "lecture-examples/lecture03/04.json",
+          "title": "3.4"
+        },
+        {
+          "id": "lecture03-05",
+          "file": "lecture-examples/lecture03/05.json",
+          "title": "3.5"
+        },
+        {
+          "id": "lecture03-06",
+          "file": "lecture-examples/lecture03/06.json",
+          "title": "3.6"
+        },
+        {
+          "id": "lecture03-07",
+          "file": "lecture-examples/lecture03/07.json",
+          "title": "3.7"
+        },
+        {
+          "id": "lecture03-08",
+          "file": "lecture-examples/lecture03/08.json",
+          "title": "3.8"
+        }
+      ]
+    },
+    {
+      "id": "lecture04",
+      "name": "Lecture 4",
+      "folder": "lecture-examples/lecture04",
+      "snippets": [
+        {
+          "id": "lecture04-01",
+          "file": "lecture-examples/lecture04/01.json",
+          "title": "4.1"
+        },
+        {
+          "id": "lecture04-02",
+          "file": "lecture-examples/lecture04/02.json",
+          "title": "4.2"
+        },
+        {
+          "id": "lecture04-03",
+          "file": "lecture-examples/lecture04/03.json",
+          "title": "4.3"
+        },
+        {
+          "id": "lecture04-04",
+          "file": "lecture-examples/lecture04/04.json",
+          "title": "4.4"
+        }
+      ]
+    },
+    {
+      "id": "lecture05",
+      "name": "Lecture 5",
+      "folder": "lecture-examples/lecture05",
+      "snippets": [
+        {
+          "id": "lecture05-01",
+          "file": "lecture-examples/lecture05/01.json",
+          "title": "5.1"
+        },
+        {
+          "id": "lecture05-02",
+          "file": "lecture-examples/lecture05/02.json",
+          "title": "5.2"
+        },
+        {
+          "id": "lecture05-03",
+          "file": "lecture-examples/lecture05/03.json",
+          "title": "5.3"
+        },
+        {
+          "id": "lecture05-04",
+          "file": "lecture-examples/lecture05/04.json",
+          "title": "5.4"
+        },
+        {
+          "id": "lecture05-05",
+          "file": "lecture-examples/lecture05/05.json",
+          "title": "5.5"
+        },
+        {
+          "id": "lecture05-06",
+          "file": "lecture-examples/lecture05/06.json",
+          "title": "5.6"
+        },
+        {
+          "id": "lecture05-07",
+          "file": "lecture-examples/lecture05/07.json",
+          "title": "5.7"
+        }
+      ]
+    },
+    {
+      "id": "lecture06",
+      "name": "Lecture 6",
+      "folder": "lecture-examples/lecture06",
+      "snippets": [
+        {
+          "id": "lecture06-01",
+          "file": "lecture-examples/lecture06/01.json",
+          "title": "6.1"
+        },
+        {
+          "id": "lecture06-02",
+          "file": "lecture-examples/lecture06/02.json",
+          "title": "6.2"
+        },
+        {
+          "id": "lecture06-03",
+          "file": "lecture-examples/lecture06/03.json",
+          "title": "6.3"
+        },
+        {
+          "id": "lecture06-04",
+          "file": "lecture-examples/lecture06/04.json",
+          "title": "6.4"
+        },
+        {
+          "id": "lecture06-05",
+          "file": "lecture-examples/lecture06/05.json",
+          "title": "6.5"
+        },
+        {
+          "id": "lecture06-06",
+          "file": "lecture-examples/lecture06/06.json",
+          "title": "6.6"
+        },
+        {
+          "id": "lecture06-07",
+          "file": "lecture-examples/lecture06/07.json",
+          "title": "6.7"
+        },
+        {
+          "id": "lecture06-08",
+          "file": "lecture-examples/lecture06/08.json",
+          "title": "6.8"
+        },
+        {
+          "id": "lecture06-09",
+          "file": "lecture-examples/lecture06/09.json",
+          "title": "6.9"
+        }
+      ]
+    },
+    {
+      "id": "lecture08",
+      "name": "Lecture 8",
+      "folder": "lecture-examples/lecture08",
+      "snippets": [
+        {
+          "id": "lecture08-01",
+          "file": "lecture-examples/lecture08/01.json",
+          "title": "8.1"
+        },
+        {
+          "id": "lecture08-02",
+          "file": "lecture-examples/lecture08/02.json",
+          "title": "8.2"
+        },
+        {
+          "id": "lecture08-03",
+          "file": "lecture-examples/lecture08/03.json",
+          "title": "8.3"
+        },
+        {
+          "id": "lecture08-04",
+          "file": "lecture-examples/lecture08/04.json",
+          "title": "8.4"
+        },
+        {
+          "id": "lecture08-05",
+          "file": "lecture-examples/lecture08/05.json",
+          "title": "8.5"
+        },
+        {
+          "id": "lecture08-06",
+          "file": "lecture-examples/lecture08/06.json",
+          "title": "8.6"
+        },
+        {
+          "id": "lecture08-07",
+          "file": "lecture-examples/lecture08/07.json",
+          "title": "8.7"
+        },
+        {
+          "id": "lecture08-08",
+          "file": "lecture-examples/lecture08/08.json",
+          "title": "8.8"
+        },
+        {
+          "id": "lecture08-09",
+          "file": "lecture-examples/lecture08/09.json",
+          "title": "8.9"
+        }
+      ]
+    },
+    {
+      "id": "lecture09",
+      "name": "Lecture 9",
+      "folder": "lecture-examples/lecture09",
+      "snippets": [
+        {
+          "id": "lecture09-01",
+          "file": "lecture-examples/lecture09/01.json",
+          "title": "9.1"
+        },
+        {
+          "id": "lecture09-02",
+          "file": "lecture-examples/lecture09/02.json",
+          "title": "9.2"
+        },
+        {
+          "id": "lecture09-03",
+          "file": "lecture-examples/lecture09/03.json",
+          "title": "9.3"
+        },
+        {
+          "id": "lecture09-04",
+          "file": "lecture-examples/lecture09/04.json",
+          "title": "9.4"
+        },
+        {
+          "id": "lecture09-05",
+          "file": "lecture-examples/lecture09/05.json",
+          "title": "9.5"
+        },
+        {
+          "id": "lecture09-06",
+          "file": "lecture-examples/lecture09/06.json",
+          "title": "9.6"
+        },
+        {
+          "id": "lecture09-07",
+          "file": "lecture-examples/lecture09/07.json",
+          "title": "9.7"
+        },
+        {
+          "id": "lecture09-08",
+          "file": "lecture-examples/lecture09/08.json",
+          "title": "9.8"
+        }
+      ]
     }
   ]
 }
