@@ -87,7 +87,8 @@
 .${HOST_CLS} .pw-turtle-canvas-body {
   flex: 1; overflow: auto; display: flex; align-items: flex-start; justify-content: center; padding: 8px;
 }
-.${HOST_CLS} .pw-turtle-canvas-body canvas { display: block; }
+.${HOST_CLS} .pw-turtle-canvas-wrap { position: relative; flex-shrink: 0; }
+.${HOST_CLS} .pw-turtle-canvas-wrap canvas { position: absolute !important; top: 0; left: 0; }
 
 /* ── Toolbar ── */
 .${HOST_CLS} .pw-toolbar {
@@ -912,8 +913,14 @@
 
         // ── Turtle detection ───────────────────────────────────────────────
         const allCode = Object.values(vfs).join('\n');
+        const TW = 400, TH = 400;
         const usesTurtle = /\bimport\s+turtle\b|from\s+turtle\s+import/.test(allCode);
         if (usesTurtle) {
+          // Create a fixed-size wrapper so Skulpt's two absolute canvases overlay correctly
+          const wrap = el('div', 'pw-turtle-canvas-wrap');
+          wrap.style.width  = TW + 'px';
+          wrap.style.height = TH + 'px';
+          turtleCanvasBody.appendChild(wrap);
           turtleModal.classList.add('pw-turtle-open');
           turtleCloseBtn.textContent = '⏹ Stop';
           turtleCloseBtn.onclick = () => { requestStop(); };
@@ -973,9 +980,9 @@ def open(name, mode='r', *args, **kwargs):
 
         // ── Configure Skulpt ───────────────────────────────────────────────
         Sk.TurtleGraphics = {
-          target: turtleCanvasBody,
-          width:  400,
-          height: 400
+          target: usesTurtle ? turtleCanvasBody.querySelector('.pw-turtle-canvas-wrap') : null,
+          width:  TW,
+          height: TH
         };
 
         Sk.configure({
