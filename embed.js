@@ -242,8 +242,8 @@
 }
 .${HOST_CLS} .pw-clear-btn:hover { color: #24292e; }
 .${HOST_CLS} .pw-output-body { flex: 1; overflow-y: auto; padding: 10px 14px; background: #fff; }
-.${HOST_CLS} .pw-turtle-area { display: none; flex: 1; background: #fff; overflow: auto; }
-.${HOST_CLS} .pw-turtle-area.pw-turtle-active { display: flex; align-items: flex-start; justify-content: center; }
+.${HOST_CLS} .pw-turtle-area { height: 0; overflow: hidden; background: #fff; flex-shrink: 0; }
+.${HOST_CLS} .pw-turtle-area.pw-turtle-active { height: auto; flex: 1; overflow: auto; display: flex; align-items: flex-start; justify-content: center; padding: 4px; }
 .${HOST_CLS} .pw-turtle-area canvas { display: block; }
 .${HOST_CLS} .pw-output-pre {
   margin: 0; font-family: 'Courier New', Courier, monospace;
@@ -446,8 +446,6 @@
     const outputPre   = el('pre', 'pw-output-pre');
     outputBody.appendChild(outputPre);
     const turtleArea = el('div', 'pw-turtle-area');
-    const turtleId   = 'pw-turtle-' + widgetId;
-    turtleArea.id    = turtleId;
     outputPanel.append(outputHdr, outputBody, turtleArea);
 
     const outputResizeHandle = el('div', 'pw-output-resize');
@@ -455,14 +453,14 @@
     editorSection.appendChild(outputPanel);
     mainArea.appendChild(editorSection);
 
-    // When Skulpt adds a canvas: hide text output, show turtle panel at natural size
+    // When Skulpt adds a canvas: hide text output, show turtle panel
     const turtleObserver = new MutationObserver(() => {
       const canvas = turtleArea.querySelector('canvas');
       if (!canvas) return;
       outputBody.style.display = 'none';
       turtleArea.classList.add('pw-turtle-active');
     });
-    turtleObserver.observe(turtleArea, { childList: true });
+    turtleObserver.observe(turtleArea, { childList: true, subtree: true });
 
     // ── File state management ─────────────────────────────────────────────────
     const fileStates = new Map();
@@ -946,7 +944,7 @@ def open(name, mode='r', *args, **kwargs):
 
         // ── Configure Skulpt ───────────────────────────────────────────────
         Sk.TurtleGraphics = {
-          target: turtleId,
+          target: turtleArea,
           width:  400,
           height: 400
         };
