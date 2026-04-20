@@ -212,10 +212,22 @@
 .${HOST_CLS} .pw-editor-area .cm-activeLine    { background: #f3f8ff !important; }
 .${HOST_CLS} .pw-editor-area .cm-activeLineGutter { background: #dce9f7 !important; }
 
+/* ── Output resize handle ── */
+.${HOST_CLS} .pw-output-resize {
+  height: 6px; flex-shrink: 0; cursor: ns-resize;
+  background: #d0d7de; position: relative; transition: background 0.15s;
+}
+.${HOST_CLS} .pw-output-resize:hover { background: #0969da; }
+.${HOST_CLS} .pw-output-resize::after {
+  content: ''; position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: 32px; height: 2px; background: #fff; border-radius: 2px; opacity: 0.7;
+}
+
 /* ── Output / terminal panel (IDLE-style white shell) ── */
 .${HOST_CLS} .pw-output {
-  height: 200px; flex-shrink: 0; border-top: 1px solid #d0d7de;
-  display: flex; flex-direction: column; background: #fff;
+  height: 200px; flex-shrink: 0;
+  display: flex; flex-direction: column; background: #fff; overflow: hidden;
 }
 .${HOST_CLS} .pw-output-hdr {
   display: flex; align-items: center; justify-content: space-between;
@@ -434,6 +446,9 @@
     const outputPre   = el('pre', 'pw-output-pre');
     outputBody.appendChild(outputPre);
     outputPanel.append(outputHdr, outputBody);
+
+    const outputResizeHandle = el('div', 'pw-output-resize');
+    editorSection.appendChild(outputResizeHandle);
     editorSection.appendChild(outputPanel);
 
     const turtleArea = el('div', 'pw-turtle-area');
@@ -602,6 +617,38 @@
 
     clearOutput();
     clearBtn.addEventListener('click', clearOutput);
+
+    // ── Output panel resize ───────────────────────────────────────────────────
+    outputResizeHandle.addEventListener('mousedown', (e) => {
+      e.preventDefault();
+      const startY = e.clientY;
+      const startH = outputPanel.offsetHeight;
+      const onMove = (e) => {
+        const newH = Math.max(60, Math.min(800, startH - (e.clientY - startY)));
+        outputPanel.style.height = newH + 'px';
+      };
+      const onUp = () => {
+        document.removeEventListener('mousemove', onMove);
+        document.removeEventListener('mouseup', onUp);
+      };
+      document.addEventListener('mousemove', onMove);
+      document.addEventListener('mouseup', onUp);
+    });
+
+    outputResizeHandle.addEventListener('touchstart', (e) => {
+      const startY = e.touches[0].clientY;
+      const startH = outputPanel.offsetHeight;
+      const onMove = (e) => {
+        const newH = Math.max(60, Math.min(800, startH - (e.touches[0].clientY - startY)));
+        outputPanel.style.height = newH + 'px';
+      };
+      const onEnd = () => {
+        outputResizeHandle.removeEventListener('touchmove', onMove);
+        outputResizeHandle.removeEventListener('touchend', onEnd);
+      };
+      outputResizeHandle.addEventListener('touchmove', onMove, { passive: true });
+      outputResizeHandle.addEventListener('touchend', onEnd);
+    }, { passive: true });
 
     // ── Fullscreen toggle ─────────────────────────────────────────────────────
     function toggleFullscreen() {
