@@ -1,0 +1,13 @@
+{
+  "title": "3.1",
+  "files": [
+    {
+      "name": "grupp.txt",
+      "content": "Test\nTest2\nTest3\nTest4\n"
+    },
+    {
+      "name": "main.py",
+      "content": "#Ett program som slumpar gruppindelning\n#Ett program som läser in namn från fil och skapar par/grupper slumpvis.\nimport random\n\ndef läsa_in(filnamn):\n    gruppmedlemmar = []\n    infil = open(filnamn, \"r\")\n    for rad in infil:\n        rad = rad.strip()\n        gruppmedlemmar.append(rad)\n        \n    return gruppmedlemmar\n\n\ndef udda_kontroll(gruppmedlemmar):\n    udda= False\n    if len(gruppmedlemmar)%2 == 1:\n        gruppmedlemmar.append(\"är själv.\")\n        udda = True\n    return udda, gruppmedlemmar\n\n\ndef skapa_grupper(udda, gruppmedlemmar):\n    antal_grupper = len(gruppmedlemmar)//2\n    for i in range(antal_grupper):\n        print(\"Grupp \", i+1,\":\", sep=\"\")\n        if udda and i == antal_grupper - 1: \n            print(gruppmedlemmar.pop(0), gruppmedlemmar.pop(0))\n        else:\n            print(gruppmedlemmar.pop(0), \"och\", gruppmedlemmar.pop(0))\n    \n\ndef huvudprogram():    \n    filnamn=input(\"Vad heter filen med gruppmedlemmarna? \")\n    filnamn = filnamn +\".txt\"\n    medlemmarna = läsa_in(filnamn)\n    random.shuffle(medlemmarna) \n    udda, medlemmarna = udda_kontroll(medlemmarna)\n    skapa_grupper(udda, medlemmarna)\n\nhuvudprogram()"
+    }
+  ]
+}

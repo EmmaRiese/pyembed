@@ -1,0 +1,9 @@
+{
+  "title": "6.5",
+  "files": [
+    {
+      "name": "main.py",
+      "content": "class Färgmängd(set):\n    \n  def __str__(self):\n    pass\n\ndef main():\n  mängd = {\"Vit\",\\\n  \"Gul\", \"Blå\", \"Grön\"}\n\n  print(\"Utskrift av 'set':\")\n  print(mängd)\n\n  \n  färgmängd = Färgmängd(set()) #För att skapa tomt set använd set()\n  for element in mängd:\n    färgmängd.add(element) # alla metoder som set har ärvs av Färgmängd\n  print(\"Utskrift av 'Färgmängd':\")\n  print(färgmängd)\n\n\nmain()"
+    }
+  ]
+}

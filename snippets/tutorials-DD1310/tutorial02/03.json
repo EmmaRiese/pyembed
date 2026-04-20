@@ -1,0 +1,9 @@
+{
+  "title": "2.3",
+  "files": [
+    {
+      "name": "main.py",
+      "content": "lista = []\nflera_namn = \"ja\"\nwhile flera_namn == \"ja\":\n  namn = input(\"Mata in ett namn: \")\n  lista.append(namn)\n  flera_namn = input(\"Har du flera namn?\")\n\nprint(\"\\nNamnen i listan är:\")\nfor namn in lista: \t\t\t\t\t\n  print(namn, end=\" \")\t"
+    }
+  ]
+}

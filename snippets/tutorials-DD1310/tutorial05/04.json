@@ -1,0 +1,13 @@
+{
+  "title": "5.4",
+  "files": [
+    {
+      "name": "bocker.txt",
+      "content": "Dansa min docka\nAnna Jansson\n363\nI väntan på julen\nUlf Nilsson\n74"
+    },
+    {
+      "name": "main.py",
+      "content": "class Bok:\n  \n  def __init__(self, titel, av, sidor):\n    self.titel = titel\n    self.skriven_av = av\n    self.antal_sidor = sidor\n    \n  def __str__(self):\n    return self.titel +  \", skriven av: \" + self.skriven_av + \", har \" + str(self.antal_sidor) + \" sidor.\"\n  \n  def lägg_till_förord(self, nya_sidor):\n    self.antal_sidor += nya_sidor\n\n\ndef läsa_böcker():\n  \"\"\"Läser in böcker från filen bocker.txt\n  Parameter: Inga\n  Returnerar: böcker (lista med Bok-objekt)\"\"\"\n  fil = open(\"bocker.txt\", \"r\")\n  böcker = []\n  titel = fil.readline().strip()\n  while titel != \"\":           #Så länge som raden inte är tom\n    författare = fil.readline().strip()  \n    sidor = fil.readline().strip() \n    böcker.append(Bok(titel,författare, sidor)) #Här skapar vi Bok-objekt och lägger in det i listan böcker\n    titel = fil.readline().strip()  #läser in nästa rad, titeln på nästa bok\n  fil.close()\n  return böcker\n\ndef huvudprogram():\n  bok_lista = läsa_böcker()\n  for bok in bok_lista:\n    print(bok)\n    \nhuvudprogram()"
+    }
+  ]
+}

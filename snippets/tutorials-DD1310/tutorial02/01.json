@@ -1,0 +1,9 @@
+{
+  "title": "2.1",
+  "files": [
+    {
+      "name": "main.py",
+      "content": "fortsätt = \"ja\"\nwhile fortsätt == \"ja\":\n  tal = 1\n  fler_tal = \"ja\"\n  while fler_tal == \"ja\":\n    print(tal)\n    fler_tal = input(\"Vill du ha flera tal i följden? \")\n    tal += 1\n  fortsätt = input(\"Vill du fortsätta med en ny talföljd? \")"
+    }
+  ]
+}

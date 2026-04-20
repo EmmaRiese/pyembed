@@ -1,0 +1,13 @@
+{
+  "title": "6.2",
+  "files": [
+    {
+      "name": "bok.py",
+      "content": "class Bok:\n  \n  def __init__(self, titel, av, sidor, lånad):\n    self.titel = titel\n    self.författare = av\n    self.antal_sidor = sidor\n    self.lånad = lånad\n    \n  def __str__(self):\n    return self.titel +  \", skriven av: \" + self.författare + \", har \" + str(self.antal_sidor) + \" sidor.\"\n  \n  def lägg_till_förord(self, nya_sidor):\n    self.antal_sidor += nya_sidor\n    \n  def låna(self):\n    self.lånad = True\n    \n  def lämna_in(self):\n    self.lånad = False"
+    },
+    {
+      "name": "main.py",
+      "content": "from bok import *\n\nclass Ljudbok(Bok):\n  pass\n    \n    "
+    }
+  ]
+}

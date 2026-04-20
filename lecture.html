@@ -113,6 +113,13 @@
         pageUrl:       function(n) { return 'lecture.html?course=mobius-dd1310&n=' + n; },
         courseTitle:   'Möbius DD1310',
         navLabel:      function(n) { return '' + n; }
+      },
+      'tutorials-dd1310': {
+        folderPrefix: 'tutorials-DD1310/tutorial',
+        numFromFolder: function(f) { return parseInt(f.replace('tutorials-DD1310/tutorial', ''), 10); },
+        pageUrl:       function(n) { return 'lecture.html?course=tutorials-dd1310&n=' + n; },
+        courseTitle:   'DD1310 Tutorials',
+        navLabel:      function(n) { return '' + n; }
       }
     };
 

@@ -1,0 +1,9 @@
+{
+  "title": "5.3",
+  "files": [
+    {
+      "name": "main.py",
+      "content": "class Bok:\n  \n  def __init__(self, titel, av, sidor):\n    self.titel = titel\n    self.skriven_av = av\n    self.antal_sidor = sidor\n    \n  def __str__(self):\n    return self.titel +  \", skriven av: \" + self.skriven_av + \", har \" + str(self.antal_sidor) + \" sidor.\"\n  \n  def lägg_till_förord(self, nya_sidor):\n    self.antal_sidor += nya_sidor\n  \nbok = Bok(\"Dansa min docka\", \"Anna Jansson\", 363)\nprint(\"Innan ändringing:\", bok)\nbok.lägg_till_förord(3)\nprint(\"\\nEfter ändring:\", bok)"
+    }
+  ]
+}
