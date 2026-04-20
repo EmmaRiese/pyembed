@@ -242,8 +242,8 @@
 }
 .${HOST_CLS} .pw-clear-btn:hover { color: #24292e; }
 .${HOST_CLS} .pw-output-body { flex: 1; overflow-y: auto; padding: 10px 14px; background: #fff; }
-.${HOST_CLS} .pw-turtle-area { height: 0; overflow: hidden; background: #fff; flex-shrink: 0; }
-.${HOST_CLS} .pw-turtle-area.pw-turtle-active { height: auto; flex: 1; overflow: auto; display: flex; align-items: flex-start; justify-content: center; padding: 4px; }
+.${HOST_CLS} .pw-turtle-area { display: none; background: #fff; border-top: 1px solid #d0d7de; overflow: auto; }
+.${HOST_CLS} .pw-turtle-area.pw-turtle-active { display: block; }
 .${HOST_CLS} .pw-turtle-area canvas { display: block; }
 .${HOST_CLS} .pw-output-pre {
   margin: 0; font-family: 'Courier New', Courier, monospace;
@@ -445,12 +445,14 @@
     const outputBody  = el('div', 'pw-output-body');
     const outputPre   = el('pre', 'pw-output-pre');
     outputBody.appendChild(outputPre);
-    const turtleArea = el('div', 'pw-turtle-area');
-    outputPanel.append(outputHdr, outputBody, turtleArea);
+    outputPanel.append(outputHdr, outputBody);
 
     const outputResizeHandle = el('div', 'pw-output-resize');
     editorSection.appendChild(outputResizeHandle);
     editorSection.appendChild(outputPanel);
+
+    const turtleArea = el('div', 'pw-turtle-area');
+    editorSection.appendChild(turtleArea);
     mainArea.appendChild(editorSection);
 
 
@@ -863,10 +865,9 @@
       runBtn.removeEventListener('click', runCode);
       runBtn.addEventListener('click', requestStop, { once: true });
       clearOutput();
-      // Reset turtle canvas and restore text output
+      // Reset turtle canvas
       turtleArea.innerHTML = '';
       turtleArea.classList.remove('pw-turtle-active');
-      outputBody.style.display = '';
 
       const mainFile = files.find(f => f.name === 'main.py') ?? files.find(f => f.name.endsWith('.py'));
       if (!mainFile) {
@@ -883,12 +884,9 @@
         for (const f of files) vfs[f.name] = getContent(f.name);
 
         // ── Turtle detection ───────────────────────────────────────────────
-        // Check all files for turtle imports before running so the canvas
-        // container is visible and sized when Skulpt initialises it.
         const allCode = Object.values(vfs).join('\n');
         const usesTurtle = /\bimport\s+turtle\b|from\s+turtle\s+import/.test(allCode);
         if (usesTurtle) {
-          outputBody.style.display = 'none';
           turtleArea.classList.add('pw-turtle-active');
         }
 
