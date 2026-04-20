@@ -453,14 +453,6 @@
     editorSection.appendChild(outputPanel);
     mainArea.appendChild(editorSection);
 
-    // When Skulpt adds a canvas: hide text output, show turtle panel
-    const turtleObserver = new MutationObserver(() => {
-      const canvas = turtleArea.querySelector('canvas');
-      if (!canvas) return;
-      outputBody.style.display = 'none';
-      turtleArea.classList.add('pw-turtle-active');
-    });
-    turtleObserver.observe(turtleArea, { childList: true, subtree: true });
 
     // ── File state management ─────────────────────────────────────────────────
     const fileStates = new Map();
@@ -889,6 +881,16 @@
         // Snapshot of all project files for this run
         const vfs = {};
         for (const f of files) vfs[f.name] = getContent(f.name);
+
+        // ── Turtle detection ───────────────────────────────────────────────
+        // Check all files for turtle imports before running so the canvas
+        // container is visible and sized when Skulpt initialises it.
+        const allCode = Object.values(vfs).join('\n');
+        const usesTurtle = /\bimport\s+turtle\b|from\s+turtle\s+import/.test(allCode);
+        if (usesTurtle) {
+          outputBody.style.display = 'none';
+          turtleArea.classList.add('pw-turtle-active');
+        }
 
         // Build a Python dict literal for the VFS
         const vfsPyLiteral = '{\n' +
