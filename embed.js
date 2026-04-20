@@ -440,6 +440,14 @@
     editorSection.appendChild(outputPanel);
     mainArea.appendChild(editorSection);
 
+    // Show turtle area automatically when Skulpt adds a canvas into it
+    const turtleObserver = new MutationObserver(() => {
+      if (turtleArea.children.length > 0) {
+        turtleArea.classList.add('pw-turtle-active');
+      }
+    });
+    turtleObserver.observe(turtleArea, { childList: true });
+
     // ── File state management ─────────────────────────────────────────────────
     const fileStates = new Map();
     const fileItems  = new Map();
@@ -891,10 +899,7 @@ def open(name, mode='r', *args, **kwargs):
         Sk.TurtleGraphics = {
           target: turtleId,
           width:  400,
-          height: 400,
-          beforeRun: function() {
-            turtleArea.classList.add('pw-turtle-active');
-          }
+          height: 400
         };
 
         Sk.configure({
