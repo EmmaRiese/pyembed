@@ -230,9 +230,9 @@
 }
 .${HOST_CLS} .pw-clear-btn:hover { color: #24292e; }
 .${HOST_CLS} .pw-output-body { flex: 1; overflow-y: auto; padding: 10px 14px; background: #fff; }
-.${HOST_CLS} .pw-turtle-area { display: none; background: #fff; border-top: 1px solid #d0d7de; text-align: center; padding: 8px; }
+.${HOST_CLS} .pw-turtle-area { display: none; background: #fff; border-top: 1px solid #d0d7de; text-align: center; padding: 8px; overflow: hidden; }
 .${HOST_CLS} .pw-turtle-area.pw-turtle-active { display: block; }
-.${HOST_CLS} .pw-turtle-area canvas { max-width: 100%; }
+.${HOST_CLS} .pw-turtle-area canvas { display: block; margin: 0 auto; transform-origin: top center; }
 .${HOST_CLS} .pw-output-pre {
   margin: 0; font-family: 'Courier New', Courier, monospace;
   font-size: 14px; line-height: 1.6; color: #24292e;
@@ -433,18 +433,31 @@
     const outputBody  = el('div', 'pw-output-body');
     const outputPre   = el('pre', 'pw-output-pre');
     outputBody.appendChild(outputPre);
+    outputPanel.append(outputHdr, outputBody);
+    editorSection.appendChild(outputPanel);
+
     const turtleArea = el('div', 'pw-turtle-area');
     const turtleId   = 'pw-turtle-' + widgetId;
     turtleArea.id    = turtleId;
-    outputPanel.append(outputHdr, outputBody, turtleArea);
-    editorSection.appendChild(outputPanel);
+    editorSection.appendChild(turtleArea);
     mainArea.appendChild(editorSection);
 
-    // Show turtle area automatically when Skulpt adds a canvas into it
+    // Show turtle area and scale canvas when Skulpt adds it
     const turtleObserver = new MutationObserver(() => {
-      if (turtleArea.children.length > 0) {
-        turtleArea.classList.add('pw-turtle-active');
-      }
+      const canvas = turtleArea.querySelector('canvas');
+      if (!canvas) return;
+      turtleArea.classList.add('pw-turtle-active');
+      // Scale canvas to fit widget width
+      const scaleCanvas = () => {
+        const available = turtleArea.clientWidth - 16;
+        const naturalW  = canvas.width  || 400;
+        const naturalH  = canvas.height || 400;
+        const scale     = Math.min(1, available / naturalW);
+        canvas.style.transform = 'scale(' + scale + ')';
+        turtleArea.style.height = Math.round(naturalH * scale + 16) + 'px';
+      };
+      scaleCanvas();
+      new ResizeObserver(scaleCanvas).observe(turtleArea);
     });
     turtleObserver.observe(turtleArea, { childList: true });
 
