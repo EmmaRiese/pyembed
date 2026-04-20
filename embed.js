@@ -902,6 +902,10 @@
         return;
       }
 
+      // Declared outside try so finally block can access them
+      let turtleAnimId = null;
+      let skulptTarget  = null;
+
       try {
         const Sk = await skulptPromise;
 
@@ -912,8 +916,6 @@
         // ── Turtle detection ───────────────────────────────────────────────
         const allCode = Object.values(vfs).join('\n');
         const TW = 400, TH = 400;
-        let turtleAnimId = null;
-        let skulptTarget  = null;
         const usesTurtle = /\bimport\s+turtle\b|from\s+turtle\s+import/.test(allCode);
         if (usesTurtle) {
           // Hidden off-screen div for Skulpt to render into
