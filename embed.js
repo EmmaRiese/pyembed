@@ -242,9 +242,9 @@
 }
 .${HOST_CLS} .pw-clear-btn:hover { color: #24292e; }
 .${HOST_CLS} .pw-output-body { flex: 1; overflow-y: auto; padding: 10px 14px; background: #fff; }
-.${HOST_CLS} .pw-turtle-area { display: none; background: #fff; border-top: 1px solid #d0d7de; text-align: center; padding: 8px; overflow: hidden; }
-.${HOST_CLS} .pw-turtle-area.pw-turtle-active { display: block; }
-.${HOST_CLS} .pw-turtle-area canvas { display: block; margin: 0 auto; transform-origin: top center; }
+.${HOST_CLS} .pw-turtle-area { display: none; flex: 1; background: #fff; overflow: hidden; align-items: center; justify-content: center; }
+.${HOST_CLS} .pw-turtle-area.pw-turtle-active { display: flex; }
+.${HOST_CLS} .pw-turtle-area canvas { display: block; transform-origin: center center; }
 .${HOST_CLS} .pw-output-pre {
   margin: 0; font-family: 'Courier New', Courier, monospace;
   font-size: 14px; line-height: 1.6; color: #24292e;
@@ -445,31 +445,29 @@
     const outputBody  = el('div', 'pw-output-body');
     const outputPre   = el('pre', 'pw-output-pre');
     outputBody.appendChild(outputPre);
-    outputPanel.append(outputHdr, outputBody);
+    const turtleArea = el('div', 'pw-turtle-area');
+    const turtleId   = 'pw-turtle-' + widgetId;
+    turtleArea.id    = turtleId;
+    outputPanel.append(outputHdr, outputBody, turtleArea);
 
     const outputResizeHandle = el('div', 'pw-output-resize');
     editorSection.appendChild(outputResizeHandle);
     editorSection.appendChild(outputPanel);
-
-    const turtleArea = el('div', 'pw-turtle-area');
-    const turtleId   = 'pw-turtle-' + widgetId;
-    turtleArea.id    = turtleId;
-    editorSection.appendChild(turtleArea);
     mainArea.appendChild(editorSection);
 
-    // Show turtle area and scale canvas when Skulpt adds it
+    // When Skulpt adds a canvas: hide text output, show turtle panel, scale to fit
     const turtleObserver = new MutationObserver(() => {
       const canvas = turtleArea.querySelector('canvas');
       if (!canvas) return;
+      outputBody.style.display = 'none';
       turtleArea.classList.add('pw-turtle-active');
-      // Scale canvas to fit widget width
       const scaleCanvas = () => {
-        const available = turtleArea.clientWidth - 16;
-        const naturalW  = canvas.width  || 400;
-        const naturalH  = canvas.height || 400;
-        const scale     = Math.min(1, available / naturalW);
+        const w = turtleArea.clientWidth;
+        const h = turtleArea.clientHeight;
+        const naturalW = canvas.width  || 400;
+        const naturalH = canvas.height || 400;
+        const scale = Math.min(w / naturalW, h / naturalH, 1);
         canvas.style.transform = 'scale(' + scale + ')';
-        turtleArea.style.height = Math.round(naturalH * scale + 16) + 'px';
       };
       scaleCanvas();
       new ResizeObserver(scaleCanvas).observe(turtleArea);
@@ -885,9 +883,10 @@
       runBtn.removeEventListener('click', runCode);
       runBtn.addEventListener('click', requestStop, { once: true });
       clearOutput();
-      // Reset turtle canvas
+      // Reset turtle canvas and restore text output
       turtleArea.innerHTML = '';
       turtleArea.classList.remove('pw-turtle-active');
+      outputBody.style.display = '';
 
       const mainFile = files.find(f => f.name === 'main.py') ?? files.find(f => f.name.endsWith('.py'));
       if (!mainFile) {
