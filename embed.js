@@ -64,8 +64,30 @@
 .${HOST_CLS} .pw-widget {
   display: flex; flex-direction: column; height: 520px;
   border: 1px solid #d0d7de; border-radius: 8px; overflow: hidden;
-  background: #fff; color: #24292e; line-height: 1.5;
+  background: #fff; color: #24292e; line-height: 1.5; position: relative;
 }
+
+/* ── Turtle modal overlay ── */
+.${HOST_CLS} .pw-turtle-modal {
+  display: none; position: absolute; inset: 0; z-index: 200;
+  flex-direction: column; background: #fff; border-radius: 8px; overflow: hidden;
+}
+.${HOST_CLS} .pw-turtle-modal.pw-turtle-open { display: flex; }
+.${HOST_CLS} .pw-turtle-modal-hdr {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 6px 12px; background: #f6f8fa; border-bottom: 1px solid #d0d7de;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.5px; color: #57606a; flex-shrink: 0;
+}
+.${HOST_CLS} .pw-turtle-modal-title { text-transform: uppercase; letter-spacing: 1px; }
+.${HOST_CLS} .pw-turtle-modal-close {
+  padding: 4px 12px; border-radius: 6px; border: 1px solid #d0d7de;
+  background: #fff; color: #24292e; font-size: 12px; cursor: pointer; font-family: inherit;
+}
+.${HOST_CLS} .pw-turtle-modal-close:hover { background: #f3f4f6; }
+.${HOST_CLS} .pw-turtle-canvas-body {
+  flex: 1; overflow: auto; display: flex; align-items: flex-start; justify-content: center; padding: 8px;
+}
+.${HOST_CLS} .pw-turtle-canvas-body canvas { display: block; }
 
 /* ── Toolbar ── */
 .${HOST_CLS} .pw-toolbar {
@@ -242,9 +264,6 @@
 }
 .${HOST_CLS} .pw-clear-btn:hover { color: #24292e; }
 .${HOST_CLS} .pw-output-body { flex: 1; overflow-y: auto; padding: 10px 14px; background: #fff; }
-.${HOST_CLS} .pw-turtle-area { display: none; background: #fff; border-top: 1px solid #d0d7de; overflow: auto; }
-.${HOST_CLS} .pw-turtle-area.pw-turtle-active { display: block; }
-.${HOST_CLS} .pw-turtle-area canvas { display: block; }
 .${HOST_CLS} .pw-output-pre {
   margin: 0; font-family: 'Courier New', Courier, monospace;
   font-size: 14px; line-height: 1.6; color: #24292e;
@@ -451,8 +470,15 @@
     editorSection.appendChild(outputResizeHandle);
     editorSection.appendChild(outputPanel);
 
-    const turtleArea = el('div', 'pw-turtle-area');
-    editorSection.appendChild(turtleArea);
+    // ── Turtle modal ──────────────────────────────────────────────────────────
+    const turtleModal      = el('div', 'pw-turtle-modal');
+    const turtleModalHdr   = el('div', 'pw-turtle-modal-hdr');
+    const turtleModalTitle = el('span', 'pw-turtle-modal-title', 'Canvas');
+    const turtleCloseBtn   = el('button', 'pw-turtle-modal-close', '✕ Close');
+    turtleModalHdr.append(turtleModalTitle, turtleCloseBtn);
+    const turtleCanvasBody = el('div', 'pw-turtle-canvas-body');
+    turtleModal.append(turtleModalHdr, turtleCanvasBody);
+    widget.appendChild(turtleModal);
     mainArea.appendChild(editorSection);
 
 
@@ -865,9 +891,10 @@
       runBtn.removeEventListener('click', runCode);
       runBtn.addEventListener('click', requestStop, { once: true });
       clearOutput();
-      // Reset turtle canvas
-      turtleArea.innerHTML = '';
-      turtleArea.classList.remove('pw-turtle-active');
+      // Reset turtle modal
+      turtleCanvasBody.innerHTML = '';
+      turtleModal.classList.remove('pw-turtle-open');
+      turtleCloseBtn.textContent = '✕ Close';
 
       const mainFile = files.find(f => f.name === 'main.py') ?? files.find(f => f.name.endsWith('.py'));
       if (!mainFile) {
@@ -887,7 +914,9 @@
         const allCode = Object.values(vfs).join('\n');
         const usesTurtle = /\bimport\s+turtle\b|from\s+turtle\s+import/.test(allCode);
         if (usesTurtle) {
-          turtleArea.classList.add('pw-turtle-active');
+          turtleModal.classList.add('pw-turtle-open');
+          turtleCloseBtn.textContent = '⏹ Stop';
+          turtleCloseBtn.onclick = () => { requestStop(); };
         }
 
         // Build a Python dict literal for the VFS
@@ -944,7 +973,7 @@ def open(name, mode='r', *args, **kwargs):
 
         // ── Configure Skulpt ───────────────────────────────────────────────
         Sk.TurtleGraphics = {
-          target: turtleArea,
+          target: turtleCanvasBody,
           width:  400,
           height: 400
         };
@@ -999,6 +1028,14 @@ def open(name, mode='r', *args, **kwargs):
         runBtn.classList.replace('pw-btn-stop', 'pw-btn-run');
         runBtn.textContent = '▶ Run';
         runBtn.addEventListener('click', runCode);
+        // Switch turtle modal button to Close (program finished)
+        if (turtleModal.classList.contains('pw-turtle-open')) {
+          turtleCloseBtn.textContent = '✕ Close';
+          turtleCloseBtn.onclick = () => {
+            turtleModal.classList.remove('pw-turtle-open');
+            turtleCanvasBody.innerHTML = '';
+          };
+        }
       }
     }
   }
