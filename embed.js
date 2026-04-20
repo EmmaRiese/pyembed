@@ -87,8 +87,6 @@
 .${HOST_CLS} .pw-turtle-canvas-body {
   flex: 1; overflow: auto; display: flex; align-items: flex-start; justify-content: center; padding: 8px;
 }
-.${HOST_CLS} .pw-turtle-canvas-wrap { position: relative; flex-shrink: 0; }
-.${HOST_CLS} .pw-turtle-canvas-wrap canvas { position: absolute !important; top: 0; left: 0; }
 
 /* ── Toolbar ── */
 .${HOST_CLS} .pw-toolbar {
@@ -914,13 +912,34 @@
         // ── Turtle detection ───────────────────────────────────────────────
         const allCode = Object.values(vfs).join('\n');
         const TW = 400, TH = 400;
+        let turtleAnimId = null;
+        let skulptTarget  = null;
         const usesTurtle = /\bimport\s+turtle\b|from\s+turtle\s+import/.test(allCode);
         if (usesTurtle) {
-          // Create a fixed-size wrapper so Skulpt's two absolute canvases overlay correctly
-          const wrap = el('div', 'pw-turtle-canvas-wrap');
-          wrap.style.width  = TW + 'px';
-          wrap.style.height = TH + 'px';
-          turtleCanvasBody.appendChild(wrap);
+          // Hidden off-screen div for Skulpt to render into
+          skulptTarget = document.createElement('div');
+          skulptTarget.style.cssText = 'position:fixed;left:-9999px;top:-9999px;width:' + TW + 'px;height:' + TH + 'px;';
+          document.body.appendChild(skulptTarget);
+
+          // Single visible merged canvas
+          const mergedCanvas = document.createElement('canvas');
+          mergedCanvas.width  = TW;
+          mergedCanvas.height = TH;
+          mergedCanvas.style.display = 'block';
+          turtleCanvasBody.appendChild(mergedCanvas);
+          const mergedCtx = mergedCanvas.getContext('2d');
+
+          // rAF loop: composite Skulpt's layered canvases onto the merged canvas
+          const compose = () => {
+            const layers = skulptTarget.querySelectorAll('canvas');
+            mergedCtx.clearRect(0, 0, TW, TH);
+            mergedCtx.fillStyle = '#fff';
+            mergedCtx.fillRect(0, 0, TW, TH);
+            layers.forEach(c => mergedCtx.drawImage(c, 0, 0));
+            turtleAnimId = requestAnimationFrame(compose);
+          };
+          turtleAnimId = requestAnimationFrame(compose);
+
           turtleModal.classList.add('pw-turtle-open');
           turtleCloseBtn.textContent = '⏹ Stop';
           turtleCloseBtn.onclick = () => { requestStop(); };
@@ -980,7 +999,7 @@ def open(name, mode='r', *args, **kwargs):
 
         // ── Configure Skulpt ───────────────────────────────────────────────
         Sk.TurtleGraphics = {
-          target: usesTurtle ? turtleCanvasBody.querySelector('.pw-turtle-canvas-wrap') : null,
+          target: skulptTarget || undefined,
           width:  TW,
           height: TH
         };
@@ -1035,7 +1054,10 @@ def open(name, mode='r', *args, **kwargs):
         runBtn.classList.replace('pw-btn-stop', 'pw-btn-run');
         runBtn.textContent = '▶ Run';
         runBtn.addEventListener('click', runCode);
-        // Switch turtle modal button to Close (program finished)
+        // Stop compositing loop, clean up hidden Skulpt target
+        if (turtleAnimId) { cancelAnimationFrame(turtleAnimId); turtleAnimId = null; }
+        if (skulptTarget) { skulptTarget.remove(); skulptTarget = null; }
+        // Switch modal button to Close
         if (turtleModal.classList.contains('pw-turtle-open')) {
           turtleCloseBtn.textContent = '✕ Close';
           turtleCloseBtn.onclick = () => {
