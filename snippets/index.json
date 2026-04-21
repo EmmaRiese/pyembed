@@ -275,6 +275,10 @@
           "id": "lecture06-09",
           "file": "lecture-examples/lecture06/09.json",
           "title": "6.9"
+        },
+        {
+          "file": "lecture-examples/lecture06/10.json",
+          "title": "6.10 – Recursion: skapa_matris()"
         }
       ]
     },
@@ -373,6 +377,22 @@
           "id": "lecture08-09",
           "file": "lecture-examples/lecture08/09.json",
           "title": "8.9"
+        },
+        {
+          "file": "lecture-examples/lecture08/10.json",
+          "title": "8.10 – File I/O with Exception Handling"
+        },
+        {
+          "file": "lecture-examples/lecture08/11.json",
+          "title": "8.11 – Try/Except: Exception Handling"
+        },
+        {
+          "file": "lecture-examples/lecture08/12.json",
+          "title": "8.12 – Recursion: meny()"
+        },
+        {
+          "file": "lecture-examples/lecture08/13.json",
+          "title": "8.13 – For Loop with range()"
         }
       ]
     },
@@ -442,6 +462,26 @@
           "id": "lecture10-03",
           "file": "lecture-examples/lecture10/03.json",
           "title": "10.3"
+        },
+        {
+          "file": "lecture-examples/lecture10/04.json",
+          "title": "10.4 – Tal Class (multi-file)"
+        },
+        {
+          "file": "lecture-examples/lecture10/05.json",
+          "title": "10.5 – Grupp Class"
+        },
+        {
+          "file": "lecture-examples/lecture10/06.json",
+          "title": "10.6 – Hus Class (multi-file)"
+        },
+        {
+          "file": "lecture-examples/lecture10/07.json",
+          "title": "10.7 – Grupp Class"
+        },
+        {
+          "file": "lecture-examples/lecture10/08.json",
+          "title": "10.8 – Grupp Class"
         }
       ]
     },
@@ -469,6 +509,22 @@
           "id": "lecture11-04",
           "file": "lecture-examples/lecture11/04.json",
           "title": "11.4"
+        },
+        {
+          "file": "lecture-examples/lecture11/05.json",
+          "title": "11.5 – Rum Class (multi-file)"
+        },
+        {
+          "file": "lecture-examples/lecture11/06.json",
+          "title": "11.6 – Inköpslista extends list"
+        },
+        {
+          "file": "lecture-examples/lecture11/07.json",
+          "title": "11.7 – Rum: Inheritance"
+        },
+        {
+          "file": "lecture-examples/lecture11/08.json",
+          "title": "11.8 – Sjutton extends Exception"
         }
       ]
     },
@@ -496,6 +552,14 @@
           "id": "lecture12-04",
           "file": "lecture-examples/lecture12/04.json",
           "title": "12.4"
+        },
+        {
+          "file": "lecture-examples/lecture12/05.json",
+          "title": "12.5 – Frukt Class (multi-file)"
+        },
+        {
+          "file": "lecture-examples/lecture12/06.json",
+          "title": "12.6 – Tal Class"
         }
       ]
     },
@@ -543,6 +607,14 @@
           "id": "lecture13-08",
           "file": "lecture-examples/lecture13/08.json",
           "title": "13.8"
+        },
+        {
+          "file": "lecture-examples/lecture13/09.json",
+          "title": "13.9 – Exempel med bra kommentar"
+        },
+        {
+          "file": "lecture-examples/lecture13/10.json",
+          "title": "13.10 – Kakformer extends set"
         }
       ]
     },
@@ -555,6 +627,10 @@
           "id": "lecture14-01",
           "file": "lecture-examples/lecture14/01.json",
           "title": "14.1"
+        },
+        {
+          "file": "lecture-examples/lecture14/02.json",
+          "title": "14.2 – Reading and Writing Files"
         }
       ]
     },
@@ -572,6 +648,14 @@
           "id": "lecture15-02",
           "file": "lecture-examples/lecture15/02.json",
           "title": "15.2"
+        },
+        {
+          "file": "lecture-examples/lecture15/03.json",
+          "title": "15.3 – For Loop with range()"
+        },
+        {
+          "file": "lecture-examples/lecture15/04.json",
+          "title": "15.4 – Reading and Writing Files"
         }
       ]
     },
