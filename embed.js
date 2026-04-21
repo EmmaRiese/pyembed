@@ -623,9 +623,10 @@
     clearOutput();
     clearBtn.addEventListener('click', clearOutput);
 
-    // ── Output panel resize ───────────────────────────────────────────────────
-    outputResizeHandle.addEventListener('mousedown', (e) => {
+    // ── Output panel resize (pointer capture keeps events inside iframe) ─────
+    outputResizeHandle.addEventListener('pointerdown', (e) => {
       e.preventDefault();
+      outputResizeHandle.setPointerCapture(e.pointerId);
       const startY = e.clientY;
       const startH = outputPanel.offsetHeight;
       const onMove = (e) => {
@@ -633,46 +634,38 @@
         outputPanel.style.height = newH + 'px';
       };
       const onUp = () => {
-        document.removeEventListener('mousemove', onMove);
-        document.removeEventListener('mouseup', onUp);
+        outputResizeHandle.removeEventListener('pointermove', onMove);
+        outputResizeHandle.removeEventListener('pointerup', onUp);
       };
-      document.addEventListener('mousemove', onMove);
-      document.addEventListener('mouseup', onUp);
+      outputResizeHandle.addEventListener('pointermove', onMove);
+      outputResizeHandle.addEventListener('pointerup', onUp);
     });
 
-    outputResizeHandle.addEventListener('touchstart', (e) => {
-      const startY = e.touches[0].clientY;
-      const startH = outputPanel.offsetHeight;
-      const onMove = (e) => {
-        const newH = Math.max(60, Math.min(800, startH - (e.touches[0].clientY - startY)));
-        outputPanel.style.height = newH + 'px';
-      };
-      const onEnd = () => {
-        outputResizeHandle.removeEventListener('touchmove', onMove);
-        outputResizeHandle.removeEventListener('touchend', onEnd);
-      };
-      outputResizeHandle.addEventListener('touchmove', onMove, { passive: true });
-      outputResizeHandle.addEventListener('touchend', onEnd);
-    }, { passive: true });
-
-    // ── Fullscreen toggle ─────────────────────────────────────────────────────
-    function toggleFullscreen() {
-      const isFs = hostEl.classList.toggle('pw-is-fullscreen');
+    // ── Fullscreen toggle (uses browser Fullscreen API — works in iframes) ───
+    function applyFullscreenState(isFs) {
+      hostEl.classList.toggle('pw-is-fullscreen', isFs);
       fsBtn.textContent = isFs ? '✕' : '⛶';
       fsBtn.title       = isFs ? 'Exit fullscreen' : 'Fullscreen';
-      // Prevent body scroll when fullscreen
       document.body.style.overflow = isFs ? 'hidden' : '';
-      // Refresh CodeMirror layout
       editor.requestMeasure();
     }
 
-    fsBtn.addEventListener('click', toggleFullscreen);
-
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && hostEl.classList.contains('pw-is-fullscreen')) {
-        toggleFullscreen();
+    function toggleFullscreen() {
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      } else {
+        document.documentElement.requestFullscreen({ navigationUI: 'hide' }).catch(() => {
+          // Fallback for browsers/contexts that block the Fullscreen API
+          applyFullscreenState(!hostEl.classList.contains('pw-is-fullscreen'));
+        });
       }
+    }
+
+    document.addEventListener('fullscreenchange', () => {
+      applyFullscreenState(!!document.fullscreenElement);
     });
+
+    fsBtn.addEventListener('click', toggleFullscreen);
 
     editorArea.addEventListener('keydown', e => {
       if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
@@ -710,7 +703,7 @@
         : 'https://USERNAME.github.io/REPO';
       const shortSrc  = dataSrc.replace(/^(https?:\/\/[^/]+\/[^/]+\/)?snippets\//, '');
       const viewerUrl = `${base}/viewer.html?src=${encodeURIComponent(shortSrc)}`;
-      const iframeCode = `<iframe\n  src="${viewerUrl}"\n  width="100%"\n  height="540"\n  style="border:none;border-radius:8px;"\n  loading="lazy"\n></iframe>`;
+      const iframeCode = `<iframe\n  src="${viewerUrl}"\n  width="100%"\n  height="540"\n  style="border:none;border-radius:8px;"\n  loading="lazy"\n  allowfullscreen\n></iframe>`;
 
       // ── Suggest a filename from the snippet title ────────────────────────────
       const defaultFilename = (snippet.title || 'my_snippet')
