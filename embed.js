@@ -237,6 +237,7 @@
 .${HOST_CLS} .pw-output-resize {
   height: 6px; flex-shrink: 0; cursor: ns-resize;
   background: #d0d7de; position: relative; transition: background 0.15s;
+  touch-action: none;
 }
 .${HOST_CLS} .pw-output-resize:hover { background: #0969da; }
 .${HOST_CLS} .pw-output-resize::after {
@@ -623,22 +624,26 @@
     clearOutput();
     clearBtn.addEventListener('click', clearOutput);
 
-    // ── Output panel resize (pointer capture keeps events inside iframe) ─────
+    // ── Output panel resize ───────────────────────────────────────────────────
+    // A full-page overlay captures all pointer events during the drag so the
+    // handle keeps working even when the cursor leaves the resize strip.
     outputResizeHandle.addEventListener('pointerdown', (e) => {
       e.preventDefault();
-      outputResizeHandle.setPointerCapture(e.pointerId);
       const startY = e.clientY;
       const startH = outputPanel.offsetHeight;
-      const onMove = (e) => {
+
+      const overlay = document.createElement('div');
+      overlay.style.cssText =
+        'position:fixed;inset:0;z-index:99999;cursor:ns-resize;user-select:none;';
+      document.body.appendChild(overlay);
+
+      overlay.addEventListener('pointermove', (e) => {
         const newH = Math.max(60, Math.min(800, startH - (e.clientY - startY)));
         outputPanel.style.height = newH + 'px';
-      };
-      const onUp = () => {
-        outputResizeHandle.removeEventListener('pointermove', onMove);
-        outputResizeHandle.removeEventListener('pointerup', onUp);
-      };
-      outputResizeHandle.addEventListener('pointermove', onMove);
-      outputResizeHandle.addEventListener('pointerup', onUp);
+      });
+      const endDrag = () => overlay.remove();
+      overlay.addEventListener('pointerup',     endDrag, { once: true });
+      overlay.addEventListener('pointercancel', endDrag, { once: true });
     });
 
     // ── Fullscreen toggle (uses browser Fullscreen API — works in iframes) ───
