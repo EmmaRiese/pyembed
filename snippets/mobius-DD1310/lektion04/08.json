@@ -1,9 +1,9 @@
 {
-  "title": "4.8",
+  "title": "4.8 Dictionary med konstnärer och verk",
   "files": [
     {
       "name": "main.py",
-      "content": "månader = {\"jan\":31, \"feb\":28, \"mar\":31, \"apr\":30,\n\"maj\":31, \"jun\":30, \"jul\":31, \"aug\":31, \"sep\":30,\n\"okt\":31, \"nov\":30, \"dec\":31} \n\nvald_månad = input(\"Vilken månad vill du veta antalet dagar i?\")\n\nif vald_månad in månader.keys():  #Om den valda månden är en nyckel i hashtabellen månader\n  print(vald_månad, \"har\", ) #Här saknas utskriften för värdet, lägg in det\n"
+      "content": "konstnärer_länder = {\n    'Leonardo da Vinci': 'Italien',\n    'Vincent van Gogh': 'Nederländerna',\n    'Frida Kahlo': 'Mexiko',\n    'Pablo Picasso': 'Spanien',\n    'Hokusai': 'Japan'\n}\n\nfor konstnär in konstnärer_länder.keys():\n  #Vad saknas här om du vill skriva ut varje nyckel och dess tillhörande värde?"
     }
   ]
 }

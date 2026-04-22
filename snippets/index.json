@@ -1157,52 +1157,52 @@
         {
           "id": "mobius-dd1310-04-01",
           "file": "mobius-DD1310/lektion04/01.json",
-          "title": "4.1"
+          "title": "4.1 Tuppel"
         },
         {
           "id": "mobius-dd1310-04-02",
           "file": "mobius-DD1310/lektion04/02.json",
-          "title": "4.2"
+          "title": "4.2 Tuppel med for-slinga och index"
         },
         {
           "id": "mobius-dd1310-04-03",
           "file": "mobius-DD1310/lektion04/03.json",
-          "title": "4.3"
+          "title": "4.3 Metoder för tupler"
         },
         {
           "id": "mobius-dd1310-04-04",
           "file": "mobius-DD1310/lektion04/04.json",
-          "title": "4.4"
+          "title": "4.4 Mängder"
         },
         {
           "id": "mobius-dd1310-04-05",
           "file": "mobius-DD1310/lektion04/05.json",
-          "title": "4.5"
+          "title": "4.5 – Mängdoperationer"
         },
         {
           "id": "mobius-dd1310-04-06",
           "file": "mobius-DD1310/lektion04/06.json",
-          "title": "4.6 – Unionen - snittet:"
+          "title": "4.6 Dictionary 8pythons inbyggda hashtabell)"
         },
         {
           "id": "mobius-dd1310-04-07",
           "file": "mobius-DD1310/lektion04/07.json",
-          "title": "4.7"
+          "title": "4.7 Ett större exempel med lexikon"
         },
         {
           "id": "mobius-dd1310-04-08",
           "file": "mobius-DD1310/lektion04/08.json",
-          "title": "4.8"
+          "title": "4.8 Dictionary med konstnärer och verk"
         },
         {
           "id": "mobius-dd1310-04-09",
           "file": "mobius-DD1310/lektion04/09.json",
-          "title": "4.9"
+          "title": "4.9 Program med dictionary att felsöka i"
         },
         {
           "id": "mobius-dd1310-04-10",
           "file": "mobius-DD1310/lektion04/10.json",
-          "title": "4.10"
+          "title": "4.10 Övning med tupler"
         }
       ]
     },
