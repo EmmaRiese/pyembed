@@ -1322,16 +1322,16 @@
         {
           "id": "mobius-dd1310-06-05",
           "file": "mobius-DD1310/lektion06/05.json",
-          "title": "6.5 Iteration och rekursion"
+          "title": "6.5 Importera från annan fil"
         },
         {
           "id": "mobius-dd1310-06-06",
           "file": "mobius-DD1310/lektion06/06.json",
-          "title": "6.6 Övning med slumptal"
+          "title": "6.6 Iteration och rekursion"
         },
         {
           "file": "mobius-DD1310/lektion06/07.json",
-          "title": "6.1"
+          "title": "6.7 Övning med slumptal"
         }
       ]
     },
