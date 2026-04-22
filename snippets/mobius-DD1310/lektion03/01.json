@@ -1,9 +1,9 @@
 {
-  "title": "3.1",
+  "title": "3.1 Skapa en lista och använda index",
   "files": [
     {
       "name": "main.py",
-      "content": "#Skriver ut en multiplikationstabell från 1 till 11.\nfor i in range(1, 12):\n  for j in range (1,12):\n    print (i*j, end = \"  \")\n  print()"
+      "content": "namnlista = [\"Ali\", \"Bertil\", \"Celina\"]\n\nprint(\"Om man printar ut hela listan får man: \", namnlista)\nprint(\"Första namnet är \", namnlista[0])\nprint(\"Andra namnet är \", namnlista[1])\nprint(\"Tredje namnet är \", namnlista[2])"
     }
   ]
 }

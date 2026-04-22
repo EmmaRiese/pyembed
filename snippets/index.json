@@ -1090,52 +1090,52 @@
         {
           "id": "mobius-dd1310-03-01",
           "file": "mobius-DD1310/lektion03/01.json",
-          "title": "3.1"
+          "title": "3.1 Skapa en lista och använda index"
         },
         {
           "id": "mobius-dd1310-03-02",
           "file": "mobius-DD1310/lektion03/02.json",
-          "title": "3.2"
+          "title": "3.2 – Negativa index"
         },
         {
           "id": "mobius-dd1310-03-03",
           "file": "mobius-DD1310/lektion03/03.json",
-          "title": "3.3"
+          "title": "3.3 for-slinga för att gå igenom alla element i en lista"
         },
         {
           "id": "mobius-dd1310-03-04",
           "file": "mobius-DD1310/lektion03/04.json",
-          "title": "3.4"
+          "title": "3.4 for-slingor med range"
         },
         {
           "id": "mobius-dd1310-03-05",
           "file": "mobius-DD1310/lektion03/05.json",
-          "title": "3.5 – Näst-näst sista namnet i listan är"
+          "title": "3.5 Listor med None och en bestämd längd"
         },
         {
           "id": "mobius-dd1310-03-06",
           "file": "mobius-DD1310/lektion03/06.json",
-          "title": "3.6"
+          "title": "3.6 Nästlade for-slingor"
         },
         {
           "id": "mobius-dd1310-03-07",
           "file": "mobius-DD1310/lektion03/07.json",
-          "title": "3.7"
+          "title": "3.7 Nästlade listor med fel"
         },
         {
           "id": "mobius-dd1310-03-08",
           "file": "mobius-DD1310/lektion03/08.json",
-          "title": "3.8"
+          "title": "3.8 Matris - listor i listor"
         },
         {
           "id": "mobius-dd1310-03-09",
           "file": "mobius-DD1310/lektion03/09.json",
-          "title": "3.9"
+          "title": "3.9 Hitta minsta värdet"
         },
         {
           "id": "mobius-dd1310-03-10",
           "file": "mobius-DD1310/lektion03/10.json",
-          "title": "3.10"
+          "title": "3.10 Fyll i range-villkoren"
         },
         {
           "id": "mobius-dd1310-03-11",
