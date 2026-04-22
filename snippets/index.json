@@ -923,15 +923,15 @@
       "snippets": [
         {
           "file": "mobius-DD100N/lesson05/09.json",
-          "title": "5.8"
+          "title": "5.1"
         },
         {
           "file": "mobius-DD100N/lesson05/10.json",
-          "title": "5.8"
+          "title": "5.2"
         },
         {
           "file": "mobius-DD100N/lesson05/11.json",
-          "title": "5.8"
+          "title": "5.3"
         },
         {
           "id": "mobius-dd100n-05-01",
@@ -986,11 +986,11 @@
       "snippets": [
         {
           "file": "mobius-DD100N/lesson06/06.json",
-          "title": "6.9"
+          "title": "6.1"
         },
         {
           "file": "mobius-DD100N/lesson06/07.json",
-          "title": "6.9"
+          "title": "6.2"
         },
         {
           "id": "mobius-dd100n-06-01",
@@ -1019,7 +1019,7 @@
         },
         {
           "file": "mobius-DD100N/lesson06/08.json",
-          "title": "6.9"
+          "title": "6.8"
         },
         {
           "file": "mobius-DD100N/lesson06/09.json",
@@ -1345,8 +1345,8 @@
           "title": "7.4"
         },
         {
-          "file": "mobius-DD1310/lektion07/05.json",
-          "title": "7.5"
+          "file": "mobius-DD1310/lektion07/011.json",
+          "title": "7.1 Läsa in data från en .txt"
         },
         {
           "file": "mobius-DD1310/lektion07/01.json",
@@ -1441,19 +1441,19 @@
         },
         {
           "file": "mobius-DD1310/lektion10/02.json",
-          "title": "10.6"
+          "title": "10.2"
         },
         {
           "file": "mobius-DD1310/lektion10/03.json",
-          "title": "10.6"
+          "title": "10.3"
         },
         {
           "file": "mobius-DD1310/lektion10/04.json",
-          "title": "10.6"
+          "title": "10.4"
         },
         {
           "file": "mobius-DD1310/lektion10/05.json",
-          "title": "10.6"
+          "title": "10.5"
         },
         {
           "file": "mobius-DD1310/lektion10/06.json",
@@ -1468,7 +1468,7 @@
       "snippets": [
         {
           "file": "mobius-DD1310/lektion11/02.json",
-          "title": "11.2"
+          "title": "11.1"
         },
         {
           "file": "mobius-DD1310/lektion11/03.json",
