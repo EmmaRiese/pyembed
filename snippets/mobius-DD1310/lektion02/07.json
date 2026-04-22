@@ -1,9 +1,9 @@
 {
-  "title": "2.7",
+  "title": "2.7 while-slinga med räknare",
   "files": [
     {
       "name": "main.py",
-      "content": "#Koden innehåller två typer av fel, provkör och se om du kan rätta till dem.\nräntefaktorn = 1.01\nif räntefaktorn > 1\nprint(\"Du får en positiv utveckling på dina sparpengar\")\n\n#Prova gärna att göra samma sak i det redigeringsprogram du använder (t.ex. IDLE) \n#och se hur presentationen av felen ser ut där."
+      "content": "total = 0\nantal = 0\n\nwhile True:\n    nummer = input(\"Ange ett nummer (eller 'sluta' för att avsluta): \")\n    if nummer == 'sluta':\n        break\n    else:\n        total += nummer\n        antal += 1\n\nmedelvärde = total / antal\nprint(\"Medelvärdet av de angivna numrerna är:\", medelvärde)\n"
     }
   ]
 }

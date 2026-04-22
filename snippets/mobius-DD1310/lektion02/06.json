@@ -1,9 +1,9 @@
 {
-  "title": "2.6",
+  "title": "2.6 continue och break",
   "files": [
     {
       "name": "main.py",
-      "content": "total = 0\nantal = 0\n\nwhile True:\n    nummer = input(\"Ange ett nummer (eller 'sluta' för att avsluta): \")\n    if nummer == 'sluta':\n        break\n    else:\n        total += nummer\n        antal += 1\n\nmedelvärde = total / antal\nprint(\"Medelvärdet av de angivna numrerna är:\", medelvärde)\n"
+      "content": "# Exempel med break och continue\n\ntal = 100\nwhile True:\n  if tal > 50:\n    tal -= 10\n    print(tal)\n    continue\n  print(\"Tal är nu\",tal ,\".\")\n  svar = input(\"Vil du fortsätta? (j/n)\")\n  \n  if svar == \"n\":\n    break\n  else:\n    tal = 100\n  \nprint(\"Tack och hej!\")"
     }
   ]
 }
