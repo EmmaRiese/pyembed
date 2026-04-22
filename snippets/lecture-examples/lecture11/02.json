@@ -1,9 +1,9 @@
 {
-  "title": "11.2 – Långord Class with Menu",
+  "title": "11.2",
   "files": [
     {
       "name": "main.py",
-      "content": "class Långord:\n\n    VOKALER = \"aeiouyåäö\"  # VOKALER är ett klassattribut\n\n    def __init__(self, ordet):\n        self.ordet = ordet\n\n    def antal_vokaler(self):\n        antal = 0\n        for bokstav in self.ordet:\n            if bokstav in Långord.VOKALER:\n                antal += 1\n        return antal\n\ndef main():\n  ordobjekt = Långord(\"boendeparkeringstillstånd\")\n  print(ordobjekt.antal_vokaler())\n\nmain()\n"
+      "content": "class Inköpslista(list):\n    \n  def __str__(self):\n    sträng = \"\"\n    for vara in self:\n      sträng += \" * \" + str(vara) + \"\\n\"\n    return sträng\n\ndef main():\n  lista = [\"Ägg\",\"Smör\",\"Mjölk\"]\n  print(\"Utskrift av 'list'\")\n  print(lista)\n  inköpslista = Inköpslista(lista)\n  print(\"Utskrift av 'Inköpslista'\")\n  print(inköpslista)\n\n\nmain()"
     }
   ]
 }

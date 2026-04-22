@@ -1,9 +1,9 @@
 {
-  "title": "3.6 – for-slinga med inmatning",
+  "title": "3.6",
   "files": [
     {
       "name": "main.py",
-      "content": "ANTAL_BÖCKER = 4\ntitlar = []\nfor i in range(ANTAL_BÖCKER): \n    bok = input(\"Vad heter bok nr \" + str(i+1)+ \"? \")\n    titlar.append(bok)\nprint(titlar) #skriver ut listan när slinga är klar"
+      "content": "for i in range(1,4):\n    for j in range(1,4):\n        print(i*j, end =\" \")\n    print()"
     }
   ]
 }

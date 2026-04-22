@@ -1,13 +1,9 @@
 {
-  "title": "8.6 – Ett program som läser in bakverk och dess pris",
+  "title": "8.6",
   "files": [
     {
       "name": "main.py",
-      "content": "#Ett program som läser in bakverk och dess pris\ndef läsa_in(filnamn):\n  \"\"\"Läser in bakverk från filen infil.txt\n  Parameter: Inga\n  Returnerar: lista_bakverk (lista med tupler (bakverk, pris), (string, int))\"\"\"\n  infil = open(filnamn, \"r\")\n  lista_bakverk = []\n  bakverk = infil.readline().strip()\n  while bakverk != \"\":           #Så länge som raden inte är tom\n    pris = infil.readline().strip()   #Här vill du läsa in nästa rad, den som innehåller priset och spars den i variabeln pris\n    lista_bakverk.append((bakverk,int(pris))) #Här gör vi om det andra värdet, priset till en integer, läger in som tuppel\n    bakverk = infil.readline().strip()  #läser in nästa rad, namnet på nästa bakverk\n  infil.close()\n  return lista_bakverk\n  \ndef lägga_till(bakverk):\n  \"\"\"Lägger till ett bakverk till listan\n  Parameter: bakverk (lista med tupler (bakverk, pris), (string, int))\n  Returnerar: bakverk (lista med tupler (bakverk, pris), (string, int))\"\"\"\n  bakverk_namn = input(\"Vad heter bakverket du vill lägga till? \")\n  pris = int(input(\"Vilket pris har bakverket?\"))\n  bakverk.append((bakverk_namn, pris))\n \ndef spara(bakverk, filnamn):\n  \"\"\"Skriver över alla bakverk till fil.\n  Parameter: bakverk (lista med tupler (bakverk, pris), (string, int))\n             filnamn (sträng) \n  Returnerar: Inget \"\"\"\n  utfil = open(filnamn, \"w\")\n  for element in bakverk:\n    utfil.write(element[0] + \"\\n\")\n    utfil.write(str(element[1]) + \"\\n\")\n  utfil.close()\n  \n\ndef huvudfunktion():\n  inlästa_bakverk = läsa_in(\"infil.txt\")\n  #print(inlästa_bakverk) utskrift för att visa datastrukturen\n  for bakverk in inlästa_bakverk:\n    print(bakverk[0], \" har priset \", bakverk[1],\" kr.\")\n  print(\"Nu vill vi lägga till ett bakverkt till sortementet.\")\n  lägga_till(inlästa_bakverk)\n  print(\"Nu ser listan ut så här.\")\n  for bakverk in inlästa_bakverk :\n    print(bakverk[0], \" har priset \", bakverk[1],\" kr.\")\n  spara(inlästa_bakverk, \"infil.txt\")\n  print(\"\\nProgrammet avslutas - kolla i infil.txt\")\n  \nhuvudfunktion()"
-    },
-    {
-      "name": "infil.txt",
-      "content": "kanelbulle\n35\nlussekatt\n20\nkladdkaka\n40\nmacaron\n10\n"
+      "content": "\ntal = \"23\"\ntry:\n  print(tal + 23)\n\nexcept TypeError:\n  print(tal, \"är inte en integer. \")\n\n"
     }
   ]
 }

@@ -1,9 +1,9 @@
 {
-  "title": "1.3 – Exempel 2 - Heltal och flyttal",
+  "title": "1.3 När det blir fel",
   "files": [
     {
       "name": "main.py",
-      "content": "print(\"\\nExempel 2 - Heltal och flyttal\")\ncelsius = 10                      #Du kan prova att ändra temperatur\nfarenheit = celsius * 1.8 + 32\nprint(celsius, \"grader Celsius motsvarar\", farenheit, \"grader Farenheit\")\nGRADERS_ÖKNING = 1                #Du kan ändra hur många grader tempraturen ökar med\ncelsius += GRADERS_ÖKNING \nfarenheit = celsius * 1.8 + 32\nprint(str(celsius) + \" grader Celsius motsvarar \" + str(farenheit) + \" grader Farenheit\")"
+      "content": "#Den här koden innehåller en hel del fel.\n#Kan du provköra den och rätta till de?\n\nprint(\"Exempel 3: När det blir fel\")\n\nprint(\"Först vill jag sätta en variabel till värdet \" + 5 + \", mitt lyckotal\")\ntal = 5\n\nprint(\"Nu ska vi se att det lyckades, min variabel tal är: \" + str(tal))\nprint(\"Sedan vill jag dubblera mitt tal\")\n\nnytt_tal = taal*2\nprint(\"Mitt nya tal är då: \" + str (nytt_tal)\n\n#Prova gärna att göra samma sak i det redigeringsprogram du använder (t.ex. IDLE) \n#och se hur presentationen av felen ser ut där."
     }
   ]
 }

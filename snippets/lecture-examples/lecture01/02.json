@@ -1,9 +1,9 @@
 {
-  "title": "1.2 – Input och print",
+  "title": "1.2",
   "files": [
     {
       "name": "main.py",
-      "content": "antal_husdjur = int(input(\"Hur många husdjur har du?\"))\nprint(\"Ok, det var ju inte så imponerande, jag har\", antal_husdjur + 1 , \" husdjur\")"
+      "content": "tal = int(input(\"Tänk på ett tal\"))\ntal += 1 #Läger till ett\nprint(\"Nu har vi lagt till 1 så talet är:\", tal)"
     }
   ]
 }

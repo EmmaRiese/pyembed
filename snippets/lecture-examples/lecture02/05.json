@@ -1,9 +1,9 @@
 {
-  "title": "2.5 – While slinga med input och .lower()",
+  "title": "2.5",
   "files": [
     {
       "name": "main.py",
-      "content": "fortsätt = \"ja\"\nwhile fortsätt == \"ja\":\n\tfortsätt = input(\"Vill du fortsätta? \")\n\tfortsätt = fortsätt.lower()\n\t\nprint(\"avslutas\")"
+      "content": "fortsätt = \"ja\"\nwhile fortsätt == \"ja\":\n\tfortsätt = input(\"Vill du fortsätta? \")"
     }
   ]
 }

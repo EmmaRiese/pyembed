@@ -1,9 +1,9 @@
 {
-  "title": "8.8 – Exception Handling: TypeError",
+  "title": "8.8",
   "files": [
     {
       "name": "main.py",
-      "content": "\ntal = \"23\"\ntry:\n  print(tal + 23)\n\nexcept TypeError:\n  print(tal, \"är inte en integer. \")\n\n"
+      "content": "def meny():\n  val = \"\"\n  while val != \"2\":\n    print(\"Meny\\n1. Val 1.\\n2. Avsluta.\")\n    val = input(\"Vad vill du göra?\")\n    if val == \"1\":\n      print(\"Du valde 1.\\n\")\n    elif val == \"2\":\n      print(\"Programmet avslutas\")\n    else:\n      print(\"Inte ett menyval, välj igen.\")\n\nmeny()"
     }
   ]
 }

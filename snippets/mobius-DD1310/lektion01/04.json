@@ -1,9 +1,9 @@
 {
-  "title": "1.4",
+  "title": "1.4 input",
   "files": [
     {
       "name": "main.py",
-      "content": "#Den här koden innehåller en hel del fel.\n#Kan du provköra den och rätta till de?\n\nprint(\"Exempel 3: När det blir fel\")\n\nprint(\"Först vill jag sätta en variabel till värdet \" + 5 + \", mitt lyckotal\")\ntal = 5\n\nprint(\"Nu ska vi se att det lyckades, min variabel tal är: \" + str(tal))\nprint(\"Sedan vill jag dubblera mitt tal\")\n\nnytt_tal = taal*2\nprint(\"Mitt nya tal är då: \" + str (nytt_tal)\n\n#Prova gärna att göra samma sak i det redigeringsprogram du använder (t.ex. IDLE) \n#och se hur presentationen av felen ser ut där."
+      "content": "# Exempel som visar hur man skickar in variabel med int.\nkattNummer = 3\nkattNamn = input(\"Ge namnet på katt nummer \" + str(kattNummer) + \": \")\n\nprint(\"Katt nummer\", kattNummer, \"heter\", kattNamn)\n#print(\"Katt nummer \"+str(kattNummer)+\" heter \"+str(kattNamn))  \n\n# Testa båda print-funktionerna genom att ta bort \"#\" framför printen i rad 6!\n\n# Raden här under kommer att ge ett felmeddelande och inte fungera:\nkattNamn = input(\"Ge namnet på katt nummer\", kattNummer, \": \") "
     }
   ]
 }

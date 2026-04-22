@@ -638,7 +638,7 @@
       document.body.appendChild(overlay);
 
       overlay.addEventListener('pointermove', (e) => {
-        const newH = Math.max(60, Math.min(800, startH - (e.clientY - startY)));
+        const newH = Math.max(60, Math.min(800, startH + (e.clientY - startY)));
         outputPanel.style.height = newH + 'px';
       });
       const endDrag = () => overlay.remove();

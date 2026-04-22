@@ -1,9 +1,9 @@
 {
-  "title": "13.5 – For Loop with range()",
+  "title": "13.5",
   "files": [
     {
       "name": "main.py",
-      "content": "matris = []\nfor i in range(1,4):\n  rad=[]\n  for j in range(1,4):\n    rad.append(j*i)\n  matris.append(rad)\nprint(matris)\n\nprint(matris[1][2])"
+      "content": "katter = {\"Lusse\": 3 , \"Smulan\": 8}\nprint(katter[\"Lusse\"]) # Ger oss värdet 3\n\n#Från nycklarna kommer vi åt värdena\nfor nyckel in katter.keys():\n\tprint(nyckel, \"har värdet\", katter[nyckel])\n\n#Men inte åt andra hållet, här ett exempel på att skriva ut värdena\t\nfor värdet in katter.values():\n  print(värdet)\n  \n#.items ger både nycklar och värden\nfor nyckel, värdet in katter.items():\n  print(nyckel, \"har värdet\", värdet)"
     }
   ]
 }

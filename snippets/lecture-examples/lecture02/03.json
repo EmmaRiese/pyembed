@@ -1,9 +1,9 @@
 {
-  "title": "2.3 – if / elif / else",
+  "title": "2.3 – Du valde inte en siffra 1-4.",
   "files": [
     {
       "name": "main.py",
-      "content": "antal_studenter = 9\nif antal_studenter < 147:\n\tprint(\"Alla är inte här\")\n\nif antal_studenter < 10:\n\tprint(\"Väldigt få är här\")\t\n\t\nelif antal_studenter > 147: #Annars om detta är sant\n\tprint(\"Det är fler närvarande här än vad som är registrerade\")\n\nelse:  # I alla andra fall\n\tprint(\"Alla är här\")\n"
+      "content": "val = input(\"Vad vill du göra ? Ange siffra 1-4\")\nwhile val != \"4\":\n\tif val == \"1\":\n\t\tprint(\"Du valde 1.\")\n\t\n\telse:\n                print(\"Du valde inte 1!\")\n\t\t\n\tif val == \"2\":\n                print(\"Du valde 2.\")\n\t\t\n\tif val == \"3\":\n                print(\"Du valde\", val)\n\t\n\telse:\n                print(\"Du valde inte en siffra 1-4.\")\n\t\t\n\tval = input(\"Vad vill du göra ? Ange siffra 1-4\")\nprint(\"Du valde 4. Hejdå!\")\n"
     }
   ]
 }

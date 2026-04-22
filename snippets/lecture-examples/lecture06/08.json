@@ -1,9 +1,9 @@
 {
-  "title": "6.8 – Math Module",
+  "title": "6.8",
   "files": [
     {
       "name": "main.py",
-      "content": "import math\n\nprint(math.sqrt(4))  #.sqrt() är en funktion för kvadratroten ur som finns i math modulen\n\nprint(math.pi)       #En konstant pi, definierad i modulen \n\n\nprint(math.pow(3, 4)) # 3 upphöjt till 4 "
+      "content": "from random import randint\nslag1 = randint(1,6)\nslag2 = randint(1,6)\nprint(\"Du slog \" + str(slag1) + \" och \" + str(slag2) + \" på tärningarna\")\n"
     }
   ]
 }

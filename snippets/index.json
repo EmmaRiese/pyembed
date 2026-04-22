@@ -1011,32 +1011,32 @@
         {
           "id": "mobius-dd1310-01-01",
           "file": "mobius-DD1310/lektion01/01.json",
-          "title": "1.1"
+          "title": "1.1 – Strängar, print och kommentarer"
         },
         {
           "id": "mobius-dd1310-01-02",
           "file": "mobius-DD1310/lektion01/02.json",
-          "title": "1.2"
+          "title": "1.2 – Heltal och flyttal"
         },
         {
           "id": "mobius-dd1310-01-03",
           "file": "mobius-DD1310/lektion01/03.json",
-          "title": "1.3 – Exempel 2 - Heltal och flyttal"
+          "title": "1.3 När det blir fel"
         },
         {
           "id": "mobius-dd1310-01-04",
           "file": "mobius-DD1310/lektion01/04.json",
-          "title": "1.4"
+          "title": "1.4 input"
         },
         {
           "id": "mobius-dd1310-01-05",
           "file": "mobius-DD1310/lektion01/05.json",
-          "title": "1.5 – Exempel 1 - Strängar"
+          "title": "1.5 Övning med input"
         },
         {
           "id": "mobius-dd1310-01-06",
           "file": "mobius-DD1310/lektion01/06.json",
-          "title": "1.6"
+          "title": "1.6 Felsökning"
         }
       ]
     },

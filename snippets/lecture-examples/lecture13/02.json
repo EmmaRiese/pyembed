@@ -1,9 +1,9 @@
 {
-  "title": "13.2 – Exception Handling: ValueError",
+  "title": "13.2",
   "files": [
     {
       "name": "main.py",
-      "content": "def är_postivit_heltal(inmatning):\n  try:\n    inmatning = int(inmatning)\n    if inmatning < 0:\n      raise ValueError\n    return True\n  except ValueError:\n    print(\"Inte en postiv siffra, försök igen.\")\n    return False\n\ndef meny():\n  val = 0\n  while val != 2:\n    print(\"Meny\\n1. Val 1.\\n2. Avsluta.\")\n    val = input(\"Vad vill du göra?\")\n    while not är_postivit_heltal(val):\n      val = input(\"Vad vill du göra?\")\n    val = int(val)\n    if val == 1:\n      print(\"Du valde 1.\\n\")\n      \n    elif val ==2:\n      print(\"Programmet avslutas\")\n      \n    else:\n       print(\"Fel siffra, välj igen.\")\n    \nmeny()\n\n"
+      "content": "ANTAL_FRUKTER = 3\n\ndef inmatning():\n  frukter_pris = {}\n  for i in range(ANTAL_FRUKTER):\n    frukt = input(\"Vilken frukt vill du lägga till?\")\n    pris =[None]*2\n    pris[0] = int(input(\"Vilket ordinarie pris? \"))\n    pris[1] = int(input(\"Vilket rea pris? \"))\n    frukter_pris[frukt] = pris\n  return frukter_pris\n\ndef mindre_fin_utskrift(frukter):\n  print(\"Mindre fin utskrift: \")\n  for frukt in frukter.keys():\n    print(frukt, \"har priserna\", frukter[frukt])\n  print()\n  \ndef fin_utskrift(frukter):\n  print(\"Bättre utskrift: \")\n  for frukt in frukter.keys():\n    print(frukt, \"har\", end=\" \")\n    print(\"ett ordinarie pris på\", frukter[frukt][0], \"kr.\", end=\" \")\n    print(frukt +\"s reapriset är \" + str(frukter[frukt][1])+\" kr.\")\n    print()\n    \ndef huvudfunktion():\n  frukt_dictonary = inmatning()\n  mindre_fin_utskrift(frukt_dictonary)\n  fin_utskrift(frukt_dictonary)\n  \nhuvudfunktion()"
     }
   ]
 }

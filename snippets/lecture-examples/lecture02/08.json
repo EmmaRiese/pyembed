@@ -1,9 +1,9 @@
 {
-  "title": "2.8 – While-slinga med meny (if/else)",
+  "title": "2.8",
   "files": [
     {
       "name": "main.py",
-      "content": "val = input(\"Vad vill du göra ? Ange siffra 1-4\")\nwhile val != \"4\":\n\tif val == \"1\":\n\t\tprint(\"Du valde 1.\")\n\telse:\n\t\tprint(\"Du valde inte 1!\")\n\t\n\tif val == \"2\":\n\t\tprint(\"Du valde 2.\")\n\t\n\tif val == \"3\":\n\t\tprint(\"Du valde\", val)\n\telse:\n\t\tprint(\"Du valde inte en siffra 1-4.\")\n\t\n\tval = input(\"Vad vill du göra ? Ange siffra 1-4\")\nprint(\"Du valde 4. Hejdå!\")"
+      "content": "antal_studenter = 126\nif antal_studenter < 147:\n\tprint(\"Alla är inte här\")\n\nelse:  # I alla andra fall\n\tprint(\"Alla är här\")\n"
     }
   ]
 }

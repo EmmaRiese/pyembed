@@ -1,9 +1,9 @@
 {
-  "title": "3.3 – for-slingor och listor",
+  "title": "3.3",
   "files": [
     {
       "name": "main.py",
-      "content": "frukter = [\"äpple\",\"päron\",\"körsbär\",\"mango\"]\nfor frukt in frukter:\n    print(frukt, end =\" \")"
+      "content": "frukter =[\"äpple\",\"päron\",\"körsbär\",\"mango\"]\nprint(frukter[3])\n\nfrukter[3] = \"apelsin\" #ändrar värdet på index 3\nprint(frukter)"
     }
   ]
 }

@@ -1,9 +1,9 @@
 {
-  "title": "15.2 – Example 2",
+  "title": "15.2",
   "files": [
     {
       "name": "main.py",
-      "content": "print('{} {}'.format('ett', 'två'))\nantal = 2\nprint('{}{}'.format('antal= ', antal))\n\n\n\n"
+      "content": "print(\"Svårläst tabell: \")\nfor n in range(10):\n  print(n, n**2, n**3, n**4)\n\nprint()\nprint(\"Finare tabell: \")\nfor n in range(10):\n  print(\"{}\".format(n), \"{:>3}\".format(n**2), \\\n  \"{:>4}\".format(n**3), \"{:>5}\".format(n**4))\n"
     }
   ]
 }

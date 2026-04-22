@@ -1,9 +1,9 @@
 {
-  "title": "2.10 – Flyttalsprecision med while",
+  "title": "2.10",
   "files": [
     {
       "name": "main.py",
-      "content": "tal = 0.0\nwhile abs(tal - 1.0) > 0.000001:\n\tprint(tal)\n\ttal += 0.1"
+      "content": "fortsätt = \"ja\"\nwhile fortsätt == \"ja\":\n\tfortsätt = input(\"Vill du fortsätta? \")\n\tfortsätt = fortsätt.lower()\n\t\nprint(\"avslutas\")"
     }
   ]
 }

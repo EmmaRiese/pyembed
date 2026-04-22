@@ -1,9 +1,9 @@
 {
-  "title": "1.1",
+  "title": "1.1 – Strängar, print och kommentarer",
   "files": [
     {
       "name": "main.py",
-      "content": "ålder = input(\"Hur gamal är du? \")\n\nprint(\"Då fyller du snart\", ålder + 1, \"år.\")"
+      "content": "#Här brukar man kommentera med namn på den/de som skrivit koden.\n#Vilket datum koden skrevs eller vilken version det är.\n#Är den inlämning, även med kurskoden.\n\nprint(\"Exempel 1 - Strängar\")\nFAVORITGLASS = \"Piggelin\"          #Här kan du ändra till din favoritglass\npåstående = FAVORITGLASS + \" är den godaste glassen!\"\nprint(påstående)\nprint(\"Om jag kodar hela förmiddagen får jag en \" + FAVORITGLASS + \" efter lunch.\", end = \" \")\nprint(\"Men om jag också städar i eftermiddag får jag åtminstånde en\", FAVORITGLASS, \"till!\")"
     }
   ]
 }
