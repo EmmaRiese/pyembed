@@ -1301,17 +1301,26 @@
       "folder": "mobius-DD1310/lektion07",
       "snippets": [
         {
-          "id": "mobius-dd1310-07-01",
+          "file": "mobius-DD1310/lektion07/04.json",
+          "title": "7.4"
+        },
+        {
+          "file": "mobius-DD1310/lektion07/05.json",
+          "title": "7.5"
+        },
+        {
           "file": "mobius-DD1310/lektion07/01.json",
           "title": "7.1"
         },
         {
-          "id": "mobius-dd1310-07-02",
           "file": "mobius-DD1310/lektion07/02.json",
           "title": "7.2"
         },
         {
-          "id": "mobius-dd1310-07-03",
+          "file": "mobius-DD1310/lektion07/06.json",
+          "title": "7.6"
+        },
+        {
           "file": "mobius-DD1310/lektion07/03.json",
           "title": "7.3"
         }
