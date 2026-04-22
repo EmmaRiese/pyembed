@@ -1,9 +1,9 @@
 {
-  "title": "6.5",
+  "title": "6.5 Iteration och rekursion",
   "files": [
     {
       "name": "main.py",
-      "content": "import turtle\n\ndef star(myTurtle, size,color):\n    myTurtle.color(color)      #sätter färgen på linjen\n    myTurtle.fillcolor(color)  #sätter färgen på fyllningen\n    myTurtle.begin_fill()      #sätter startpunkt för fyllningen\n    angle = 144             \n    for i in range(5):         #fem hörn\n        myTurtle.forward(size) #Gå framåt\n        myTurtle.right(angle)  #vrid åt höger\n    myTurtle.end_fill()        #avsluta fyllning\n    \ndef main(): \n  myTurtle = turtle.Turtle()  #skapar en sköldpadda\n  myTurtle.shape(\"turtle\")    #sätter sköldpaddan till att ta formen av sköldpadda\n  star(myTurtle, 100, \"blue\") #anropar vår funktion för att ritar en stjärna\n  myTurtle.penup()            #lyfter upp pennan så ingen linje ritas\n  myTurtle.goto(70,-100)      #går till koordinaten (70,-100)\n  myTurtle.pendown()          #sätter ner pennan\n  star(myTurtle, 70, \"green\") #anropar vår funktion för att rita en stjärna\n  \nmain()\n"
+      "content": "\ndef fakultet_iteration(tal):\n  \"\"\"Här använder vi en for-slinga för att räkna ut n! (fakultet av ett tal).\n  Inparameter: tal (heltal)\n  Returvärde: resultat (heltal)\"\"\"\n  resultat = 1\n  for i in range(1, tal + 1):\n    resultat *= i\n  return resultat\n\n\ndef fakultet_rekursion(tal):  \n  \"\"\"Här använder vi rekursion för att räkna ut n! (fakultet av ett tal).\n  Inparameter: tal (heltal)\n  Returvärde: resultat (heltal)\"\"\"\n  if tal == 1:\n    return 1 #Vårt bas-fall\n  else:\n    return tal * fakultet_rekursion(tal - 1) #Vårt rekursion-steg, vi använder att n! = n * (n-1)!\n\ndef huvudfunktion():\n  valt_tal = int(input(\"Vilket tal vill du räkna fakultet av? \"))\n  print(\"Fakultet med iteration: \", fakultet_iteration(valt_tal))\n  print(\"Fakultet med rekursion: \", fakultet_rekursion(valt_tal))\n\nhuvudfunktion()"
     }
   ]
 }

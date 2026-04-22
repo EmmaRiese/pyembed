@@ -1,9 +1,9 @@
 {
-  "title": "6.6",
+  "title": "6.6 Övning med slumptal",
   "files": [
     {
       "name": "main.py",
-      "content": "i = 0\n\ndef fib(n):\n  global i #För att i ska vara en global variabel som vi ska kunna ändra även i funkionen\n  # din kod in här\n  if n < 2:\n    return n\n  else:\n    return fib(n-1) + fib(n-2)\n  \nprint(\"Fib: \" + str(fib(4)))\nprint(\"Antal anrop: \" + str(i))"
+      "content": "from random import choice\n\ndef slumpa_från_lista(lista):\n  if not lista:\n    return \"Listan är tom, det finns inget att slumpa.\"\n\n  #Använd choice för att slumpa fram ett element ur listan\n  return #returnera det slumade elementet\n\ndef test_kör():\n  min_lista = [\"äpple\", \"banan\", \"körsbär\", \"apelsin\", \"mango\"]\n  slumpat_resultat = slumpa_från_lista(min_lista)\n  print(\"Slumpat element från listan:\", slumpat_resultat)"
     }
   ]
 }

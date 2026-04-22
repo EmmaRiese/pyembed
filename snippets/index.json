@@ -1266,32 +1266,32 @@
         {
           "id": "mobius-dd1310-06-01",
           "file": "mobius-DD1310/lektion06/01.json",
-          "title": "6.1"
+          "title": "6.1 Rekursion - hur många anrop bli det?"
         },
         {
           "id": "mobius-dd1310-06-02",
           "file": "mobius-DD1310/lektion06/02.json",
-          "title": "6.2"
+          "title": "6.2 Importera modulen math"
         },
         {
           "id": "mobius-dd1310-06-03",
           "file": "mobius-DD1310/lektion06/03.json",
-          "title": "6.3"
+          "title": "6.3 Turtle-modulen för att rita"
         },
         {
           "id": "mobius-dd1310-06-04",
           "file": "mobius-DD1310/lektion06/04.json",
-          "title": "6.4"
+          "title": "6.4 Yatzy, ett större exempel med random"
         },
         {
           "id": "mobius-dd1310-06-05",
           "file": "mobius-DD1310/lektion06/05.json",
-          "title": "6.5"
+          "title": "6.5 Iteration och rekursion"
         },
         {
           "id": "mobius-dd1310-06-06",
           "file": "mobius-DD1310/lektion06/06.json",
-          "title": "6.6"
+          "title": "6.6 Övning med slumptal"
         }
       ]
     },

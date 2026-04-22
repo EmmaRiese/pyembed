@@ -1,9 +1,9 @@
 {
-  "title": "6.2",
+  "title": "6.2 Importera modulen math",
   "files": [
     {
       "name": "main.py",
-      "content": "from random import choice\n\ndef slumpa_från_lista(lista):\n  if not lista:\n    return \"Listan är tom, det finns inget att slumpa.\"\n\n  #Använd choice för att slumpa fram ett element ur listan\n  return #returnera det slumade elementet\n\ndef test_kör():\n  min_lista = [\"äpple\", \"banan\", \"körsbär\", \"apelsin\", \"mango\"]\n  slumpat_resultat = slumpa_från_lista(min_lista)\n  print(\"Slumpat element från listan:\", slumpat_resultat)"
+      "content": "import math\n\ndef areaCirkel(radien):\n  area = math.pow(radien, 2) * math.pi\n  return area\n  \ndef huvudprogram():\n  radie = int(input(\"Vilken radie har cirkeln du vill beräkna arean av? \"))\n  area = areaCirkel(radie)\n  print(\"Arean av cirkeln med radien\", radie, \"längdenheter är:\", round(area, 2), \"areaenheter\")\n  #round används för att avrunda ett flyttal till ett visst antal decimaler, i detta fall 2.\nhuvudprogram()\n"
     }
   ]
 }
