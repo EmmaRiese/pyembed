@@ -901,10 +901,6 @@
           "title": "4.16"
         },
         {
-          "file": "mobius-DD100N/lesson04/19.json",
-          "title": "4.17"
-        },
-        {
           "id": "mobius-dd100n-04-17",
           "file": "mobius-DD100N/lesson04/17.json",
           "title": "4.17"
@@ -913,6 +909,10 @@
           "id": "mobius-dd100n-04-18",
           "file": "mobius-DD100N/lesson04/18.json",
           "title": "4.18"
+        },
+        {
+          "file": "mobius-DD100N/lesson04/19.json",
+          "title": "4.17"
         }
       ]
     },
@@ -921,18 +921,6 @@
       "name": "Möbius DD100N – Lesson 5",
       "folder": "mobius-DD100N/lesson05",
       "snippets": [
-        {
-          "file": "mobius-DD100N/lesson05/09.json",
-          "title": "5.1"
-        },
-        {
-          "file": "mobius-DD100N/lesson05/10.json",
-          "title": "5.2"
-        },
-        {
-          "file": "mobius-DD100N/lesson05/11.json",
-          "title": "5.3"
-        },
         {
           "id": "mobius-dd100n-05-01",
           "file": "mobius-DD100N/lesson05/01.json",
@@ -954,10 +942,6 @@
           "title": "5.4"
         },
         {
-          "file": "mobius-DD100N/lesson05/12.json",
-          "title": "5.8"
-        },
-        {
           "id": "mobius-dd100n-05-05",
           "file": "mobius-DD100N/lesson05/05.json",
           "title": "5.5"
@@ -976,6 +960,22 @@
           "id": "mobius-dd100n-05-08",
           "file": "mobius-DD100N/lesson05/08.json",
           "title": "5.8"
+        },
+        {
+          "file": "mobius-DD100N/lesson05/09.json",
+          "title": "5.1"
+        },
+        {
+          "file": "mobius-DD100N/lesson05/10.json",
+          "title": "5.2"
+        },
+        {
+          "file": "mobius-DD100N/lesson05/11.json",
+          "title": "5.3"
+        },
+        {
+          "file": "mobius-DD100N/lesson05/12.json",
+          "title": "5.8"
         }
       ]
     },
@@ -984,14 +984,6 @@
       "name": "Möbius DD100N – Lesson 6",
       "folder": "mobius-DD100N/lesson06",
       "snippets": [
-        {
-          "file": "mobius-DD100N/lesson06/06.json",
-          "title": "6.1"
-        },
-        {
-          "file": "mobius-DD100N/lesson06/07.json",
-          "title": "6.2"
-        },
         {
           "id": "mobius-dd100n-06-01",
           "file": "mobius-DD100N/lesson06/01.json",
@@ -1016,6 +1008,14 @@
           "id": "mobius-dd100n-06-05",
           "file": "mobius-DD100N/lesson06/05.json",
           "title": "6.5"
+        },
+        {
+          "file": "mobius-DD100N/lesson06/06.json",
+          "title": "6.1"
+        },
+        {
+          "file": "mobius-DD100N/lesson06/07.json",
+          "title": "6.2"
         },
         {
           "file": "mobius-DD100N/lesson06/08.json",
@@ -1300,8 +1300,24 @@
       "folder": "mobius-DD1310/lektion06",
       "snippets": [
         {
-          "file": "mobius-DD1310/lektion06/07.json",
-          "title": "6.1"
+          "id": "mobius-dd1310-06-01",
+          "file": "mobius-DD1310/lektion06/01.json",
+          "title": "6.1 Rekursion - hur många anrop bli det?"
+        },
+        {
+          "id": "mobius-dd1310-06-02",
+          "file": "mobius-DD1310/lektion06/02.json",
+          "title": "6.2 Importera modulen math"
+        },
+        {
+          "id": "mobius-dd1310-06-03",
+          "file": "mobius-DD1310/lektion06/03.json",
+          "title": "6.3 Turtle-modulen för att rita"
+        },
+        {
+          "id": "mobius-dd1310-06-04",
+          "file": "mobius-DD1310/lektion06/04.json",
+          "title": "6.4 Yatzy, ett större exempel med random"
         },
         {
           "id": "mobius-dd1310-06-05",
@@ -1314,24 +1330,8 @@
           "title": "6.6 Övning med slumptal"
         },
         {
-          "id": "mobius-dd1310-06-04",
-          "file": "mobius-DD1310/lektion06/04.json",
-          "title": "6.4 Yatzy, ett större exempel med random"
-        },
-        {
-          "id": "mobius-dd1310-06-03",
-          "file": "mobius-DD1310/lektion06/03.json",
-          "title": "6.3 Turtle-modulen för att rita"
-        },
-        {
-          "id": "mobius-dd1310-06-01",
-          "file": "mobius-DD1310/lektion06/01.json",
-          "title": "6.1 Rekursion - hur många anrop bli det?"
-        },
-        {
-          "id": "mobius-dd1310-06-02",
-          "file": "mobius-DD1310/lektion06/02.json",
-          "title": "6.2 Importera modulen math"
+          "file": "mobius-DD1310/lektion06/07.json",
+          "title": "6.1"
         }
       ]
     },
@@ -1341,14 +1341,6 @@
       "folder": "mobius-DD1310/lektion07",
       "snippets": [
         {
-          "file": "mobius-DD1310/lektion07/04.json",
-          "title": "7.4"
-        },
-        {
-          "file": "mobius-DD1310/lektion07/011.json",
-          "title": "7.1 Läsa in data från en .txt"
-        },
-        {
           "file": "mobius-DD1310/lektion07/01.json",
           "title": "7.1"
         },
@@ -1357,12 +1349,20 @@
           "title": "7.2"
         },
         {
+          "file": "mobius-DD1310/lektion07/03.json",
+          "title": "7.3"
+        },
+        {
+          "file": "mobius-DD1310/lektion07/04.json",
+          "title": "7.4"
+        },
+        {
           "file": "mobius-DD1310/lektion07/06.json",
           "title": "7.6"
         },
         {
-          "file": "mobius-DD1310/lektion07/03.json",
-          "title": "7.3"
+          "file": "mobius-DD1310/lektion07/011.json",
+          "title": "7.1 Läsa in data från en .txt"
         }
       ]
     },
@@ -1399,10 +1399,6 @@
       "folder": "mobius-DD1310/lektion09",
       "snippets": [
         {
-          "file": "mobius-DD1310/lektion09/06.json",
-          "title": "9.1"
-        },
-        {
           "id": "mobius-dd1310-09-01",
           "file": "mobius-DD1310/lektion09/01.json",
           "title": "9.1"
@@ -1426,6 +1422,10 @@
           "id": "mobius-dd1310-09-05",
           "file": "mobius-DD1310/lektion09/05.json",
           "title": "9.5"
+        },
+        {
+          "file": "mobius-DD1310/lektion09/06.json",
+          "title": "9.1"
         }
       ]
     },
@@ -1467,17 +1467,17 @@
       "folder": "mobius-DD1310/lektion11",
       "snippets": [
         {
+          "id": "mobius-dd1310-11-01",
+          "file": "mobius-DD1310/lektion11/01.json",
+          "title": "11.1"
+        },
+        {
           "file": "mobius-DD1310/lektion11/02.json",
           "title": "11.1"
         },
         {
           "file": "mobius-DD1310/lektion11/03.json",
           "title": "11.2"
-        },
-        {
-          "id": "mobius-dd1310-11-01",
-          "file": "mobius-DD1310/lektion11/01.json",
-          "title": "11.1"
         }
       ]
     },
