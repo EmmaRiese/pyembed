@@ -1,9 +1,9 @@
 {
-  "title": "5.11",
+  "title": "5.11 Ett program med ett huvudprogram",
   "files": [
     {
       "name": "main.py",
-      "content": "def beräknaLöneKostnader(antalAnställda): \n  return antalAnställda * 30000 #alla på företaget kostar 30000 att anställa per månad, praktiskt!\n\ndef beräknaLokalKostnader(area, antalKaffemaskiner): \n  summa = area * 5000 \n  summa = summa + antalKaffemaskiner * 500 \n  return summa\n  \ndef beräknaSlutresultat(kostnadLön, kostnadlokal):\n  summa = kostnadLön + kostnadlokal\n  return summa\n  \nlöneKostnader = beräknaLöneKostnader(19) \nlokalKostnader = beräknaLokalKostnader(214, 300) \ntotalaKostnader = beräknaSlutresultat(löneKostnader, lokalKostnader) \nprint(\"Totala kostnader för lokal och personal är  \" + str(totalaKostnader) + \" i månaden\")"
+      "content": "def skapa_lista():\n  glasslista = [\"vaniljglass\", \"jordgubbsglass\", \"chokladglass\"]\n  return glasslista\n  \ndef ny_smak(glasslista):\n  glasslista.append(\"hallonglass\")\n  glasslista.append(\"blåbärsglass\")\n  return glasslista\n  \ndef ta_bort(glasslista, smak):\n  glasslista.remove(smak)\n  return glasslista\n\ndef huvudprogram():\n  glassar = skapa_lista()\n  med_nya_smaker = ny_smak(glassar)\n  uppdaterad_lista = ta_bort(med_nya_smaker, \"hallonglass\")\n  sorterad_lista = sorted(uppdaterad_lista)\n  print(sorterad_lista)"
     }
   ]
 }

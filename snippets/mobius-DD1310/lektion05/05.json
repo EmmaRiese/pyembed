@@ -1,9 +1,9 @@
 {
-  "title": "5.5",
+  "title": "5.5 default-parametrar",
   "files": [
     {
       "name": "main.py",
-      "content": "def skrik(meddelande): \n  print(meddelande+\"!!!\") \n\nskrik(\"Shhhh\")\nskrik(\"Tyst i klassen\")"
+      "content": "def dörrvakt(namn, ålder, åldersgräns = 18): \n  if ålder < åldersgräns: \n    print(\"Tyvärr \" + namn + \", du får vänta tills du är\", åldersgräns, \".\") \n    \n  else: \n    print(\"Välkommen in \" + namn) \n  \ndörrvakt(\"Nisse\", 22)"
     }
   ]
 }

@@ -1204,57 +1204,57 @@
         {
           "id": "mobius-dd1310-05-01",
           "file": "mobius-DD1310/lektion05/01.json",
-          "title": "5.1"
+          "title": "5.1 Funktionsdefinition"
         },
         {
           "id": "mobius-dd1310-05-02",
           "file": "mobius-DD1310/lektion05/02.json",
-          "title": "5.2"
+          "title": "5.2 Funktion med parameter"
         },
         {
           "id": "mobius-dd1310-05-03",
           "file": "mobius-DD1310/lektion05/03.json",
-          "title": "5.3"
+          "title": "5.3 Flera parametrar"
         },
         {
           "id": "mobius-dd1310-05-04",
           "file": "mobius-DD1310/lektion05/04.json",
-          "title": "5.4"
+          "title": "5.4 Funktion med returvärde"
         },
         {
           "id": "mobius-dd1310-05-05",
           "file": "mobius-DD1310/lektion05/05.json",
-          "title": "5.5"
+          "title": "5.5 default-parametrar"
         },
         {
           "id": "mobius-dd1310-05-06",
           "file": "mobius-DD1310/lektion05/06.json",
-          "title": "5.6"
+          "title": "5.6 Flera default-parametrar och olika typer av funktionsanrop"
         },
         {
           "id": "mobius-dd1310-05-07",
           "file": "mobius-DD1310/lektion05/07.json",
-          "title": "5.7"
+          "title": "5.7 Inbyggda default-parametrar"
         },
         {
           "id": "mobius-dd1310-05-08",
           "file": "mobius-DD1310/lektion05/08.json",
-          "title": "5.8"
+          "title": "5.8 Global och lokala variabler"
         },
         {
           "id": "mobius-dd1310-05-09",
           "file": "mobius-DD1310/lektion05/09.json",
-          "title": "5.9"
+          "title": "5.9 En global lista - en svår kodstruktur att felsöka i"
         },
         {
           "id": "mobius-dd1310-05-10",
           "file": "mobius-DD1310/lektion05/10.json",
-          "title": "5.10"
+          "title": "5.10 Returvärden och inparametrar för bättre kodstruktur"
         },
         {
           "id": "mobius-dd1310-05-11",
           "file": "mobius-DD1310/lektion05/11.json",
-          "title": "5.11"
+          "title": "5.11 Ett program med ett huvudprogram"
         }
       ]
     },

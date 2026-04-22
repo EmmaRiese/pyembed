@@ -1,9 +1,9 @@
 {
-  "title": "5.3",
+  "title": "5.3 Flera parametrar",
   "files": [
     {
       "name": "main.py",
-      "content": "def skapa_djurlista():\n  djur = [\"katt\",\"hund\",\"häst\", \"marsvin\"]\n  return djur\n  \ndjuren = skapa_djurlista()\n\nfor djur in djuren:\n  print(djur)\n  \nfor djur in djuren:\n  print(djur, end =\"!!! \")"
+      "content": "def dörrvakt(namn, ålder): \n  if ålder < 18: \n    print(\"Tyvärr \" + namn + \", du får vänta tills du är 18\") \n    \n  else: \n    print(\"Välkommen in \" + namn) \n  \ndörrvakt(\"Nisse\", 17)"
     }
   ]
 }

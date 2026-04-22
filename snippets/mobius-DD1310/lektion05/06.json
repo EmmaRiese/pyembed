@@ -1,9 +1,9 @@
 {
-  "title": "5.6",
+  "title": "5.6 Flera default-parametrar och olika typer av funktionsanrop",
   "files": [
     {
       "name": "main.py",
-      "content": "def dörrvakt(namn, ålder): \n  if ålder < 18: \n    print(\"Tyvärr \" + namn + \", du får vänta tills du är 18\") \n    \n  else: \n    print(\"Välkommen in \" + namn) \n  \ndörrvakt(\"Nisse\", 17)"
+      "content": "def dörrvakt(namn = \"Alex\", ålder = 17, åldersgräns = 18): \n  if ålder < åldersgräns: \n    print(\"Tyvärr \" + namn + \", du får vänta tills du är\", åldersgräns, \".\") \n    \n  else: \n    print(\"Välkommen in \" + namn) \n  \ndörrvakt(\"Nisse\", 22)\ndörrvakt()\ndörrvakt(ålder = 16, åldersgräns = 20)\ndörrvakt(\"Chris\", 14, 15)"
     }
   ]
 }
