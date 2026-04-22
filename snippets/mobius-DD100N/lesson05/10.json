@@ -1,0 +1,13 @@
+{
+  "title": "5.2",
+  "files": [
+    {
+      "name": "frukter.txt",
+      "content": "mango\näpple\ngrapefrukt"
+    },
+    {
+      "name": "main.py",
+      "content": "def läs_från_fil(filnamn):\n    \"\"\"Öppna filen för läsning och returnerar innehållet\n    inparameter: filnamn (str)\n    returvärde: lista (list)\n    \"\"\"\n    with open(filnamn, \"r\") as fil:\n        innehåll = fil.read()\n        lista = innehåll.split()\n        return lista\n\ndef skriv_till_fil(filnamn, data):\n    \"\"\"Öppna filen för skrivniing och skriver ut data på filen \n    inparameter: filnamn (str)\n                 data (lista)\n    returvärde: inget\n    \"\"\"\n    with open(filnamn, \"w\") as fil:\n        # Skriv varje frukt till filen på en separat rad\n        for frukt in data:\n            fil.write(frukt + \"\\n\")\n\ndef main():\n  frukter = läs_från_fil(\"frukter.txt\")\n  frukter.append(\"apelsin\")\n  skriv_till_fil(\"frukter.txt\", frukter)\n\nmain()"
+    }
+  ]
+}
