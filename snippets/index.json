@@ -1628,6 +1628,24 @@
           "title": "6.5"
         }
       ]
+    },
+    {
+      "folder": "dd1320/automater",
+      "name": "DD1320 – Automater",
+      "snippets": [
+        {
+          "file": "dd1320/automater/01.json",
+          "title": "Automater 1.1"
+        },
+        {
+          "file": "dd1320/automater/02.json",
+          "title": "Automater 1.2"
+        },
+        {
+          "file": "dd1320/automater/03.json",
+          "title": "Automater 1.3"
+        }
+      ]
     }
   ]
 }
