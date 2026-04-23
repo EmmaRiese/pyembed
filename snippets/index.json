@@ -1630,19 +1630,19 @@
       ]
     },
     {
-      "folder": "dd1320/automater",
+      "folder": "dd1320/1",
       "name": "DD1320 – Automater",
       "snippets": [
         {
-          "file": "dd1320/automater/01.json",
+          "file": "dd1320/1/01.json",
           "title": "Automater 1.1"
         },
         {
-          "file": "dd1320/automater/02.json",
+          "file": "dd1320/1/02.json",
           "title": "Automater 1.2"
         },
         {
-          "file": "dd1320/automater/03.json",
+          "file": "dd1320/1/03.json",
           "title": "Automater 1.3"
         }
       ]

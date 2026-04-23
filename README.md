@@ -148,7 +148,7 @@ Converts source folders of `.py` files (and multi-file subfolders) into snippet 
 │   ├── tutorials-DD1310/
 │   │   ├── tutorial01/ … tutorial04/
 │   └── dd1320/
-│       └── automater/
+│       └── 1/
 ├── .nojekyll                   ← disables Jekyll on GitHub Pages
 └── README.md
 ```
