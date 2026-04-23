@@ -3,7 +3,7 @@
   "files": [
     {
       "name": "main.py",
-      "content": "def skriv_till_fil(lista,filnam):\n  \"\"\"Skriv ut varje frukt som finns i variaben lista på filen med namnet som finns i parametern filnamn.\"\"\"\n  \ndef huvudfunktion():\n  frukt = [\"äpple\",\"mango\",\"päron\",\"körsbär\",\"blåbär\",\"lingon\",\"tranbär\"]\n  skriv_till_fil(frukter, \"frukter.txt\")\n\nhuvudfunktion() "
+      "content": "def skriv_till_fil(lista, filnamn):\n  \"\"\"Skriv ut varje element i lista på filen med namnet filnamn, ett element per rad.\"\"\"\n  \ndef huvudfunktion():\n  frukt = [\"äpple\", \"mango\", \"päron\", \"körsbär\", \"blåbär\", \"lingon\", \"tranbär\"]\n  skriv_till_fil(frukt, \"frukter.txt\")\n\nhuvudfunktion()"
     },
     {
       "name": "frukter.txt",
