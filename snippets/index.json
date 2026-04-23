@@ -34,22 +34,22 @@
         {
           "id": "lecture01-01",
           "file": "lecture-examples/lecture01/01.json",
-          "title": "1.1"
+          "title": "1.1 Välkomna!"
         },
         {
           "id": "lecture01-02",
           "file": "lecture-examples/lecture01/02.json",
-          "title": "1.2"
+          "title": "1.2 Antal husdjur"
         },
         {
           "id": "lecture01-03",
           "file": "lecture-examples/lecture01/03.json",
-          "title": "1.3"
+          "title": "1.3 Inmatning av heltal"
         },
         {
           "id": "lecture01-04",
           "file": "lecture-examples/lecture01/04.json",
-          "title": "1.4"
+          "title": "1.4 Gissningslek"
         }
       ]
     },
