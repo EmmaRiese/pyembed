@@ -1,9 +1,9 @@
 {
-  "title": "4.12",
+  "title": "4.12 Rekursion - hur många anrop bli det?",
   "files": [
     {
       "name": "main.py",
-      "content": "def beräknaLöneKostnader(antalAnställda): \n  return antalAnställda * 30000 #alla på företaget kostar 30000 att anställa per månad, praktiskt!\n\ndef beräknaLokalKostnader(area, antalKaffemaskiner): \n  summa = area * 5000 \n  summa = summa + antalKaffemaskiner * 500 \n  return summa\n  \ndef beräknaSlutresultat(kostnadLön, kostnadlokal):\n  summa = kostnadLön + kostnadlokal\n  return summa\n  \nlöneKostnader = beräknaLöneKostnader(19) \nlokalKostnader = beräknaLokalKostnader(214, 300) \ntotalaKostnader = beräknaSlutresultat(löneKostnader, lokalKostnader) \nprint(\"Totala kostnader för lokal och personal är  \" + str(totalaKostnader) + \" i månaden\")"
+      "content": "i = 0\n\ndef fib(n):\n  global i #För att i ska vara en global variabel som vi ska kunna ändra även i funkionen\n  # din kod in här\n  if n < 2:\n    return n\n  else:\n    return fib(n-1) + fib(n-2)\n  \nprint(\"Fib: \" + str(fib(4)))\nprint(\"Antal anrop: \" + str(i))"
     }
   ]
 }

@@ -1,9 +1,9 @@
 {
-  "title": "4.8",
+  "title": "4.8 Global och lokala variabler",
   "files": [
     {
       "name": "main.py",
-      "content": "def skapa_djurlista():\n  djur = [\"katt\",\"hund\",\"häst\", \"marsvin\"]\n  return djur\n  \ndjuren = skapa_djurlista()\n\nfor djur in djuren:\n  print(djur)\n  \nfor djur in djuren:\n  print(djur, end =\"!!! \")"
+      "content": "def skapa_lista():\n  glasslista = [\"vaniljglass, jordgubsglass, chokladglass\"]\n  print(glasslista)\n  \nskapa_lista()\nprint(glasslista)"
     }
   ]
 }

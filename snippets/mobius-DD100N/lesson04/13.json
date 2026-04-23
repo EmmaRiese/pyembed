@@ -1,9 +1,9 @@
 {
-  "title": "4.13",
+  "title": "4.13 Importera modulen math",
   "files": [
     {
       "name": "main.py",
-      "content": "import random #importerar random modulen\n\n\ndef slumpa_tal(min_värde, max_värde):\n  \"\"\"Vår egna funktion som slumpar ett tal.\n  Inparameter: min_värde (int), max_värde (int)\n  returnerar: tal(int) - det slumpade talet\"\"\" #Det är en doc-string kommentar som beskriver vår funktion\n  tal = random.randint(min_värde, max_värde)  # Slumpar heltal, randint finns som funktion i random\n  print(\"Det slumpade talet mellan\", min_värde,\" och \", max_värde, \" blev:\", tal)\n  return tal\n\ndef gissa_talet():\n  \"\"\"Vår egna funktion för en enkel gissningslek. Slumpar ett tal mellan 1 och 5 och \n  Inparameter: inget\n  returnerar: inget \"\"\"\n  hemligt = random.randint(1, 5)\n  gissning = int(input(\"Gissa ett tal mellan 1 och 5: \"))\n  while gissning != hemligt:\n    gissning = int(input(\"Fel! Gissa på ett nytt tal mellan 1 och 5: \"))  \n  print(\"Rätt gissat! 🎉\")\n\n# Här anropas vår funktion med två tal\nslumpat = slumpa_tal(1, 10) #slumpat är en global variabel, den ligger utanför våra funktioner\ngissa_talet() #Anropar vår funktion, inget returvärde eller parameter för den här funktionen\n"
+      "content": "import math\n\ndef areaCirkel(radien):\n  area = math.pow(radien, 2) * math.pi\n  return area\n  \ndef huvudprogram():\n  radie = int(input(\"Vilken radie har cirkeln du vill beräkna arean av? \"))\n  area = areaCirkel(radie)\n  print(\"Arean av cirkeln med radien\", radie, \"längdeneter är:\", round(area, 2), \"areaenheter\")\n  #round används för att avrunda ett flyttal till ett visst antal decimaler, i detta fall 2.\nhuvudprogram()\n"
     }
   ]
 }
