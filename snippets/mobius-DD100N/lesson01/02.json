@@ -1,9 +1,9 @@
 {
-  "title": "1.2 – Exempel 1 - Strängar",
+  "title": "1.2 – Heltal och flyttal",
   "files": [
     {
       "name": "main.py",
-      "content": "#Här brukar man kommentera med namn på den/de som skrivit koden.\n#Vilket datum koden skrevs eller vilken verision det är.\n#Är den inlämning, även med kurskoden.\n\nprint(\"Exempel 1 - Strängar\")\nFAVORITGLASS = \"Piggelin\"          #Här kan du ändra till din favoritglass\npåstående = FAVORITGLASS + \" är den godaste glassen!\"\nprint(påstående)\nprint(\"Om jag kodar hela förmiddagen får jag en \" + FAVORITGLASS + \" efter lunch.\", end = \" \")\nprint(\"Men om jag också städar i eftermiddag får jag åtminstonde en\", FAVORITGLASS, \"till!\")"
+      "content": "print(\"\\nExempel 2 - Heltal och flyttal\")\ncelsius = 10                      #Du kan prova att ändra temperatur\nfarenheit = celsius * 1.8 + 32\nprint(celsius, \"grader Celsius motsvarar\", farenheit, \"grader Farenheit\")\nGRADERS_ÖKNING = 1                #Du kan ändra hur många grader tempraturen ökar med\ncelsius += GRADERS_ÖKNING \nfarenheit = celsius * 1.8 + 32\nprint(str(celsius) + \" grader Celsius motsvarar \" + str(farenheit) + \" grader Farenheit\")"
     }
   ]
 }
