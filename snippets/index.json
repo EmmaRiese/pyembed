@@ -1342,27 +1342,31 @@
       "snippets": [
         {
           "file": "mobius-DD1310/lektion07/01.json",
-          "title": "7.1"
+          "title": "7.1 Läsa in data från en .txt"
         },
         {
           "file": "mobius-DD1310/lektion07/02.json",
-          "title": "7.2"
+          "title": "7.2 Läsa in och dela upp olika data på samma rad"
         },
         {
           "file": "mobius-DD1310/lektion07/03.json",
-          "title": "7.3"
+          "title": "7.3 Skriva till fil med join"
         },
         {
           "file": "mobius-DD1310/lektion07/04.json",
-          "title": "7.4"
+          "title": "7.4 Skriva till fil med writelines()"
         },
         {
           "file": "mobius-DD1310/lektion07/06.json",
-          "title": "7.6"
+          "title": "7.6 Övning att läsa från fil"
         },
         {
           "file": "mobius-DD1310/lektion07/011.json",
           "title": "7.1 Läsa in data från en .txt"
+        },
+        {
+          "file": "mobius-DD1310/lektion07/07.json",
+          "title": "7.7 Skriv till fil"
         }
       ]
     },

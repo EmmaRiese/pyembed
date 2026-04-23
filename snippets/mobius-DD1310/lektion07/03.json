@@ -1,9 +1,9 @@
 {
-  "title": "7.3",
+  "title": "7.3 Skriva till fil med join",
   "files": [
     {
       "name": "main.py",
-      "content": "def skriv_till_fil(lista,filnam):\n  \"\"\"Skriv ut varje frukt som finns i variaben lista på filen med namnet som finns i parametern filnamn.\"\"\"\n  \ndef huvudfunktion():\n  frukt = [\"äpple\",\"mango\",\"päron\",\"körsbär\",\"blåbär\",\"lingon\",\"tranbär\"]\n  skriv_till_fil(frukter, \"frukter.txt\")\n\nhuvudfunktion() "
+      "content": "with open('husdjur.txt', 'w') as fil: \n  namn = ['Katt', 'Hund', 'Marsvin'] \n  fil.write('\\n'.join(namn))"
     }
   ]
 }

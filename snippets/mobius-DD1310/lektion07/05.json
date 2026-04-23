@@ -1,0 +1,13 @@
+{
+  "title": "7.5 Läsa, uppdatera och spara en lista till fil",
+  "files": [
+    {
+      "name": "main.py",
+      "content": "# Läser in namn från fil, låter användaren lägga till ett namn,\n# och sparar den uppdaterade listan tillbaka till filen.\n\ndef läs_från_fil(filnamn):\n    \"\"\"\n    Läser in alla rader från en textfil och returnerar dem som en lista.\n\n    Parameter: filnamn (str)  - namnet på filen som ska läsas\n    Returnerar: namnlista (list) - en lista med strängar, en per rad i filen\n    \"\"\"\n    fil = open(filnamn, \"r\")\n    namnlista = []\n    for rad in fil:\n        namnlista.append(rad.strip())\n    fil.close()\n    return namnlista\n\ndef spara_till_fil(filnamn, namnlista):\n    \"\"\"\n    Skriver alla namn i listan till en textfil, ett namn per rad.\n\n    Parameter: filnamn (str)    - namnet på filen som ska skrivas till\n    Parameter: namnlista (list) - listan med namn som ska sparas\n    Returnerar: inget\n    \"\"\"\n    fil = open(filnamn, \"w\")\n    for namn in namnlista:\n        fil.write(namn + \"\\n\")\n    fil.close()\n\ndef huvudfunktion():\n    \"\"\"\n    Läser in namn från fil, tar emot ett nytt namn från användaren\n    och sparar den uppdaterade listan tillbaka till filen.\n\n    Returnerar: inget\n    \"\"\"\n    filnamn = \"namn.txt\"\n    namnlista = läs_från_fil(filnamn)\n\n    print(\"Nuvarande namn i filen:\")\n    for namn in namnlista:\n        print(\"-\", namn)\n\n    nytt_namn = input(\"Ange ett namn att lägga till: \")\n    namnlista.append(nytt_namn)\n\n    spara_till_fil(filnamn, namnlista)\n    print(\"Filen uppdaterad! Nya listan:\")\n    for namn in namnlista:\n        print(\"-\", namn)\n\nhuvudfunktion()\n"
+    },
+    {
+      "name": "namn.txt",
+      "content": "Anna\nBjörn\nCecilia\n"
+    }
+  ]
+}
