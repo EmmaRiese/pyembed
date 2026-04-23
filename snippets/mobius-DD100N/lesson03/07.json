@@ -1,9 +1,9 @@
 {
-  "title": "3.7",
+  "title": "3.7 Nästlade for-slingor",
   "files": [
     {
       "name": "main.py",
-      "content": "# En tom dictionary där nyckeln kommer vara persons namn och värdet är en lista med hobbyer\nkompisar = {}\n\nkompisar[\"Alva\"] = [\"måla\",\"gå på karate\"]\nkompisar[\"Ben\"] = [\"fotboll\", \"måla\"]\n\nnamn = input(\"Vad heter din kompis? \")\nhobbys = input(\"Vad har \" + namn + \" för hobbys? (använd , emellan)\").split(\", \") #split delar upp till en lista\nkompisar[namn] = hobbys\n\n# Skriv ut alla kompisar och deras hobbyer\nprint(\"\\nKompisar och deras hobbyer:\")\nfor namn in kompisar.keys():\n    print(namn + \"s hobbys är att\", end =\" \")\n    for hobby in kompisar[namn]:\n        if hobby !=  kompisar[namn][-1]: #om det är sista element i listan vill vi inte ha ett kommatecken\n          print(hobby, end =\", \")\n        else:\n          print(hobby)\n\nkompisar[\"Alva\"].append(\"läsa\") #lägger till en hobby för Alva\nkompisar[\"Ben\"].remove(\"måla\") #Tar bort en hobby för Ben\n\n# Skriv ut alla kompisar och deras hobbyer, efter ändringarna\nprint(\"\\nEfter ändringarna:\\nKompisar och deras hobbyer:\")\nfor namn in kompisar.keys():\n    print(namn + \"s hobbys är att\", end =\" \")\n    for hobby in kompisar[namn]:\n        if hobby !=  kompisar[namn][-1]: #om det är sista element i listan vill vi inte ha ett kommatecken\n          print(hobby, end =\", \")\n        else:\n          print(hobby)"
+      "content": "#Skriver ut en multiplikationstabell från 1 till 11.\nfor i in range(1, 12):\n  for j in range (1,12):\n    print (i*j, end = \"  \")\n  print()"
     }
   ]
 }

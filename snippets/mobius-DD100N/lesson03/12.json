@@ -1,9 +1,9 @@
 {
-  "title": "3.12",
+  "title": "3.12 Sammanfattande exempel",
   "files": [
     {
       "name": "main.py",
-      "content": "konstnärer_länder = {\n    'Leonardo da Vinci': 'Italien',\n    'Vincent van Gogh': 'Nederländerna',\n    'Frida Kahlo': 'Mexiko',\n    'Pablo Picasso': 'Spanien',\n    'Hokusai': 'Japan'\n}\n\nfor konstnär in konstnärer_länder.keys():\n  #Vad saknas här om du vill skriva ut varje nyckel och dess tillhörande värde?"
+      "content": "# En tom dictionary där nyckeln kommer vara persons namn och värdet är en lista med hobbyer\nkompisar = {}\n\nkompisar[\"Alva\"] = [\"måla\",\"gå på karate\"]\nkompisar[\"Ben\"] = [\"fotboll\", \"måla\"]\n\nnamn = input(\"Vad heter din kompis? \")\nhobbys = input(\"Vad har \" + namn + \" för hobbys? (använd , emellan)\").split(\", \") #split delar upp till en lista\nkompisar[namn] = hobbys\n\n# Skriv ut alla kompisar och deras hobbyer\nprint(\"\\nKompisar och deras hobbyer:\")\nfor namn in kompisar.keys():\n    print(namn + \"s hobbys är att\", end =\" \")\n    for hobby in kompisar[namn]:\n        if hobby !=  kompisar[namn][-1]: #om det är sista element i listan vill vi inte ha ett kommatecken\n          print(hobby, end =\", \")\n        else:\n          print(hobby)\n\nkompisar[\"Alva\"].append(\"läsa\") #lägger till en hobby för Alva\nkompisar[\"Ben\"].remove(\"måla\") #Tar bort en hobby för Ben\n\n# Skriv ut alla kompisar och deras hobbyer, efter ändringarna\nprint(\"\\nEfter ändringarna:\\nKompisar och deras hobbyer:\")\nfor namn in kompisar.keys():\n    print(namn + \"s hobbys är att\", end =\" \")\n    for hobby in kompisar[namn]:\n        if hobby !=  kompisar[namn][-1]: #om det är sista element i listan vill vi inte ha ett kommatecken\n          print(hobby, end =\", \")\n        else:\n          print(hobby)"
     }
   ]
 }

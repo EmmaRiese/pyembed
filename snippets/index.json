@@ -746,72 +746,72 @@
         {
           "id": "mobius-dd100n-03-01",
           "file": "mobius-DD100N/lesson03/01.json",
-          "title": "3.1"
+          "title": "3.1 Skapa en lista och använda index"
         },
         {
           "id": "mobius-dd100n-03-02",
           "file": "mobius-DD100N/lesson03/02.json",
-          "title": "3.2"
+          "title": "3.2 – Negativa index"
         },
         {
           "id": "mobius-dd100n-03-03",
           "file": "mobius-DD100N/lesson03/03.json",
-          "title": "3.3"
+          "title": "3.3 for-slinga för att gå igenom alla element i en lista"
         },
         {
           "id": "mobius-dd100n-03-04",
           "file": "mobius-DD100N/lesson03/04.json",
-          "title": "3.4"
+          "title": "3.4 for-slingor med range"
         },
         {
           "id": "mobius-dd100n-03-05",
           "file": "mobius-DD100N/lesson03/05.json",
-          "title": "3.5 – Näst-näst sista namnet i listan är"
+          "title": "3.5 Listor med None och en bestämd längd"
         },
         {
           "id": "mobius-dd100n-03-06",
           "file": "mobius-DD100N/lesson03/06.json",
-          "title": "3.6"
+          "title": "3.6 append()"
         },
         {
           "id": "mobius-dd100n-03-07",
           "file": "mobius-DD100N/lesson03/07.json",
-          "title": "3.7"
+          "title": "3.7 Nästlade for-slingor"
         },
         {
           "id": "mobius-dd100n-03-08",
           "file": "mobius-DD100N/lesson03/08.json",
-          "title": "3.8"
+          "title": "3.8 Nästlade listor med fel"
         },
         {
           "id": "mobius-dd100n-03-09",
           "file": "mobius-DD100N/lesson03/09.json",
-          "title": "3.9"
+          "title": "3.9 Matris - listor i listor"
         },
         {
           "id": "mobius-dd100n-03-10",
           "file": "mobius-DD100N/lesson03/10.json",
-          "title": "3.10"
+          "title": "3.10 Dictionary -pythons inbyggda hashtabell)"
         },
         {
           "id": "mobius-dd100n-03-11",
           "file": "mobius-DD100N/lesson03/11.json",
-          "title": "3.11"
+          "title": "3.11 Ett större exempel med lexikon"
         },
         {
           "id": "mobius-dd100n-03-12",
           "file": "mobius-DD100N/lesson03/12.json",
-          "title": "3.12"
+          "title": "3.12 Sammanfattande exempel"
         },
         {
           "id": "mobius-dd100n-03-13",
           "file": "mobius-DD100N/lesson03/13.json",
-          "title": "3.13"
+          "title": "3.13 Dictionary med konstnärer och verk"
         },
         {
           "id": "mobius-dd100n-03-14",
           "file": "mobius-DD100N/lesson03/14.json",
-          "title": "3.14"
+          "title": "3.14 Kod att färdigställa"
         }
       ]
     },
