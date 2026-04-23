@@ -1,9 +1,9 @@
 {
-  "title": "2.3",
+  "title": "2.3 if, elif och else",
   "files": [
     {
       "name": "main.py",
-      "content": "# Exempel med break och continue\n\ntal = 100\nwhile True:\n  if tal > 50:\n    tal -= 10\n    print(tal)\n    continue\n  print(\"Tal är nu\",tal ,\".\")\n  svar = input(\"Vil du fortsätta? (j/n)\")\n  \n  if svar == \"n\":\n    break\n  else:\n    tal = 100\n  \nprint(\"Tack och hej!\")"
+      "content": "# Ett program som visar hur if-elif-else fungerar\n\nbetyg = int(input(\"Ge poäng mellan 1-100: \"))\n\nif betyg >= 90:\n    print(\"Du fick betyget A\")\nelif betyg >= 80: \n    print(\"Du fick betyget B\")\nelif betyg >= 70:\n    print(\"Du fick betyget C\")\nelif betyg >= 60:\n    print(\"Du fick betyget D\")\nelif betyg >= 50:\n    print(\"Du fick betyget E\")\nelse:\n    print(\"Du fick betyget F\")"
     }
   ]
 }

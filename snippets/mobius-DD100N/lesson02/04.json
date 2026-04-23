@@ -1,9 +1,9 @@
 {
-  "title": "2.4",
+  "title": "2.4 Ordningen spelar roll",
   "files": [
     {
       "name": "main.py",
-      "content": "\nwhile True:\n    namn = input(\"Skriv ett namn (eller 'a' för att avsluta): \")\n    if namn == 'a':\n        print(\"Programmet avslutas.\")\n        break  # Avslutar loopen\n\n    if namn == \"\":\n        print(\"Du skrev inget namn. Försök igen.\")\n        continue  # Hoppar över resten och börjar om\n\n    if namn == \"Malin\":\n        print(\"Hej Malin! Trevligt att se dig igen.\")\n        \n    elif namn == \"Erik\":\n        print(\"Tjena Erik! Det var länge sedan.\")\n        \n    else:\n        print(\"Hej \"+ namn + \"!\")\n        \n        \nantal_namn = int(input(\"Hur många fler namn vill du mata in?\"))\ninmatade = 0\nwhile inmatade < antal_namn:\n    namn = input(\"Skriv ett namn: \")\n    \n    if namn == \"\":\n        print(\"Du skrev inget namn. Försök igen.\")\n        continue  # Hoppar över resten och börjar om\n\n    else:\n        print(\"Hej \"+ namn + \"!\")\n        inmatade +=1 #lägger till ett till inmatade, nu har vi matat in ett namn\n        \nprint(\"Programmet avslutas, du har matat in\", antal_namn,\"namn till.\")"
+      "content": "# Exempel med fel ordning på satser, \n# vi borde egentligen få A\n\nbetyg = 95\n\nif betyg >= 50:\n    print(\"Du fick betyget E\")\nelif betyg >= 60: \n    print(\"Du fick betyget D\")\nelif betyg >= 70:\n    print(\"Du fick betyget C\")\nelif betyg >= 80:\n    print(\"Du fick betyget B\")\nelif betyg >= 90:\n    print(\"Du fick betyget A\")\nelse:\n    print(\"Du fick betyget F\")"
     }
   ]
 }

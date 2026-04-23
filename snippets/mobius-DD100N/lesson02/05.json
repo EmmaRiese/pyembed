@@ -1,9 +1,9 @@
 {
-  "title": "2.5",
+  "title": "2.5 Olika typer av fel",
   "files": [
     {
       "name": "main.py",
-      "content": "x = 5    # 'x' tilldelas värdet 5\nprint(x) # skriver ut 5\nprint(x == 5) #jämför om x är lika med 5, skriver ut True eftersom det stämmer."
+      "content": "#Koden innehåller två typer av fel, provkör och se om du kan rätta till dem.\nräntefaktorn = 1.01\nif räntefaktorn > 1\nprint(\"Du får en positiv utveckling på dina sparpengar\")\n\n#Prova gärna att göra samma sak i det redigeringsprogram du använder (t.ex. IDLE) \n#och se hur presentationen av felen ser ut där."
     }
   ]
 }
