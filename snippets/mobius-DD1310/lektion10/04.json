@@ -1,5 +1,5 @@
 {
-  "title": "10.4",
+  "title": "10.4 Överlagring",
   "files": [
     {
       "name": "konto.py",
@@ -7,11 +7,11 @@
     },
     {
       "name": "main.py",
-      "content": "from konto import*\nfrom sparkonto import*\n\n    \ndef huvudprogram():\n  \"\"\"Skapar Konto och Sparkonto objekt och skrier ut dessa\"\"\"\n  konto = Konto(\"Kontohavare A\",1120000, 1234, 10)\n  sparkonto = Sparkonto(\"Kontohavare A\",1120001, 1234, 1000, 1.5)\n  \n  print(\"Konto:\", konto)\n  print(\"Sparkonto:\", sparkonto)\n  \n  print(\"\\nRäntan ändras\")\n  sparkonto.ändra_ränta(2.3)\n  print(\"Sparkonto:\", sparkonto)\n\nhuvudprogram()"
+      "content": "from konto import*\nfrom sparkonto import*\n\n    \ndef huvudprogram():\n  \"\"\"Skapar Konto och Sparkonto objekt och skrier ut dessa\"\"\"\n  konto = Konto(\"Kontohavare A\",1120000, 1234, 10)\n  sparkonto = Sparkonto(\"Kontohavare A\",1120001, 1234, 1000, 1.5)\n  \n  print(\"Konto:\", konto)\n  print(\"Sparkonto:\", sparkonto)\n  \n\nhuvudprogram()"
     },
     {
       "name": "sparkonto.py",
-      "content": "from konto import *\n\nclass Sparkonto(Konto):\n  \"\"\"Beskriver ett Sparkonto, ärver från klassen Konto har attributen kontoinnehavare (str), kontonr (int), pin (int), saldo (float)\"\"\"\n  \n  def __init__(self,namn, nr, pin, saldo, ränta):\n    self.kontonr = nr #int\n    self.saldo = saldo #float\n    self.kontoinnehavare = namn #string\n    self.pin = pin #int\n    self.ränta = ränta #float\n     \n  def __str__(self):\n    \"\"\"Returnerar: en sträng som beskriver objektet\"\"\"\n    return self.kontoinnehavare + \" har \" + str(self.saldo) + \" på sitt sparkonto \" + str(self.kontonr) + \" räntan är \" + str(self.ränta) + \"%\"\n    \n  def ändra_ränta(self, ny_ränta):\n    self.ränta = ny_ränta"
+      "content": "from konto import *\n\nclass Sparkonto(Konto):\n  \"\"\"Beskriver ett Sparkonto, ärver från klassen Konto har attributen kontoinnehavare (str), kontonr (int), pin (int), saldo (float)\"\"\"\n  \n  def __init__(self,namn, nr, pin, saldo, ränta):\n    self.kontonr = nr #int\n    self.saldo = saldo #float\n    self.kontoinnehavare = namn #string\n    self.pin = pin #int\n    self.ränta = ränta #float\n     \n  def __str__(self):\n    \"\"\"Returnerar: en sträng som beskriver objektet\"\"\"\n    return self.kontoinnehavare + \" har \" + str(self.saldo) + \" på sitt sparkonto \" + str(self.kontonr) + \" räntan är \" + str(self.ränta) + \"%\""
     }
   ]
 }
