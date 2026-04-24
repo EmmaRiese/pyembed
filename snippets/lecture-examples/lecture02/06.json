@@ -1,9 +1,9 @@
 {
-  "title": "2.6",
+  "title": "2.6 while-slinga med break",
   "files": [
     {
       "name": "main.py",
-      "content": "tal = 1\nwhile tal < 5:\n\tprint(\"Varv: \", tal)\n\ttal += 1\n"
+      "content": "while True:\n\tprint(\"Det här skrivs tills du skriver nej\")\n\tfortsätt = input(\"Vill du fortsätta? \")\n\tif fortsätt == \"nej\":\n\t\tbreak\n\t\t"
     }
   ]
 }

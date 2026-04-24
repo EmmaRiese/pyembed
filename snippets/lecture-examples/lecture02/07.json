@@ -1,9 +1,9 @@
 {
-  "title": "2.7",
+  "title": "2.7 Ett vist antal varv",
   "files": [
     {
       "name": "main.py",
-      "content": "antal_studenter = 9\nif antal_studenter < 147:\n\tprint(\"Alla är inte här\")\n\nif antal_studenter < 10:\n\tprint(\"Väldigt få är här\")\t\n\t\nelif antal_studenter > 147: #Annars om detta är sant\n\tprint(\"Det är fler närvarande här än vad som är registrerade\")\n\nelse:  # I alla andra fall\n\tprint(\"Alla är här\")\n"
+      "content": "tal = 1\nwhile tal < 5:\n\tprint(\"Varv: \", tal)\n\ttal += 1\n"
     }
   ]
 }

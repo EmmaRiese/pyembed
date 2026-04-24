@@ -1,9 +1,9 @@
 {
-  "title": "2.1",
+  "title": "2.1 if och else",
   "files": [
     {
       "name": "main.py",
-      "content": "while True:\n\tprint(\"Det här skrivs tills du skriver nej\")\n\tfortsätt = input(\"Vill du fortsätta? \")\n\tif fortsätt == \"nej\":\n\t\tbreak\n\t\t"
+      "content": "antal_studenter = 126\nif antal_studenter < 147:\n\tprint(\"Alla är inte här\")\n\nelse:  # I alla andra fall\n\tprint(\"Alla är här\")\n"
     }
   ]
 }
