@@ -1,5 +1,5 @@
 {
-  "title": "6.2",
+  "title": "6.2 __str__ och metod som använder print",
   "files": [
     {
       "name": "main.py",

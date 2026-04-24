@@ -987,43 +987,43 @@
         {
           "id": "mobius-dd100n-06-01",
           "file": "mobius-DD100N/lesson06/01.json",
-          "title": "6.1"
+          "title": "6.1 1 Klass med __str__"
         },
         {
           "id": "mobius-dd100n-06-02",
           "file": "mobius-DD100N/lesson06/02.json",
-          "title": "6.2"
+          "title": "6.2 __str__ och metod som använder print"
         },
         {
           "id": "mobius-dd100n-06-03",
           "file": "mobius-DD100N/lesson06/03.json",
-          "title": "6.3"
+          "title": "6.3 __str__ och __repr__"
         },
         {
           "id": "mobius-dd100n-06-04",
           "file": "mobius-DD100N/lesson06/04.json",
-          "title": "6.4"
+          "title": "6.4 __lt__ för att kunna jämföra och sortera"
         },
         {
           "id": "mobius-dd100n-06-05",
           "file": "mobius-DD100N/lesson06/05.json",
-          "title": "6.5"
+          "title": "6.5 Mer komplicerad __lt__"
         },
         {
           "file": "mobius-DD100N/lesson06/06.json",
-          "title": "6.1"
+          "title": "6.6 __eq__ Är objekten likadana?"
         },
         {
           "file": "mobius-DD100N/lesson06/07.json",
-          "title": "6.2"
+          "title": "6.7 Större program med data på fil mellan programkörningarna"
         },
         {
           "file": "mobius-DD100N/lesson06/08.json",
-          "title": "6.8"
+          "title": "6.8 Större exempel med flera klasser"
         },
         {
           "file": "mobius-DD100N/lesson06/09.json",
-          "title": "6.9"
+          "title": "6.9 Sammanfattande exempel"
         }
       ]
     },

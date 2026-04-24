@@ -1,5 +1,5 @@
 {
-  "title": "6.3",
+  "title": "6.3 __str__ och __repr__",
   "files": [
     {
       "name": "main.py",

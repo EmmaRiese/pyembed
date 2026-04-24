@@ -1,5 +1,5 @@
 {
-  "title": "6.4",
+  "title": "6.4 __lt__ för att kunna jämföra och sortera",
   "files": [
     {
       "name": "main.py",
