@@ -1,13 +1,13 @@
 {
-  "title": "5.8",
+  "title": "5.12 Skriv till fil",
   "files": [
     {
       "name": "main.py",
-      "content": "def läs_från_fil(filnam):\n  \"\"\"Läs in data från fil, lagra i en lista och returnera den\"\"\"\n  return lista\n  \ndef huvudfunktion():\n  tal_lista = läs_från_fil(\"tal.txt\")\n  for tal in tal_lista:\n    print(tal)\nhuvudfunktion() "
+      "content": "def skriv_till_fil(lista, filnamn):\n  \"\"\"Skriv ut varje element i lista på filen med namnet filnamn, ett element per rad.\"\"\"\n  \ndef huvudfunktion():\n  frukt = [\"äpple\", \"mango\", \"päron\", \"körsbär\", \"blåbär\", \"lingon\", \"tranbär\"]\n  skriv_till_fil(frukt, \"frukter.txt\")\n\nhuvudfunktion()"
     },
     {
-      "name": "tal.txt",
-      "content": "13\n1\n5\n6\n7\n10\n123\n9\n12"
+      "name": "frukter.txt",
+      "content": "\n"
     }
   ]
 }

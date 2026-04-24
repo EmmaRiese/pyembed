@@ -1,9 +1,13 @@
 {
-  "title": "5.2",
+  "title": "5.2 Läsa in och dela upp olika data på samma rad",
   "files": [
     {
+      "name": "friends.txt",
+      "content": "Den här raden kommer programmet ignorera, men du kan lägga till fler namn nedan.\nAlex Bok\nChris Davidson\nEli Franson"
+    },
+    {
       "name": "main.py",
-      "content": "def heltal(inmatning):\n  try: \n    int(inmatning)\n    return True\n  except ValueError:\n    return False\n    \ndef meny(): \n  \"\"\"En funktion som skriver ut en meny och frågar användaren om inmatning\"\"\"\n  print(\"Meny\\n1. Skriv ut en text.\\n2. Mata in en text.\\n3. Avsluta.\") \n  text = \"Det var en gång\" \n  val = input(\"Vad vill du göra?\")\n  while not heltal(val):\n    print(\"Nej, det där var inte ett giligt menyval, vänligen försök igen\")\n    val = input(\"Vad vill du göra?\")\n  val = int(val)        #Nu vet vi att det är ett heltal så då kan vi göra om datatypen\n  while val != 3: \n    if val == 1: \n      print(text) \n    elif val == 2: \n      text = input(\"Varsågod och mata in din text: \")\n    val = input(\"Vad vill du göra?\")  #Vi behöver samma kod här, eftersom det är samma kod\n    while not heltal(val):            #kan vi göra om den till en funktion också, så slipper vi kodupprepning\n      print(\"Nej, det där var inte ett giligt menyval, vänligen försök igen\")\n      val = input(\"Vad vill du göra?\")\n    val = int(val) \n  print(\"Avslutar.\")\n\nmeny()"
+      "content": "#Ett program som läser in förnamn och efternamn från en fil\n\ndef läsa_fil(filnamn):\n  namnfil = open(filnamn, \"r\")\n  namnfil.readline()              #Läser in den första raden men spara inte värdet\n  förnamn = []\n  efternamn = []\n  alla_namn = namnfil.readlines()  #Läser in alla namn\n  for namn in alla_namn:\n    namn = namn.strip()\n    namnlista = namn.split(\" \")          #Delar upp strängen vid mellanslag, till en lista\n    förnamn.append(namnlista[0])         #Lägger in första elementet i förnamn\n    efternamn.append(namnlista[1])       #Lägger in andra elementet i efternamn\n  namnfil.close()  \n  return förnamn, efternamn\n\ndef main():\n  förnamn, efternamn = läsa_fil(\"friends.txt\")\n  print(\"Förnamn på kompisar:\")\n  for namn in förnamn:\n    print(namn)\n  print(\"\\nEfternamn på kompisar:\")\n  for namn in efternamn:\n    print(namn)\n  \nmain()"
     }
   ]
 }
