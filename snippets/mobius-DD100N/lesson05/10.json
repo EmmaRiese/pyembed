@@ -1,13 +1,13 @@
 {
-  "title": "5.2",
+  "title": "5.10 Sammanfattande exempel",
   "files": [
-    {
-      "name": "frukter.txt",
-      "content": "mango\näpple\ngrapefrukt"
+     {
+      "name": "exempel.txt",
+      "content": " "
     },
     {
       "name": "main.py",
-      "content": "def läs_från_fil(filnamn):\n    \"\"\"Öppna filen för läsning och returnerar innehållet\n    inparameter: filnamn (str)\n    returvärde: lista (list)\n    \"\"\"\n    with open(filnamn, \"r\") as fil:\n        innehåll = fil.read()\n        lista = innehåll.split()\n        return lista\n\ndef skriv_till_fil(filnamn, data):\n    \"\"\"Öppna filen för skrivniing och skriver ut data på filen \n    inparameter: filnamn (str)\n                 data (lista)\n    returvärde: inget\n    \"\"\"\n    with open(filnamn, \"w\") as fil:\n        # Skriv varje frukt till filen på en separat rad\n        for frukt in data:\n            fil.write(frukt + \"\\n\")\n\ndef main():\n  frukter = läs_från_fil(\"frukter.txt\")\n  frukter.append(\"apelsin\")\n  skriv_till_fil(\"frukter.txt\", frukter)\n\nmain()"
+      "content": "\ndef skriv_till_fil(filnamn, text):\n  \"\"\"Funktion som skriver en text till en fil.\n  Inparameter: filnamn(st), text(str)\n  Returväre: inget\"\"\"\n  fil = open(filnamn, 'w', encoding='utf-8')\n  fil.write(text)\n  print(\"Texten har skrivits till filen.\")\n\ndef läs_från_fil(filnamn):\n  \"\"\"Funktion som läser från en fil.\n  Inparameter: filnamn(st)\n  Returväre: inget\"\"\"\n  try:\n    fil = open(filnamn, 'r', encoding='utf-8')\n    innehåll = fil.readlines()\n    print(\"Innehållet i filen:\" )\n    for rad in innehåll:\n      print(rad.strip())\n    return innehåll\n  except FileNotFoundError:\n    print(\"Filen finns inte.\")\n  \n\ndef huvudfunktion():\n  filnamn = \"exempel.txt\"\n  text_att_skriva = \"Hej! Detta är ett test.\\nRad två i filen.\"\n  skriv_till_fil(filnamn, text_att_skriva)\n  läs_från_fil(\"finns_inte.txt\")\n  \nhuvudfunktion()"
     }
   ]
 }
