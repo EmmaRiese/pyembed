@@ -2,12 +2,12 @@
   "title": "5.10 Sammanfattande exempel",
   "files": [
      {
-      "name": "exempel.txt",
+      "name": "tal.txt",
       "content": " "
     },
     {
       "name": "main.py",
-      "content": "\ndef skriv_till_fil(filnamn, text):\n  \"\"\"Funktion som skriver en text till en fil.\n  Inparameter: filnamn(st), text(str)\n  Returväre: inget\"\"\"\n  fil = open(filnamn, 'w', encoding='utf-8')\n  fil.write(text)\n  print(\"Texten har skrivits till filen.\")\n\ndef läs_från_fil(filnamn):\n  \"\"\"Funktion som läser från en fil.\n  Inparameter: filnamn(st)\n  Returväre: inget\"\"\"\n  try:\n    fil = open(filnamn, 'r', encoding='utf-8')\n    innehåll = fil.readlines()\n    print(\"Innehållet i filen:\" )\n    for rad in innehåll:\n      print(rad.strip())\n    return innehåll\n  except FileNotFoundError:\n    print(\"Filen finns inte.\")\n  \n\ndef huvudfunktion():\n  filnamn = \"exempel.txt\"\n  text_att_skriva = \"Hej! Detta är ett test.\\nRad två i filen.\"\n  skriv_till_fil(filnamn, text_att_skriva)\n  läs_från_fil(\"finns_inte.txt\")\n  \nhuvudfunktion()"
+      "content": "\ndef skriv_till_fil(filnamn, text):\n  \"\"\"Skriver text till en fil.\"\"\"\n  fil = open(filnamn, 'w', encoding='utf-8')\n  fil.write(text)\n  print(\"Filen skriven.\")\n\ndef läs_tal_från_fil(filnamn):\n  \"\"\"Läser rader från en fil och försöker konvertera varje rad till ett heltal.\n  Rader som inte kan konverteras hoppas över med ett felmeddelande.\"\"\"\n  fil = open(filnamn, 'r', encoding='utf-8')\n  tal_lista = []\n  for rad in fil.readlines():\n    try:\n      tal = int(rad.strip())\n      tal_lista.append(tal)\n    except ValueError:\n      print(\"Kunde inte läsa '\" + rad.strip() + \"' som ett heltal – raden hoppas över.\")\n  return tal_lista\n\ndef huvudfunktion():\n  filnamn = \"tal.txt\"\n  # Filen innehåller mest tal men också en felaktig rad\n  skriv_till_fil(filnamn, \"10\\n20\\nhej\\n30\\n\")\n  tal = läs_tal_från_fil(filnamn)\n  print(\"Inlästa tal:\", tal)\n  print(\"Summa:\", sum(tal))\n\nhuvudfunktion()"
     }
   ]
 }
