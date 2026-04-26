@@ -192,37 +192,37 @@
         {
           "id": "lecture05-01",
           "file": "lecture-examples/lecture05/01.json",
-          "title": "5.1"
+          "title": "5.1 Funktionsdefinition"
         },
         {
           "id": "lecture05-02",
           "file": "lecture-examples/lecture05/02.json",
-          "title": "5.2"
+          "title": "5.2 Funktionsanrop"
         },
         {
           "id": "lecture05-03",
           "file": "lecture-examples/lecture05/03.json",
-          "title": "5.3"
+          "title": "5.3 Parameter"
         },
         {
           "id": "lecture05-04",
           "file": "lecture-examples/lecture05/04.json",
-          "title": "5.4"
+          "title": "5.4 Returvärden och parametrar"
         },
         {
           "id": "lecture05-05",
           "file": "lecture-examples/lecture05/05.json",
-          "title": "5.5"
+          "title": "5.5 Huvudfunktion"
         },
         {
           "id": "lecture05-06",
           "file": "lecture-examples/lecture05/06.json",
-          "title": "5.6"
+          "title": "5.6 Defaultparametrar och anrop"
         },
         {
           "id": "lecture05-07",
           "file": "lecture-examples/lecture05/07.json",
-          "title": "5.7"
+          "title": "5.7 Större exempel"
         }
       ]
     },

@@ -1,9 +1,9 @@
 {
-  "title": "5.3",
+  "title": "5.3 Parameter",
   "files": [
     {
       "name": "main.py",
-      "content": "def skriva_ut_hej():\n    print(\"Hej\") #Koden i funktionen\n\nANTAL_HEJ = 3\nfor i in range(ANTAL_HEJ):\n    skriva_ut_hej()\n"
+      "content": "def skriva_ut_hej(sträng):\n    print(sträng) #Koden i funktionen\n\nskriva_ut_hej(\"Texten som ska skrivas ut\")\n"
     }
   ]
 }

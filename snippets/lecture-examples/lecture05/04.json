@@ -1,9 +1,9 @@
 {
-  "title": "5.4",
+  "title": "5.4 Returvärden och parametrar",
   "files": [
     {
       "name": "main.py",
-      "content": "def addera_subtrahera(tal1, tal2, tal3 = 0):\n  summa = tal1 + tal2 + tal3 \n  differens = tal1 - tal2 - tal3  \n  return summa, differens\n\n\nsumman, diffen = addera_subtrahera(5, 10, 4)\n\nprint(\"summan:\", summan, \"diffen:\", diffen)\n"
+      "content": "def addera(tal1, tal2):\n  summa = tal1 + tal2    #summa är en lokal variabel som\n  return summa           #är definierad bara i funktion\n    \n\n\nsumman = addera(5, 37)\nprint(summan)\n"
     }
   ]
 }

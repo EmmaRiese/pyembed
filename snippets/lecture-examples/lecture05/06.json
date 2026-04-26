@@ -1,9 +1,9 @@
 {
-  "title": "5.6",
+  "title": "5.6 Defaultparametrar och anrop",
   "files": [
     {
       "name": "main.py",
-      "content": "def skriva_ut_hej():\n\tprint(\"Hej\") #Koden i funktionen\n\t"
+      "content": "def addera_subtrahera(tal1, tal2, tal3 = 0):\n  summa = tal1 + tal2 + tal3 \n  differens = tal1 - tal2 - tal3  \n  return summa, differens\n\n\nsumman, diffen = addera_subtrahera(5, 10, 4)\n\nprint(\"summan:\", summan, \"diffen:\", diffen)\n"
     }
   ]
 }
