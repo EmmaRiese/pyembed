@@ -455,37 +455,37 @@
         {
           "id": "lecture10-01",
           "file": "lecture-examples/lecture10/01.json",
-          "title": "10.1"
+          "title": "10.1 Lägga till en metod"
         },
         {
           "id": "lecture10-02",
           "file": "lecture-examples/lecture10/02.json",
-          "title": "10.2"
+          "title": "10.2 Lägga till en meny"
         },
         {
           "id": "lecture10-03",
           "file": "lecture-examples/lecture10/03.json",
-          "title": "10.3"
+          "title": "10.3 Grupp-klass läsa från fil"
         },
         {
           "file": "lecture-examples/lecture10/04.json",
-          "title": "10.4 – Tal Class (multi-file)"
+          "title": "10.4 Grupp-klass med spara till fil"
         },
         {
           "file": "lecture-examples/lecture10/05.json",
-          "title": "10.5 – Grupp Class"
+          "title": "10.5 Grupp-klass med undermeny"
         },
         {
           "file": "lecture-examples/lecture10/06.json",
-          "title": "10.6 – Hus Class (multi-file)"
+          "title": "10.6 – __str__ och __repr__"
         },
         {
           "file": "lecture-examples/lecture10/07.json",
-          "title": "10.7 – Grupp Class"
+          "title": "10.7 Privata och publika attribut"
         },
         {
           "file": "lecture-examples/lecture10/08.json",
-          "title": "10.8 – Grupp Class"
+          "title": "10.6 – Flera klasser"
         }
       ]
     },

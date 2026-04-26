@@ -1,9 +1,17 @@
 {
-  "title": "10.8 – Grupp Class",
+  "title": "10.6 – Flera klasser",
   "files": [
     {
       "name": "main.py",
-      "content": "ANTAL_GRUPPER = 3\n\nclass Grupp:\n  def __init__ (self, namn, ständig_medlem):\n    self.gruppnamn = namn\n    self.medlemmar = [ständig_medlem]\n    \n  def __str__ (self):\n    sträng = self.gruppnamn + \" har följande medlemmar: \" \n    for medlem in self.medlemmar:\n        sträng += str(medlem +  \", \")\n    return sträng[0:-2]\n    \n  def __lt__(self, other):\n    if self.gruppnamn < other.gruppnamn:\n      return True\n    else:\n      return False\n    \n  def lägg_till_medlem(self, ny_medlem):\n    self.medlemmar.append(ny_medlem)\n    \n  def ta_bort_medlem(self, medlem):\n    if medlem in self.medlemmar:\n      self.medlemmar.remove(medlem)\n      print(medlem, \"är borttagen\")\n    else:\n      print(\"Medlemen finns inte gruppen. \")\n      \n  def ordförande(self):\n    if len(self.medlemmar) == 0:\n      print(\"Finns inga medlemmar i grupp\", self.gruppnamn)\n      return None\n    ordförande = self.medlemmar[0]\n    for i in range(len(self.medlemmar)):\n      if len(ordförande) < len(self.medlemmar[i]):\n        ordförande = self.medlemmar[i]\n    return ordförande\n    \ndef välj_grupp(grupper):\n  grupp_namn = input(\"Vad heter gruppen du vill ändra i? \")\n  for grupp in grupper:\n    if grupp_namn == grupp.gruppnamn:\n      return grupp\n  print(\"Gruppen hittades inte.\")    \n  \ndef huvudprogram():\n  grupper = []\n  namn = input(\"Vad heter den ständiga medlemen ?\")\n  for i in range(ANTAL_GRUPPER):\n    gruppnamn = input(\"Vad heter grupp \" + str(i +1) + \"? \")\n    grupp = Grupp(gruppnamn, namn)\n    grupper.append(grupp)\n    \n  grupp = välj_grupp(grupper)\n  namn = input(\"Vem vill du lägga till i grupp \" + grupp.gruppnamn +\"? \")\n  grupp.lägg_till_medlem(namn)\n  \n  grupp = välj_grupp(grupper)\n  namn = input(\"Vem vill du ta bort ur grupp \" + grupp.gruppnamn +\"? \")\n  grupp.ta_bort_medlem(namn)\n    \n  grupper.sort() #Använder __lt__ för sortering, vilken som är minst  \n  for objekt in grupper:\n    print(objekt)\n    \n  for grupp in grupper:\n    if grupp.ordförande() != None:\n      print(\"Ordförande i gruppen\", grupp.gruppnamn, \"är\", grupp.ordförande())\n  \n  \nhuvudprogram()\n    \n  "
+      "content": "from rum import *\nfrom hus import *\n\ndef main():\n  test()\n\nmain()"
+    },
+    {
+      "name": "hus.py",
+      "content": "from rum import *\n\nclass Hus:\n  def __init__(self, adress, lista_rum):\n    self.adress = adress\n    self.rum_lista = lista_rum\n   \n  def __str__(self):\n    sträng = \"Huset ligger på \" + self.adress + \".\"\n    sträng += \"\\nDet har \" + str(len(self.rum_lista)) + \" antal rum:\\n\"\n    for i in range(len(self.rum_lista)):\n      sträng += str(i+1) + \". \" + str(self.rum_lista[i]) + \"\\n\"\n    return sträng\n\n      \n  "
+    },
+    {
+      "name": "rum.py",
+      "content": "class Rum():\n  \n  def __init__(self, storlek, fönster, uthyrt=False):\n    self.storlek = storlek\n    self.antal_fönster = fönster\n    self.uthyrt = uthyrt\n    \n  def __str__(self):\n    if self.uthyrt:\n      sträng = \"Rummet är uthyrt, \"\n    else:\n      sträng = \"Rummet är ledigt, \"\n      \n    return sträng + str(self.storlek) + \" kvm stort och har \" + str(self.antal_fönster) + \" fönster.\"\n    \n  def hyr_ut(self):\n    self.uthyrt = True\n    \n  def är_ledigt(self):\n    self.uthyrt = False\n    "
     }
   ]
 }
