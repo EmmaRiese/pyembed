@@ -397,14 +397,6 @@
         {
           "file": "lecture-examples/lecture08/14.json",
           "title": "8.12 – Dålig meny, med rekursion"
-        },
-        {
-          "file": "lecture-examples/lecture08/15.json",
-          "title": "8.15 Produkter och priser"
-        },
-        {
-          "file": "lecture-examples/lecture08/16.json",
-          "title": "8.16 Produkter med duplettkontroll"
         }
       ]
     },
