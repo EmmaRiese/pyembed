@@ -994,6 +994,11 @@ def open(name, mode='r', *args, **kwargs):
         return _VF(nm, m)
     raise IOError('File not found: ' + nm)
 
+# Python 3 aliases not present in this Skulpt build
+FileNotFoundError = IOError
+PermissionError   = IOError
+IsADirectoryError = IOError
+
 `;
         const preambleLines = preamble.split('\n').length;
 

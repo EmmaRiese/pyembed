@@ -1,9 +1,9 @@
 {
-  "title": "8.2",
+  "title": "8.2 Felhantering vid filöppning",
   "files": [
     {
       "name": "main.py",
-      "content": "filnamn = \"inflil.txt\"\n\ntry:\n  fil = open(filnamn, \"r\")\n\nexcept FileNotFoundError:\n  print(\"Ingen fil med namn \" + filnamn +  \" hittades.\")"
+      "content": "filnamn = \"inflil.txt\"\n\ntry:\n  fil = open(filnamn, \"r\")\n\nexcept FileNotFoundError:\n  print(\"Ingen fil med namn \" + filnamn + \" hittades.\")"
     }
   ]
 }

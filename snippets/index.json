@@ -336,63 +336,75 @@
         {
           "id": "lecture08-01",
           "file": "lecture-examples/lecture08/01.json",
-          "title": "8.1"
+          "title": "8.1 Större exempel med filläsning"
         },
         {
           "id": "lecture08-02",
           "file": "lecture-examples/lecture08/02.json",
-          "title": "8.2"
+          "title": "8.2 Felhantering vid filöppning"
         },
         {
           "id": "lecture08-03",
           "file": "lecture-examples/lecture08/03.json",
-          "title": "8.3"
+          "title": "8.33 Större exempel med filläsning och felhantering"
         },
         {
           "id": "lecture08-04",
           "file": "lecture-examples/lecture08/04.json",
-          "title": "8.4"
+          "title": "8.4 Felhantering meny"
         },
         {
           "id": "lecture08-05",
           "file": "lecture-examples/lecture08/05.json",
-          "title": "8.5"
+          "title": "8.5 Felhantering i funktion"
         },
         {
           "id": "lecture08-06",
           "file": "lecture-examples/lecture08/06.json",
-          "title": "8.6"
+          "title": "8.6 Fel datatyp"
         },
         {
           "id": "lecture08-07",
           "file": "lecture-examples/lecture08/07.json",
-          "title": "8.7"
+          "title": "8.7 – Läs in och kontrollera data"
         },
         {
           "id": "lecture08-08",
           "file": "lecture-examples/lecture08/08.json",
-          "title": "8.8"
+          "title": "8.8 UnboundLocalError"
         },
         {
           "id": "lecture08-09",
           "file": "lecture-examples/lecture08/09.json",
-          "title": "8.9"
+          "title": "8.9 Logiska fel"
         },
         {
           "file": "lecture-examples/lecture08/10.json",
-          "title": "8.10 – File I/O with Exception Handling"
+          "title": "8.10 Framkalla fel med raise"
         },
         {
           "file": "lecture-examples/lecture08/11.json",
-          "title": "8.11 – Try/Except: Exception Handling"
+          "title": "8.11 Fånga alla fel"
         },
         {
           "file": "lecture-examples/lecture08/12.json",
-          "title": "8.12 – Recursion: meny()"
+          "title": "8.12 Felhantering utan try-except"
         },
         {
           "file": "lecture-examples/lecture08/13.json",
-          "title": "8.13 – For Loop with range()"
+          "title": "8.13 Felhantering på olika sätt"
+        },
+        {
+          "file": "lecture-examples/lecture08/14.json",
+          "title": "8.12 – Dålig meny, med rekursion"
+        },
+        {
+          "file": "lecture-examples/lecture08/15.json",
+          "title": "8.15 Produkter och priser"
+        },
+        {
+          "file": "lecture-examples/lecture08/16.json",
+          "title": "8.16 Produkter med duplettkontroll"
         }
       ]
     },
