@@ -289,42 +289,42 @@
         {
           "id": "lecture07-01",
           "file": "lecture-examples/lecture07/01.json",
-          "title": "7.1 – Ett program som läser in produkter och priser"
+          "title": "7.1 – Läsa från fil"
         },
         {
           "id": "lecture07-02",
           "file": "lecture-examples/lecture07/02.json",
-          "title": "7.2 – Reading and Writing Files"
+          "title": "7.2 – Öppna fil med with"
         },
         {
           "id": "lecture07-03",
           "file": "lecture-examples/lecture07/03.json",
-          "title": "7.3 – Ett program som läser in produkter och priser"
+          "title": "7.3 – Ta bort radbrytning"
         },
         {
           "id": "lecture07-04",
           "file": "lecture-examples/lecture07/04.json",
-          "title": "7.4 – Reading and Writing Files"
+          "title": "7.4 – Läsa en rad i taget"
         },
         {
           "id": "lecture07-05",
           "file": "lecture-examples/lecture07/05.json",
-          "title": "7.5 – Ett program som läser in produkter och priser"
+          "title": "7.5 – Ett program som läser in flera datapunkter på samma rad, en rad i taget"
         },
         {
           "id": "lecture07-06",
           "file": "lecture-examples/lecture07/06.json",
-          "title": "7.6 – Ett program som läser in produkter och priser"
+          "title": "7.6 – När vi inte vet hur många dtatpundter vi har på varje rad"
         },
         {
           "id": "lecture07-07",
           "file": "lecture-examples/lecture07/07.json",
-          "title": "7.7 – Reading and Writing Files"
+          "title": "7.7 – Ett program som både läser och skriver till fil"
         },
         {
           "id": "lecture07-08",
           "file": "lecture-examples/lecture07/08.json",
-          "title": "7.8 – Reading and Writing Files"
+          "title": "7.8 – Lägga till data i en textfil"
         }
       ]
     },

@@ -1,13 +1,13 @@
 {
-  "title": "7.8 – Reading and Writing Files",
+  "title": "7.8 – Lägga till data i en textfil",
   "files": [
     {
       "name": "main.py",
-      "content": "def läs_fil():\n  infil = open(\"fil.txt\", \"r\")\n  all_text = infil.readlines()\n  for i in range(len(all_text)):\n    all_text[i] = all_text[i].strip()\n  infil.close()\n  return all_text\n  \nprint(läs_fil())"
+      "content": "#Ett program som läser in produkter och priser\ndef läs_in(filnamn):\n  \"\"\"Läser in produkter och priser från fil\n  Inparameter: filnamn (sträng)\n  Returerar:  produkter (matris [[sträng, int]]\"\"\"\n  fil = open(filnamn, \"r\")\n  produkter = []\n  rad = fil.readline().strip()\n  while rad != \"\":           #Så länge som raden inte är tom\n    rad = rad.split()        #delar upp strängen i två\n    produkter.append([rad[0],int(rad[1])])\n    rad = fil.readline().strip()  #läser in nästa rad\n  return produkter\n \ndef lägg_till(filnamn, produkter):\n  fil = open(filnamn, \"a\")\n  fil.write(produkter[-1][0] + \" \")\n  fil.write(str(produkter[-1][1]) + \"\\n\")\n  fil.close()\n\n\ndef main():\n  inlästa_produkter = läs_in(\"infil.txt\")\n  for produkt in inlästa_produkter:\n    print(produkt[0] + \" har priset \" + str(produkt[1]) + \" kr.\")\n  ny_produkt = input(\"Vilken produkt vill du lägga till? \")\n  pris = int(input(\"Vilken pris har den? \"))\n  inlästa_produkter.append([ny_produkt, pris]) \n  lägg_till(\"infil.txt\", inlästa_produkter)\n  \nmain()"
     },
     {
-      "name": "fil.txt",
-      "content": "Limerick av Edward Lear:\nThere was an Old Man with a beard,\nWho said, 'It is just as I feared!\nTwo Owls and a Hen,\nFour Larks and a Wren, \nHave all built their nests in my beard!"
+      "name": "infil.txt",
+      "content": "mjölk 15\nbröd 25\nost 65\nfil 23\nsylt 45\n"
     }
   ]
 }
