@@ -408,42 +408,42 @@
         {
           "id": "lecture09-01",
           "file": "lecture-examples/lecture09/01.json",
-          "title": "9.1"
+          "title": "9.1 En klass och objekt"
         },
         {
           "id": "lecture09-02",
           "file": "lecture-examples/lecture09/02.json",
-          "title": "9.2"
+          "title": "9.2 Metodanrop"
         },
         {
           "id": "lecture09-03",
           "file": "lecture-examples/lecture09/03.json",
-          "title": "9.3"
+          "title": "9.3 Skriva ut objekt"
         },
         {
           "id": "lecture09-04",
           "file": "lecture-examples/lecture09/04.json",
-          "title": "9.4"
+          "title": "9.4 __str__-metod"
         },
         {
           "id": "lecture09-05",
           "file": "lecture-examples/lecture09/05.json",
-          "title": "9.5"
+          "title": "9.5 Omgjord labb med klasser"
         },
         {
           "id": "lecture09-06",
           "file": "lecture-examples/lecture09/06.json",
-          "title": "9.6"
+          "title": "9.6 __lt__ för att kunna jämföra objekt"
         },
         {
           "id": "lecture09-07",
           "file": "lecture-examples/lecture09/07.json",
-          "title": "9.7"
+          "title": "9.6 Lägga till en metod"
         },
         {
           "id": "lecture09-08",
           "file": "lecture-examples/lecture09/08.json",
-          "title": "9.8"
+          "title": "9.8 Lägga till en meny"
         }
       ]
     },

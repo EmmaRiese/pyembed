@@ -1,9 +1,9 @@
 {
-  "title": "9.4",
+  "title": "9.4 __str__-metod",
   "files": [
     {
       "name": "main.py",
-      "content": "ANTAL_GRUPPER = 3\n\nclass Grupp:\n  def __init__ (self, namn, ständig_medlem):\n    self.gruppnamn = namn\n    self.medlemmar = [ständig_medlem]\n    \n  def __str__ (self):\n    sträng = self.gruppnamn + \" har följande medlemmar: \" \n    for medlem in self.medlemmar:\n        sträng += str(medlem +  \", \")\n    return sträng[0:-2]\n    \n  def lägg_till_medlem(self, ny_medlem):\n    self.medlemmar.append(ny_medlem)\n    \n  def ta_bort_medlem(self, medlem):\n    if medlem in self.medlemmar:\n      self.medlemmar.remove(medlem)\n      print(medlem, \"är borttagen\")\n    else:\n      print(\"Medlemen finns inte gruppen. \")\n      \n  def ordförande(self):\n    if len(self.medlemmar) == 0:\n      print(\"Finns inga medlemmar och ingen ordförande!\")\n      return None\n    ordförande = self.medlemmar[0]\n    for i in range(len(self.medlemmar)):\n      if len(ordförande) < len(self.medlemmar[i]):\n        ordförande = self.medlemmar[i]\n    return ordförande\n        \ndef huvudprogram():\n  grupper = []\n  namn = input(\"Vad heter den ständiga medlemen ?\")\n  for i in range(ANTAL_GRUPPER):\n    gruppnamn = input(\"Vad heter grupp \" + str(i +1) + \"? \")\n    grupp = Grupp(gruppnamn, namn)\n    grupper.append(grupp)\n    \n  for grupp in grupper:\n    namn = input(\"Vem vill du lägga till i grupp \" + grupp.gruppnamn +\"? \")\n    grupp.lägg_till_medlem(namn)\n    \n  for objekt in grupper:\n    print(objekt)\n    \n  for grupp in grupper:\n    print(\"Ordförande i gruppen\", grupp.gruppnamn, \"är\", grupp.ordförande())\n  \n  \nhuvudprogram()\n    \n  "
+      "content": "class Spelare:\n  \n  def __init__ (self, namnet, poängen):\n    self.namn = namnet\n    self.poäng = poängen\n    \n  def __str__ (self):\n    return self.namn + \" fick \" + str(self.poäng) + \" poäng\"\n    \n  def mer_poäng(self):\n    self.poäng += 1\n\nspelare = Spelare(\"Emma\", 23)\nprint(spelare)\n"
     }
   ]
 }
