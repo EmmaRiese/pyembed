@@ -165,22 +165,22 @@
         {
           "id": "lecture04-01",
           "file": "lecture-examples/lecture04/01.json",
-          "title": "4.1"
+          "title": "4.1 Mängder"
         },
         {
           "id": "lecture04-02",
           "file": "lecture-examples/lecture04/02.json",
-          "title": "4.2"
+          "title": "4.2 Dictionary"
         },
         {
           "id": "lecture04-03",
           "file": "lecture-examples/lecture04/03.json",
-          "title": "4.3"
+          "title": "4.3 Större exempel med dictionary"
         },
         {
           "id": "lecture04-04",
           "file": "lecture-examples/lecture04/04.json",
-          "title": "4.4"
+          "title": "4.4 Finare utskrift från dictionary med flera värden"
         }
       ]
     },
