@@ -234,51 +234,51 @@
         {
           "id": "lecture06-01",
           "file": "lecture-examples/lecture06/01.json",
-          "title": "6.1"
+          "title": "6.1 Defaultparametrar och anrop"
         },
         {
           "id": "lecture06-02",
           "file": "lecture-examples/lecture06/02.json",
-          "title": "6.2"
+          "title": "6.2 Defultparametrar och huvudprogram"
         },
         {
           "id": "lecture06-03",
           "file": "lecture-examples/lecture06/03.json",
-          "title": "6.3"
+          "title": "6.3 Större exempel med matriser"
         },
         {
           "id": "lecture06-04",
           "file": "lecture-examples/lecture06/04.json",
-          "title": "6.4"
+          "title": "6.4 importer math"
         },
         {
           "id": "lecture06-05",
           "file": "lecture-examples/lecture06/05.json",
-          "title": "6.5"
+          "title": "6.5 Annat sätt att importera"
         },
         {
           "id": "lecture06-06",
           "file": "lecture-examples/lecture06/06.json",
-          "title": "6.6"
+          "title": "6.6 random för slumptal"
         },
         {
           "id": "lecture06-07",
           "file": "lecture-examples/lecture06/07.json",
-          "title": "6.7"
+          "title": "6.7 tärningsfunktion"
         },
         {
           "id": "lecture06-08",
           "file": "lecture-examples/lecture06/08.json",
-          "title": "6.8"
+          "title": "6.8 Tärning med random"
         },
         {
           "id": "lecture06-09",
           "file": "lecture-examples/lecture06/09.json",
-          "title": "6.9"
+          "title": "6.9 Rekursion Fibonaccis talföljd"
         },
         {
           "file": "lecture-examples/lecture06/10.json",
-          "title": "6.10 – Recursion: skapa_matris()"
+          "title": "6.10 rekursionexempel"
         }
       ]
     },

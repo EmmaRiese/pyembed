@@ -1,9 +1,9 @@
 {
-  "title": "6.5",
+  "title": "6.5 Annat sätt att importera",
   "files": [
     {
       "name": "main.py",
-      "content": "def vänd(sträng):\n    if sträng == \"\":\n        return sträng\n    else:\n        return vänd(sträng[1:]) + sträng[0]\n        \nprint(vänd(\"sirap\"))"
+      "content": "from math import *\n\nprint(sqrt(4))   #.sqrt() är en funktion för kvadratroten ur som finns i math modulen\n\nprint(pi)        #En konstant pi, definierad i modulen \n\nprint(pow(3, 4))  # 3 upphöjt till 4 "
     }
   ]
 }

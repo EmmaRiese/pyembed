@@ -1,9 +1,9 @@
 {
-  "title": "6.6",
+  "title": "6.6 random för slumptal",
   "files": [
     {
       "name": "main.py",
-      "content": "from math import *\n\nprint(sqrt(4))   #.sqrt() är en funktion för kvadratroten ur som finns i math modulen\n\nprint(pi)        #En konstant pi, definierad i modulen \n\nprint(pow(3, 4))  # 3 upphöjt till 4 "
+      "content": "from random import randint\nslag1 = randint(1,6)\nslag2 = randint(1,6)\nprint(\"Du slog \" + str(slag1) + \" och \" + str(slag2) + \" på tärningarna\")\n"
     }
   ]
 }
