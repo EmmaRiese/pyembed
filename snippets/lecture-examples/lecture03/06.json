@@ -1,9 +1,9 @@
 {
-  "title": "3.6",
+  "title": "3.6 Att bygga upp en lista",
   "files": [
     {
       "name": "main.py",
-      "content": "for i in range(1,4):\n    for j in range(1,4):\n        print(i*j, end =\" \")\n    print()"
+      "content": "ANTAL_BÖCKER = 4\ntitlar = []\nfor i in range(ANTAL_BÖCKER): \n    bok = input(\"Vad heter bok nr \" + str(i+1)+ \"? \")\n    titlar.append(bok)\nprint(titlar) #skriver ut listan när slinga är klar"
     }
   ]
 }

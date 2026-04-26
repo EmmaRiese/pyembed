@@ -1,9 +1,9 @@
 {
-  "title": "3.1",
+  "title": "3.1 En lista och dess index",
   "files": [
     {
       "name": "main.py",
-      "content": "tal = [42, 56 , 2, 51, 89, 32]\n\nminsta = tal[0]\nfor i in range(1, len(tal)):\n  if minsta > tal[i]:\n    minsta = tal[i]\nprint(\"Minsta talet är:\", minsta)"
+      "content": "frukter =[\"äpple\",\"päron\",\"körsbär\",\"mango\"]\nprint(frukter[3])\n\nfrukter[3] = \"apelsin\" #ändrar värdet på index 3\nprint(frukter)"
     }
   ]
 }

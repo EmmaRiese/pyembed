@@ -118,42 +118,42 @@
         {
           "id": "lecture03-01",
           "file": "lecture-examples/lecture03/01.json",
-          "title": "3.1"
+          "title": "3.1 En lista och dess index"
         },
         {
           "id": "lecture03-02",
           "file": "lecture-examples/lecture03/02.json",
-          "title": "3.2"
+          "title": "3.2 insert och append"
         },
         {
           "id": "lecture03-03",
           "file": "lecture-examples/lecture03/03.json",
-          "title": "3.3"
+          "title": "3.3 for-slinga för att gå igenom en lista"
         },
         {
           "id": "lecture03-04",
           "file": "lecture-examples/lecture03/04.json",
-          "title": "3.4"
+          "title": "3.4 range() i for-slingor"
         },
         {
           "id": "lecture03-05",
           "file": "lecture-examples/lecture03/05.json",
-          "title": "3.5"
+          "title": "3.5 Att söka igenom en lista"
         },
         {
           "id": "lecture03-06",
           "file": "lecture-examples/lecture03/06.json",
-          "title": "3.6"
+          "title": "3.6 Att bygga upp en lista"
         },
         {
           "id": "lecture03-07",
           "file": "lecture-examples/lecture03/07.json",
-          "title": "3.7"
+          "title": "3.7 for-slinga med range()"
         },
         {
           "id": "lecture03-08",
           "file": "lecture-examples/lecture03/08.json",
-          "title": "3.8"
+          "title": "3.8 Matris"
         }
       ]
     },

@@ -1,9 +1,9 @@
 {
-  "title": "3.7",
+  "title": "3.7 for-slinga med range()",
   "files": [
     {
       "name": "main.py",
-      "content": "lista = [5, 2, 3, 1, 9]\nfor i in range(len(lista)):\n\tprint(\"På index\",i, \"finns värdet:\", lista[i], end =\" \")"
+      "content": "for i in range(1,4):\n    for j in range(1,4):\n        print(i*j, end =\" \")\n    print()"
     }
   ]
 }
