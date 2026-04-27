@@ -540,22 +540,22 @@
         {
           "id": "lecture12-01",
           "file": "lecture-examples/lecture12/01.json",
-          "title": "12.1"
+          "title": "12.1 Flera referenser till samma lista"
         },
         {
           "id": "lecture12-02",
           "file": "lecture-examples/lecture12/02.json",
-          "title": "12.2"
+          "title": "12.2 Kopiera en lista"
         },
         {
           "id": "lecture12-03",
           "file": "lecture-examples/lecture12/03.json",
-          "title": "12.3"
+          "title": "12.3 En ytlig kopia"
         },
         {
           "id": "lecture12-04",
           "file": "lecture-examples/lecture12/04.json",
-          "title": "12.4"
+          "title": "12.4 En ordentlig kopia även objekten"
         },
         {
           "file": "lecture-examples/lecture12/05.json",
@@ -563,7 +563,7 @@
         },
         {
           "file": "lecture-examples/lecture12/06.json",
-          "title": "12.6 – Tal Class"
+          "title": "12.6 Frukt-klass med fil"
         }
       ]
     },
