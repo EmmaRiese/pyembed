@@ -314,7 +314,7 @@
         {
           "id": "lecture07-06",
           "file": "lecture-examples/lecture07/06.json",
-          "title": "7.6 – När vi inte vet hur många dtatpundter vi har på varje rad"
+          "title": "7.6 – När vi inte vet hur många datapunkter vi har på varje rad"
         },
         {
           "id": "lecture07-07",
@@ -497,38 +497,38 @@
         {
           "id": "lecture11-01",
           "file": "lecture-examples/lecture11/01.json",
-          "title": "11.1"
+          "title": "11.9 Flera klasser och filer"
         },
         {
           "id": "lecture11-02",
           "file": "lecture-examples/lecture11/02.json",
-          "title": "11.2"
+          "title": "11.2 Arv - Olika typer av rum"
         },
         {
           "id": "lecture11-03",
           "file": "lecture-examples/lecture11/03.json",
-          "title": "11.3"
+          "title": "11.3 Arv med Rum och Rum_med_Pentry, överlagring"
         },
         {
           "id": "lecture11-04",
           "file": "lecture-examples/lecture11/04.json",
-          "title": "11.4"
+          "title": "11.4 Arv i olika filer"
         },
         {
           "file": "lecture-examples/lecture11/05.json",
-          "title": "11.5 – Rum Class (multi-file)"
+          "title": "11.5 Arv med geometriska former"
         },
         {
           "file": "lecture-examples/lecture11/06.json",
-          "title": "11.6 – Inköpslista extends list"
+          "title": "11.6 Arv från Exception"
         },
         {
           "file": "lecture-examples/lecture11/07.json",
-          "title": "11.7 – Rum: Inheritance"
+          "title": "11.7 – Inköpslista extends list"
         },
         {
           "file": "lecture-examples/lecture11/08.json",
-          "title": "11.8 – Sjutton extends Exception"
+          "title": "11.8 Klassattribut"
         }
       ]
     },

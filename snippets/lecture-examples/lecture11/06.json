@@ -1,9 +1,9 @@
 {
-  "title": "11.6 – Inköpslista extends list",
+  "title": "11.6 Arv från Exception",
   "files": [
     {
       "name": "main.py",
-      "content": "class Inköpslista(list):\n    \n  def __str__(self):\n    sträng = \"\"\n    for vara in self:\n      sträng += \" * \" + str(vara) + \"\\n\"\n    return sträng\n\ndef main():\n  lista = [\"Ägg\",\"Smör\",\"Mjölk\"]\n  print(\"Utskrift av 'list'\")\n  print(lista)\n  inköpslista = Inköpslista(lista)\n  print(\"Utskrift av 'Inköpslista'\")\n  print(inköpslista)\n\n\nmain()"
+      "content": "class Sjutton(Exception):\n    pass\n\ndef skriv_tal(antal):\n    for i in range(antal):\n        if i == 17:\n            raise Sjutton\n        else:\n            print(i)\n\ndef main():\n    try:\n        skriv_tal(25)\n    except Sjutton:\n        print(\"Det var som sjutton!\")\n\nmain()\n"
     }
   ]
 }

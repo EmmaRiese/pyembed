@@ -1,17 +1,13 @@
 {
-  "title": "11.5 – Rum Class (multi-file)",
+  "title": "11.5 Arv med geometriska former",
   "files": [
     {
+      "name": "geometri.py",
+      "content": "class Parallellogram:\n    \n  def __init__(self, a, b, h):\n    self.kant1 = a\n    self.basKant = b\n    self.hojd = h\n        \n  def area(self):\n    return self.hojd*self.basKant\n\n  def omkrets(self):\n    return 2*(self.kant1+self.basKant)\n    \nclass Rektangel(Parallellogram):\n\n  def __init__(self, a, b):\n    self.kant1  =  a\n    self.basKant = b\n\n  def area(self):\n    return self.kant1*self.basKant\n    \nclass Kvadrat(Rektangel):\n\n  def __init__(self,a):\n    self.kant1 = a\n    self.basKant = a\n"
+    },
+    {
       "name": "main.py",
-      "content": "from rum import *\nfrom rum_pentry import *\n  \n\ndef main():\n  rum = Rum(16, 1, False)\n  print(rum)  \n  rum2 = Rum_med_Pentry(20, 1, True, False, True)\n  print(rum2) \n\nmain()"
-    },
-    {
-      "name": "rum.py",
-      "content": "class Rum():\n  \n  def __init__(self, storlek, fönster, uthyrt=False):\n    self.storlek = storlek\n    self.antal_fönster = fönster\n    self.uthyrt = uthyrt\n    \n  def __str__(self):\n    if self.uthyrt:\n      sträng = \"Rummet är uthyrt: \"\n    else:\n      sträng = \"Rummet är ledigt: \"\n      \n    return sträng + str(self.storlek) + \" kvm stort och har \" + str(self.antal_fönster) + \" fönster.\"\n    \n  def hyr_ut(self):\n    self.uthyrt = True\n    \n  def är_ledigt(self):\n    self.uthyrt = False\n    "
-    },
-    {
-      "name": "rum_pentry.py",
-      "content": "from rum import *\n\nclass Rum_med_Pentry(Rum):\n  \n  def __init__(self, storlek, fönster, uthyrt, ugn, micro):\n   super().__init__(storlek, fönster, uthyrt)\n   self.ugn = ugn\n   self.micro = micro\n  \n  def __str__(self):\n    if self.uthyrt:\n      sträng = \"Rummet är uthyrt: \"\n    else:\n      sträng = \"Rummet är ledigt: \"\n    \n    if self.ugn:\n      slut = \", har ugn och \"\n    else:\n      slut = \", har inte ugn och \"\n    \n    if self.micro:\n      slut += \"har micro.\"\n    else:\n      slut += \"har inte micro.\"\n      \n    return sträng + str(self.storlek) + \" kvm stort och har \" + str(self.antal_fönster)\\\n           + \" fönster\" + slut\n  \n    \n    "
+      "content": "# Huvudprogrammet\n\nfrom geometri import *\n\ndef main():\n    bas = int(input(\"Hur lång är basen? \"))\n    höjden = int(input(\"Hur hög är höjden? \"))\n    rek = Rektangel(höjden, bas)\n    print(\"Arean = \", rek.area())\n    print(\"Omkretsen = \", rek.omkrets())\n\nmain()\n"
     }
   ]
 }

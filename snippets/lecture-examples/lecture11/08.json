@@ -1,9 +1,9 @@
 {
-  "title": "11.8 – Sjutton extends Exception",
+  "title": "11.8 Klassattribut",
   "files": [
     {
       "name": "main.py",
-      "content": "class Sjutton(Exception):\n    pass\n\ndef skriv_tal(antal):\n    for i in range(antal):\n        if i == 17:\n            raise Sjutton\n        else:\n            print(i)\n\ndef main():\n    try:\n        skriv_tal(25)\n    except Sjutton:\n        print(\"Det var som sjutton!\")\n\nmain()\n"
+      "content": "class Långord:\n\n    VOKALER = \"aeiouyåäö\"  # VOKALER är ett klassattribut\n\n    def __init__(self, ordet):\n        self.ordet = ordet\n\n    def antal_vokaler(self):\n        antal = 0\n        for bokstav in self.ordet:\n            if bokstav in Långord.VOKALER:\n                antal += 1\n        return antal\n\ndef main():\n  ordobjekt = Långord(\"boendeparkeringstillstånd\")\n  print(ordobjekt.antal_vokaler())\n\nmain()\n"
     }
   ]
 }
