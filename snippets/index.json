@@ -646,20 +646,20 @@
         {
           "id": "lecture15-01",
           "file": "lecture-examples/lecture15/01.json",
-          "title": "15.1"
+          "title": "15.1 – Läsa och skriva till fil"
         },
         {
           "id": "lecture15-02",
           "file": "lecture-examples/lecture15/02.json",
-          "title": "15.2"
+          "title": "15.2 Läsa in en limerick från fil"
         },
         {
           "file": "lecture-examples/lecture15/03.json",
-          "title": "15.3 – For Loop with range()"
+          "title": "15.3 Formatera strängar"
         },
         {
           "file": "lecture-examples/lecture15/04.json",
-          "title": "15.4 – Reading and Writing Files"
+          "title": "15.3 – Finare tabell med justering()"
         }
       ]
     },

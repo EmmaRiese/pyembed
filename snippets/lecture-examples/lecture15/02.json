@@ -1,9 +1,13 @@
 {
-  "title": "15.2",
+  "title": "15.2 Läsa in en limerick från fil",
   "files": [
     {
+      "name": "fil.txt",
+      "content": "Limerick av Edward Lear:\nThere was an Old Man with a beard,\nWho said, 'It is just as I feared!\nTwo Owls and a Hen,\nFour Larks and a Wren, \nHave all built their nests in my beard!\nNu är limericken slut\n"
+    },
+    {
       "name": "main.py",
-      "content": "print(\"Svårläst tabell: \")\nfor n in range(10):\n  print(n, n**2, n**3, n**4)\n\nprint()\nprint(\"Finare tabell: \")\nfor n in range(10):\n  print(\"{}\".format(n), \"{:>3}\".format(n**2), \\\n  \"{:>4}\".format(n**3), \"{:>5}\".format(n**4))\n"
+      "content": "def läs_fil():\n  infil = open(\"fil.txt\", \"r\")\n  text = []\n  rad = infil.readline().strip()\n  while rad != \"\":\n    text.append(rad)\n    rad = infil.readline().strip()\n  infil.close()\n  return text\n  \nlimerick = läs_fil()\nfor rad in limerick:\n  print(rad)\n"
     }
   ]
 }
