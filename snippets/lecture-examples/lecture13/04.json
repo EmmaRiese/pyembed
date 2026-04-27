@@ -1,9 +1,9 @@
 {
-  "title": "13.4",
+  "title": "13.4 Inmatning och felhantering",
   "files": [
     {
       "name": "main.py",
-      "content": "matris = []\nfor i in range(1,4):\n  rad=[]\n  for j in range(1,4):\n    rad.append(j*i)\n  matris.append(rad)\nprint(matris)\n\nprint(matris[1][2])"
+      "content": "def är_postivit_heltal(inmatning):\n  try:\n    inmatning = int(inmatning)\n    if inmatning < 0:\n      raise ValueError\n    return True\n  except ValueError:\n    print(\"Inte en postiv siffra, försök igen.\")\n    return False\n\ndef meny():\n  val = 0\n  while val != 2:\n    print(\"Meny\\n1. Val 1.\\n2. Avsluta.\")\n    val = input(\"Vad vill du göra?\")\n    while not är_postivit_heltal(val):\n      val = input(\"Vad vill du göra?\")\n    val = int(val)\n    if val == 1:\n      print(\"Du valde 1.\\n\")\n      \n    elif val ==2:\n      print(\"Programmet avslutas\")\n      \n    else:\n       print(\"Fel siffra, välj igen.\")\n    \nmeny()\n\n"
     }
   ]
 }

@@ -575,50 +575,50 @@
         {
           "id": "lecture13-01",
           "file": "lecture-examples/lecture13/01.json",
-          "title": "13.1"
+          "title": "13.1 Söka igenom en lista"
         },
         {
           "id": "lecture13-02",
           "file": "lecture-examples/lecture13/02.json",
-          "title": "13.2"
+          "title": "13.11 Ljusstake-klass med sortering"
         },
         {
           "id": "lecture13-03",
           "file": "lecture-examples/lecture13/03.json",
-          "title": "13.3"
+          "title": "13.10 – Kakformer som ärver från set"
         },
         {
           "id": "lecture13-04",
           "file": "lecture-examples/lecture13/04.json",
-          "title": "13.4"
+          "title": "13.4 Inmatning och felhantering"
         },
         {
           "id": "lecture13-05",
           "file": "lecture-examples/lecture13/05.json",
-          "title": "13.5"
+          "title": "13.5 Läsa från fil"
         },
         {
           "id": "lecture13-06",
           "file": "lecture-examples/lecture13/06.json",
-          "title": "13.6"
+          "title": "13.6 Användarvänliga utskrifter"
         },
         {
           "id": "lecture13-07",
           "file": "lecture-examples/lecture13/07.json",
-          "title": "13.7"
+          "title": "13.7 Dictionaries"
         },
         {
           "id": "lecture13-08",
           "file": "lecture-examples/lecture13/08.json",
-          "title": "13.8"
+          "title": "13.8 nästlade for-slingor"
         },
         {
           "file": "lecture-examples/lecture13/09.json",
-          "title": "13.9 – Exempel med bra kommentar"
+          "title": "13.9 Bra namn"
         },
         {
           "file": "lecture-examples/lecture13/10.json",
-          "title": "13.10 – Kakformer extends set"
+          "title": "13.7 Bra och dåliga kommentarer"
         }
       ]
     },

@@ -1,9 +1,13 @@
 {
-  "title": "13.2",
+  "title": "13.11 Ljusstake-klass med sortering",
   "files": [
     {
+      "name": "ljus.txt",
+      "content": "7 False\n10 False\n5 False\n"
+    },
+    {
       "name": "main.py",
-      "content": "ANTAL_FRUKTER = 3\n\ndef inmatning():\n  frukter_pris = {}\n  for i in range(ANTAL_FRUKTER):\n    frukt = input(\"Vilken frukt vill du lägga till?\")\n    pris =[None]*2\n    pris[0] = int(input(\"Vilket ordinarie pris? \"))\n    pris[1] = int(input(\"Vilket rea pris? \"))\n    frukter_pris[frukt] = pris\n  return frukter_pris\n\ndef mindre_fin_utskrift(frukter):\n  print(\"Mindre fin utskrift: \")\n  for frukt in frukter.keys():\n    print(frukt, \"har priserna\", frukter[frukt])\n  print()\n  \ndef fin_utskrift(frukter):\n  print(\"Bättre utskrift: \")\n  for frukt in frukter.keys():\n    print(frukt, \"har\", end=\" \")\n    print(\"ett ordinarie pris på\", frukter[frukt][0], \"kr.\", end=\" \")\n    print(frukt +\"s reapriset är \" + str(frukter[frukt][1])+\" kr.\")\n    print()\n    \ndef huvudfunktion():\n  frukt_dictonary = inmatning()\n  mindre_fin_utskrift(frukt_dictonary)\n  fin_utskrift(frukt_dictonary)\n  \nhuvudfunktion()"
+      "content": "class Ljusstake():\n  \n  def __init__(self, ljus, batteri = False):\n    self.antal_ljus = ljus\n    self.batteridriven = batteri\n    \n  def __str__(self):\n    sträng = \"Har \"+ str(self.antal_ljus) + \" ljus \"\n    if self.batteridriven == True:\n      sträng += \"och går på batteri.\"\n    else:\n      sträng += \"och går på el.\"\n    return sträng\n    \n  def __lt__(self, other):\n    if self.antal_ljus < other.antal_ljus:\n      return True\n    else:\n      return False\n  \n  def fixa_batteri(self):\n    self.batteridriven = True\n\ndef läsa_in_från_fil(filnamn):\n  try:\n    fil = open(filnamn, \"r\")\n    rad = fil.readline().strip()\n  except FileNotFoundError:\n    print(\"Ingen fil med namn \\\"\" + filnamn + \"\\\" hittades.\")\n    rad = \"\"\n  ljus_lista = []\n  while rad != \"\":           #Så länge som raden inte är tom\n    rad = rad.split()        #delar upp strängen i två\n    if rad[1] == \"False\":\n      ljus = Ljusstake(int(rad[0]), False)\n    else:\n      ljus = Ljusstake(int(rad[0]), True)\n    ljus_lista.append(ljus)\n    rad = fil.readline().strip()  #läser in nästa rad\n  return ljus_lista\n\ndef hitta(ljusstakar):\n  antal = int(input(\"Hur många ljus har ljusstaken du letar efter? \"))\n  for ljusstake in ljusstakar:\n    if ljusstake.antal_ljus == antal:\n      print(\"Ljusstake hittad\")\n      return ljusstake\n  print(\"Hittades inte!\")\n  return False\n\ndef main():\t\n  mina_ljusstakar = läsa_in_från_fil(\"ljus.txt\")\n  mina_ljusstakar.sort()\n  for i in range(len(mina_ljusstakar)):\n    print(str(i+1) + \". \" + str(mina_ljusstakar[i]))\n  \n  ljus = hitta(mina_ljusstakar)\n  if ljus != False:\n    ljus.fixa_batteri()\n    \n  for i in range(len(mina_ljusstakar)):\n    print(str(i+1) + \". \" + str(mina_ljusstakar[i]))\n  \n  \nmain()\n"
     }
   ]
 }

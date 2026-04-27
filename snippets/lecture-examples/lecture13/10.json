@@ -1,9 +1,9 @@
 {
-  "title": "13.10 – Kakformer extends set",
+  "title": "13.7 Bra och dåliga kommentarer",
   "files": [
     {
       "name": "main.py",
-      "content": "class Kakformer(set):\n  def __str__(self):\n    sträng = \"Former: \"\n    for form in self:\n      sträng +=  str(form) + \", \"\n    return sträng[:-2] \n\ndef main():\t\n  mina_former = Kakformer({\"hjärta\", \"gran\", \"gris\", \"klocka\"})\n  print(mina_former)\n  kompis_former = Kakformer({\"hjärta\", \"häst\", \"älg\", \"stjärna\"})\n  \n  snitt = mina_former.intersection(kompis_former)\n  alla = mina_former.union(kompis_former)\n  print(\"Snitt: \", snitt)\n  print(\"Union: \", Kakformer(alla))\n  \n  \nmain()"
+      "content": "#Exempel med bra kommentar\n\ndef skriv_ut_lista(lista):\n  \"\"\"Skriver ut varje element i listan med kommatecken mellan elementen\n  Inparametrar: lista (list)\n  Returvärde: inget\"\"\"\n  for i in range(len(lista)):\n    if i == len(lista) - 1:\n      print(lista[i])\n    else:\n      print(str(lista[i]) + \", \", end = \"\")\n  \n  \n#Exempel med dåliga kommentarer\ndef skriv_ut_lista2(lista):\n  #en funktion\n  for i in range(len(lista)): #en slinga som går igenom varje element, i går från 0 till högsta index\n    if i == len(lista) - 1: #Om det är det sista elementet\n      print(lista[i]) #skrivs det inte ut något kommatecken\n    else: #annars\n      print(str(lista[i]) + \", \", end = \"\") #skrivs element och kommatecken ut\n  \n\nskriv_ut_lista([1, 4 ,7, 8 , 332, 1])\nskriv_ut_lista2([1, 4 ,7, 8 , 332, 1])"
     }
   ]
 }
