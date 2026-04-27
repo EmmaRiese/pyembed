@@ -630,11 +630,11 @@
         {
           "id": "lecture14-01",
           "file": "lecture-examples/lecture14/01.json",
-          "title": "14.1"
+          "title": "14.1 – Läsa och skriva till fil"
         },
         {
           "file": "lecture-examples/lecture14/02.json",
-          "title": "14.2 – Reading and Writing Files"
+          "title": "14.2 Klasser och objekt"
         }
       ]
     },
