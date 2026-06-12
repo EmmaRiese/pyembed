@@ -7,7 +7,7 @@
     },
     {
       "name": "friends.txt",
-      "content": "Den här raden kommer programmet ignorera, men du kan lägga till fler namn nedan.\nAlex Bok\nChris Davidson\nEli Franson\n\n\n\n\n\n\n\n\n\n\n\n"
+      "content": "Den här raden kommer programmet ignorera, men du kan lägga till fler namn nedan.\nAlex Bok\nChris Davidson\nEli Franson\n"
     }
   ]
 }

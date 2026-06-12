@@ -2,12 +2,12 @@
   "title": "KS",
   "files": [
     {
-      "name": "fil.txt",
+      "name": "main.py",
       "content": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
     },
     {
-      "name": "main.py",
-      "content": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+      "name": "fil.txt",
+      "content": ""
     }
   ]
 }
