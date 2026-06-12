@@ -44,6 +44,7 @@ Four pages are available for navigating snippets:
 | Möbius DD100N | `lecture.html?course=mobius-dd100n&n=1` |
 | Möbius DD1310 | `lecture.html?course=mobius-dd1310&n=1` |
 | DD1310 Tutorials | `lecture.html?course=tutorials-dd1310&n=1` |
+| DD1320 Automater | `lecture.html?course=dd1320&n=1` |
 
 Change `n=1` to the lesson number you want.
 
@@ -118,6 +119,20 @@ Reads the `title` field from each snippet JSON file and updates the matching ent
 python3 sync_index.py
 ```
 
+### `py_to_json.py`
+
+Converts a single `.py` file into a snippet JSON file ready to drop into the `snippets/` folder.
+
+```bash
+python3 py_to_json.py myprogram.py
+# → writes myprogram.json next to the input file
+
+python3 py_to_json.py myprogram.py snippets/lecture-examples/lecture01/05.json
+# → writes to a specific path
+```
+
+The output is a minimal single-file snippet with the filename as the title. Edit the `title` field in the JSON afterwards if needed, then run `sync_index.py` to update the index.
+
 ### `generate_lecture_snippets.py`
 
 Converts source folders of `.py` files (and multi-file subfolders) into snippet JSON files and registers them in `index.json`. Used for bulk-importing lecture examples from Möbius/Trinket exports. Not committed to git — kept local only.
@@ -134,6 +149,7 @@ Converts source folders of `.py` files (and multi-file subfolders) into snippet 
 ├── viewer.html                 ← single-snippet full-page viewer
 ├── embed.js                    ← the widget script (self-contained)
 ├── sync_index.py               ← syncs titles from JSON files into index.json
+├── py_to_json.py               ← converts a .py file into a snippet JSON file
 ├── snippets/
 │   ├── index.json              ← master list of all categories and snippets
 │   ├── basic-examples/
@@ -147,8 +163,8 @@ Converts source folders of `.py` files (and multi-file subfolders) into snippet 
 │   │   ├── lektion01/ … lektion12/
 │   ├── tutorials-DD1310/
 │   │   ├── tutorial01/ … tutorial04/
-│   └── dd1320/
-│       └── 1/
+│   └── DD1320/
+│       └── 01/
 ├── .nojekyll                   ← disables Jekyll on GitHub Pages
 └── README.md
 ```
