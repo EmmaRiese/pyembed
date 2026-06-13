@@ -2,6 +2,10 @@
   "title": "7.3 Skriva till fil med join",
   "files": [
     {
+      "name": "husdjur.txt",
+      "content": ""
+    },
+    {
       "name": "main.py",
       "content": "with open('husdjur.txt', 'w') as fil: \n  namn = ['Katt', 'Hund', 'Marsvin'] \n  fil.write('\\n'.join(namn))\n\n\n\n\n\n\n\n\n\n\n\n\n"
     }
