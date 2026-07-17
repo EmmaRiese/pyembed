@@ -6,9 +6,13 @@
   <title>Python Snippet</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; background: transparent; }
+    html, body { height: 100%; background: transparent; overflow: hidden; }
     body { display: flex; flex-direction: column; }
     .py-snippet { flex: 1; }
+    /* Give the host element an explicit height so height:100% on .pw-widget resolves correctly.
+       The ID selector beats the widget's own "all: initial" on .psw (which would otherwise
+       reset height to auto, causing the iframe document to scroll). */
+    #widget { height: 100%; }
     /* Let the widget fill the iframe */
     .psw .pw-widget { height: 100% !important; border-radius: 0 !important; border: none !important; }
   </style>
