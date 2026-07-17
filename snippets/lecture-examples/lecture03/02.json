@@ -3,7 +3,7 @@
   "files": [
     {
       "name": "main.py",
-      "content": "frukter=[\"äpple\",\"päron\",\"körsbär\",\"mango\"]\nfrukter.insert(1,\"banan\")\nfrukter.append(\"päron\")\n\n\nprint(frukter)\n\n\n\n\n\n\n\n\n\n"
+      "content": "frukter=[\"äpple\",\"päron\",\"körsbär\",\"mango\"]\nfrukter.insert(1,\"banan\")\nfrukter.append(\"päron\")\n\n\nprint(frukter)\n"
     }
   ]
 }

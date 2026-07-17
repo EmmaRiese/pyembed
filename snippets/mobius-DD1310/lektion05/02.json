@@ -3,7 +3,7 @@
   "files": [
     {
       "name": "main.py",
-      "content": "def skrik(meddelande): \n  print(meddelande+\"!!!\") \n\nskrik(\"Shhhh\")\nskrik(\"Tyst i klassen\")\n\n\n\n\n\n\n\n\n\n\n"
+      "content": "def skrik(meddelande): \n  print(meddelande+\"!!!\") \n\nskrik(\"Shhhh\")\nskrik(\"Tyst i klassen\")\n"
     }
   ]
 }

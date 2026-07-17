@@ -3,7 +3,7 @@
   "files": [
     {
       "name": "main.py",
-      "content": "def addera(tal1, tal2):\n  summa = tal1 + tal2    #summa är en lokal variabel som\n  return summa           #är definierad bara i funktion\n    \n\n\nsumman = addera(5, 37)\nprint(summan)\n\n\n\n\n\n\n\n"
+      "content": "def addera(tal1, tal2):\n  summa = tal1 + tal2    #summa är en lokal variabel som\n  return summa           #är definierad bara i funktion\n    \n\n\nsumman = addera(5, 37)\nprint(summan)\n"
     }
   ]
 }

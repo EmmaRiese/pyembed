@@ -3,7 +3,7 @@
   "files": [
     {
       "name": "main.py",
-      "content": "def skapa_lista():\n  glasslista = [\"vaniljglass, jordgubsglass, chokladglass\"]\n  print(glasslista)\n  \nskapa_lista()\nprint(glasslista)\n\n\n\n\n\n\n\n\n\n"
+      "content": "def skapa_lista():\n  glasslista = [\"vaniljglass, jordgubsglass, chokladglass\"]\n  print(glasslista)\n  \nskapa_lista()\nprint(glasslista)\n"
     }
   ]
 }

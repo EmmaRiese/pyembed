@@ -3,7 +3,7 @@
   "files": [
     {
       "name": "main.py",
-      "content": "\ntal = \"23\"\ntry:\n  print(tal + 23)\n\nexcept TypeError:\n  print(tal, \"är inte en integer. \")\n\n\n\n\n\n\n\n\n"
+      "content": "\ntal = \"23\"\ntry:\n  print(tal + 23)\n\nexcept TypeError:\n  print(tal, \"är inte en integer. \")\n"
     }
   ]
 }

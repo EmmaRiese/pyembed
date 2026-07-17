@@ -3,7 +3,7 @@
   "files": [
     {
       "name": "main.py",
-      "content": "filnamn = \"inflil.txt\"\n\ntry:\n  fil = open(filnamn, \"r\")\n\nexcept FileNotFoundError:\n  print(\"Ingen fil med namn \" + filnamn + \" hittades.\")\n\n\n\n\n\n\n\n\n"
+      "content": "filnamn = \"inflil.txt\"\n\ntry:\n  fil = open(filnamn, \"r\")\n\nexcept FileNotFoundError:\n  print(\"Ingen fil med namn \" + filnamn + \" hittades.\")\n"
     }
   ]
 }

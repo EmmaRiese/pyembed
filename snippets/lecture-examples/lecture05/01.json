@@ -3,7 +3,7 @@
   "files": [
     {
       "name": "main.py",
-      "content": "def skriva_ut_hej():\n\tprint(\"Hej\") #Koden i funktionen\n\t\n\n\n\n\n\n\n\n\n\n\n\n\n"
+      "content": "def skriva_ut_hej():\n\tprint(\"Hej\") #Koden i funktionen\n\t\n"
     }
   ]
 }

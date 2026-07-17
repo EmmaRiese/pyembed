@@ -3,7 +3,7 @@
   "files": [
     {
       "name": "main.py",
-      "content": "def skriva_ut_hej():\n    print(\"Hej\") #Koden i funktionen\n\nANTAL_HEJ = 3\nfor i in range(ANTAL_HEJ):\n    skriva_ut_hej()\n\n\n\n\n\n\n\n\n\n"
+      "content": "def skriva_ut_hej():\n    print(\"Hej\") #Koden i funktionen\n\nANTAL_HEJ = 3\nfor i in range(ANTAL_HEJ):\n    skriva_ut_hej()\n"
     }
   ]
 }

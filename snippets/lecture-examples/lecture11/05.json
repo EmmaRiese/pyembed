@@ -3,7 +3,7 @@
   "files": [
     {
       "name": "main.py",
-      "content": "# Huvudprogrammet\n\nfrom geometri import *\n\ndef main():\n    bas = int(input(\"Hur lång är basen? \"))\n    höjden = int(input(\"Hur hög är höjden? \"))\n    rek = Rektangel(höjden, bas)\n    print(\"Arean = \", rek.area())\n    print(\"Omkretsen = \", rek.omkrets())\n\nmain()\n\n\n\n"
+      "content": "# Huvudprogrammet\n\nfrom geometri import *\n\ndef main():\n    bas = int(input(\"Hur lång är basen? \"))\n    höjden = int(input(\"Hur hög är höjden? \"))\n    rek = Rektangel(höjden, bas)\n    print(\"Arean = \", rek.area())\n    print(\"Omkretsen = \", rek.omkrets())\n\nmain()\n"
     },
     {
       "name": "geometri.py",

@@ -3,7 +3,7 @@
   "files": [
     {
       "name": "main.py",
-      "content": "lista = [5, 2, 3, 1, 9]\nfor i in range(len(lista)):\n\tprint(\"På index\",i, \"finns värdet:\", lista[i], end =\" \")\n\n\n\n\n\n\n\n\n\n\n\n\n"
+      "content": "lista = [5, 2, 3, 1, 9]\nfor i in range(len(lista)):\n\tprint(\"På index\",i, \"finns värdet:\", lista[i], end =\" \")\n"
     }
   ]
 }

@@ -3,7 +3,7 @@
   "files": [
     {
       "name": "main.py",
-      "content": "def läs_från_fil(filnam):\n  \"\"\"Läs in data från fil, lagra i en lista och returnera den\"\"\"\n  return lista\n  \ndef huvudfunktion():\n  tal_lista = läs_från_fil(\"tal.txt\")\n  for tal in tal_lista:\n    print(tal)\nhuvudfunktion() \n\n\n\n\n\n\n"
+      "content": "def läs_från_fil(filnam):\n  \"\"\"Läs in data från fil, lagra i en lista och returnera den\"\"\"\n  return lista\n  \ndef huvudfunktion():\n  tal_lista = läs_från_fil(\"tal.txt\")\n  for tal in tal_lista:\n    print(tal)\nhuvudfunktion() \n"
     },
     {
       "name": "tal.txt",

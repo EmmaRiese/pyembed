@@ -3,7 +3,7 @@
   "files": [
     {
       "name": "main.py",
-      "content": "for i in range(10):\n    print(i)\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+      "content": "for i in range(10):\n    print(i)\n"
     }
   ]
 }

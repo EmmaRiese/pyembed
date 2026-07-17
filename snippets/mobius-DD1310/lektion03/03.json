@@ -3,7 +3,7 @@
   "files": [
     {
       "name": "main.py",
-      "content": "namelist = [\"David\", \"Peter\", \"Julia\"]\nfor name in namelist:\n    print(name)\n\n\n\n\n\n\n\n\n\n\n\n\n"
+      "content": "namelist = [\"David\", \"Peter\", \"Julia\"]\nfor name in namelist:\n    print(name)\n"
     }
   ]
 }

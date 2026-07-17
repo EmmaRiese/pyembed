@@ -3,7 +3,7 @@
   "files": [
     {
       "name": "main.py",
-      "content": "tal = 1\nwhile tal < 5:\n\tprint(\"Varv: \", tal)\n\ttal += 1\n\n\n\n\n\n\n\n\n\n\n\n"
+      "content": "tal = 1\nwhile tal < 5:\n\tprint(\"Varv: \", tal)\n\ttal += 1\n"
     }
   ]
 }

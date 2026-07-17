@@ -3,7 +3,7 @@
   "files": [
     {
       "name": "main.py",
-      "content": "def beräknaFakultet(n):\n    if n == 1:\n        return 1\n    else:\n        return n * beräknaFakultet(n-1)\n\nprint(beräknaFakultet(4))\n\n\n\n\n\n\n\n\n"
+      "content": "def beräknaFakultet(n):\n    if n == 1:\n        return 1\n    else:\n        return n * beräknaFakultet(n-1)\n\nprint(beräknaFakultet(4))\n"
     }
   ]
 }

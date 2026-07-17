@@ -3,7 +3,7 @@
   "files": [
     {
       "name": "main.py",
-      "content": "def läs_fil():\n  infil = open(\"fil.txt\", \"r\")\n  text = []\n  rad = infil.readline().strip()\n  while rad != \"\":\n    text.append(rad)\n    rad = infil.readline().strip()\n  infil.close()\n  return text\n  \nlimerick = läs_fil()\nfor rad in limerick:\n  print(rad)\n\n\n"
+      "content": "def läs_fil():\n  infil = open(\"fil.txt\", \"r\")\n  text = []\n  rad = infil.readline().strip()\n  while rad != \"\":\n    text.append(rad)\n    rad = infil.readline().strip()\n  infil.close()\n  return text\n  \nlimerick = läs_fil()\nfor rad in limerick:\n  print(rad)\n"
     },
     {
       "name": "fil.txt",

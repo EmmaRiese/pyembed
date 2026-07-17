@@ -3,7 +3,7 @@
   "files": [
     {
       "name": "main.py",
-      "content": "for i in range(): #fyll i range här\n  for j in range(): #fyll i range här\n    print(i*j, end =\" \")\n  print()\n\n\n\n\n\n\n\n\n\n\n\n"
+      "content": "for i in range(): #fyll i range här\n  for j in range(): #fyll i range här\n    print(i*j, end =\" \")\n  print()\n"
     }
   ]
 }

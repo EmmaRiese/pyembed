@@ -3,7 +3,7 @@
   "files": [
     {
       "name": "main.py",
-      "content": "def vänd(sträng):\n    if sträng == \"\":\n        return sträng\n    else:\n        return vänd(sträng[1:]) + sträng[0]\n        \nprint(vänd(\"sirap\"))\n\n\n\n\n\n\n\n\n"
+      "content": "def vänd(sträng):\n    if sträng == \"\":\n        return sträng\n    else:\n        return vänd(sträng[1:]) + sträng[0]\n        \nprint(vänd(\"sirap\"))\n"
     }
   ]
 }

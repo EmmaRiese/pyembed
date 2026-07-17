@@ -3,7 +3,7 @@
   "files": [
     {
       "name": "main.py",
-      "content": "from rum import *\nfrom rum_pentry import *\n  \n\ndef main():\n  rum = Rum(16, 1, False)\n  print(rum)  \n  rum2 = Rum_med_Pentry(20, 1, True)\n  #print(rum2) Innan vi deklarerat attributen kan vi inte använda vår nya str\n  \n  rum2.utrustning(False, True) #Sätter de nya attributen\n  print(rum2)\n\nmain()\n\n"
+      "content": "from rum import *\nfrom rum_pentry import *\n  \n\ndef main():\n  rum = Rum(16, 1, False)\n  print(rum)  \n  rum2 = Rum_med_Pentry(20, 1, True)\n  #print(rum2) Innan vi deklarerat attributen kan vi inte använda vår nya str\n  \n  rum2.utrustning(False, True) #Sätter de nya attributen\n  print(rum2)\n\nmain()\n"
     },
     {
       "name": "rum.py",

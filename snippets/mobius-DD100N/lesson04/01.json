@@ -3,7 +3,7 @@
   "files": [
     {
       "name": "main.py",
-      "content": "def hälsning(): \n  print(\"Hej!\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+      "content": "def hälsning(): \n  print(\"Hej!\")\n"
     }
   ]
 }

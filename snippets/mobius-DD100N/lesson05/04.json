@@ -3,7 +3,7 @@
   "files": [
     {
       "name": "main.py",
-      "content": "with open('husdjur.txt', 'w') as fil: \n  namn = ['Katt\\n', 'Hund\\n', 'Marsvin\\n'] \n  fil.writelines(namn)\n\n\n\n\n\n\n\n\n\n\n\n\n"
+      "content": "with open('husdjur.txt', 'w') as fil: \n  namn = ['Katt\\n', 'Hund\\n', 'Marsvin\\n'] \n  fil.writelines(namn)\n"
     },
     {
       "name": "husdjur.txt",

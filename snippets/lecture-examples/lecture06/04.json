@@ -3,7 +3,7 @@
   "files": [
     {
       "name": "main.py",
-      "content": "import math\n\nprint(math.sqrt(4))  #.sqrt() är en funktion för kvadratroten ur som finns i math modulen\n\nprint(math.pi)       #En konstant pi, definierad i modulen \n\n\nprint(math.pow(3, 4)) # 3 upphöjt till 4 \n\n\n\n\n\n\n\n"
+      "content": "import math\n\nprint(math.sqrt(4))  #.sqrt() är en funktion för kvadratroten ur som finns i math modulen\n\nprint(math.pi)       #En konstant pi, definierad i modulen \n\n\nprint(math.pow(3, 4)) # 3 upphöjt till 4 \n"
     }
   ]
 }

@@ -3,7 +3,7 @@
   "files": [
     {
       "name": "main.py",
-      "content": "antal = 50\nprint(\"Antal :\" , antal)\nprint(\"Antal : \" + str(antal))\nantal = int(input(str(antal)+ \" var det innan. Nytt antal? \"))\n\n\n\n\n\n\n\n\n\n\n\n"
+      "content": "antal = 50\nprint(\"Antal :\" , antal)\nprint(\"Antal : \" + str(antal))\nantal = int(input(str(antal)+ \" var det innan. Nytt antal? \"))\n"
     }
   ]
 }

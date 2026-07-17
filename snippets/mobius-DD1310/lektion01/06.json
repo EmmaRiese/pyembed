@@ -3,7 +3,7 @@
   "files": [
     {
       "name": "main.py",
-      "content": "int(input(\"Hur många föreläsningar är det? \"))\nGENOMFÖRDA = 2\nprint(\"Då är det \", antal - GENOMFÖRDA, \"kvar.\")\n\n\n\n\n\n\n\n\n\n\n\n\n"
+      "content": "int(input(\"Hur många föreläsningar är det? \"))\nGENOMFÖRDA = 2\nprint(\"Då är det \", antal - GENOMFÖRDA, \"kvar.\")\n"
     }
   ]
 }
