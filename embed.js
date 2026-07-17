@@ -910,7 +910,7 @@
       // Declared outside try so catch/finally blocks can access them
       let turtleAnimId  = null;
       let skulptTarget  = null;
-      let preambleLines = 36;   // updated inside try; fallback if error occurs before preamble
+      let preambleLines = 2;    // updated inside try; fallback if error occurs before preamble
 
       try {
         const Sk = await skulptPromise;
@@ -953,16 +953,16 @@
           turtleCloseBtn.onclick = () => { requestStop(); };
         }
 
-        // Build a Python dict literal for the VFS
+        // Build the synthetic _pyvfs module – shared VFS state for ALL Python modules.
+        // Served by the read hook as '_pyvfs.py'; every project .py file gets
+        // "from _pyvbs import *" prepended so imported modules share the same
+        // open() and the same _vfs / _vfs_written dicts.
         const vfsPyLiteral = '{\n' +
           Object.entries(vfs).map(([k, v]) =>
             '    ' + JSON.stringify(k) + ': ' + JSON.stringify(v)
           ).join(',\n') + '\n}';
 
-        // ── File I/O preamble ──────────────────────────────────────────────
-        // Defines a virtual open() that reads from / writes to vfs.
-        // _vfs_written is populated on file.close() for write/append modes.
-        const preamble = `_vfs = ${vfsPyLiteral}
+        const preambleModule = `_vfs = ${vfsPyLiteral}
 _vfs_written = {}
 
 class _VF:
@@ -1006,8 +1006,10 @@ def open(name, mode='r', *args, **kwargs):
 FileNotFoundError = IOError
 PermissionError   = IOError
 IsADirectoryError = IOError
-
 `;
+
+        // main.py gets just the import; VFS module is served by the read hook
+        const preamble = 'from _pyvfs import *\n';
         preambleLines = preamble.split('\n').length;
 
         // ── Configure Skulpt ───────────────────────────────────────────────
@@ -1022,9 +1024,15 @@ IsADirectoryError = IOError
           inputfun: (prompt) => showInlineInput(prompt),
           inputfunTakesPrompt: true,
           read: (filename) => {
-            // Serve project files (for inter-module imports)
             const clean = filename.replace(/^\.\//, '');
-            if (vfs[clean] !== undefined) return vfs[clean];
+            // Serve the synthetic VFS module (shared open() and file state)
+            if (clean === '_pyvfs.py') return preambleModule;
+            // Serve project files; inject VFS access into imported .py modules
+            if (vfs[clean] !== undefined) {
+              if (clean.endsWith('.py'))
+                return 'from _pyvfs import *\n' + vfs[clean];
+              return vfs[clean];
+            }
             // Skulpt stdlib
             if (Sk.builtinFiles?.files?.[filename] !== undefined)
               return Sk.builtinFiles.files[filename];
