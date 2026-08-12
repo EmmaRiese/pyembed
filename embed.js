@@ -354,11 +354,13 @@
     return `${type}: ${msg}` + (line ? ` (line ${line})` : '');
   }
 
-  /** Read Skulpt's _vfs_written dict back into JS after a run. */
+  /** Read _vfs_written from _pyvfs module after a run. */
   function readSkulptWritten() {
     const result = {};
     try {
-      const pyDict = window.Sk?.globals?.['_vfs_written'];
+      const Sk = window.Sk;
+      const pyvfs = Sk.sysmodules.mp$subscript(new Sk.builtin.str('_pyvfs'));
+      const pyDict = pyvfs.$d['_vfs_written'];
       if (!pyDict || !pyDict.tp$iter) return result;
       const iter = pyDict.tp$iter();
       let key;
@@ -1008,8 +1010,9 @@ PermissionError   = IOError
 IsADirectoryError = IOError
 `;
 
-        // main.py gets just the import; VFS module is served by the read hook
-        const preamble = 'from _pyvfs import *\n';
+        // Force fresh _pyvfs import each run so _vfs is re-initialized from the current
+        // editor state and _vfs_written starts empty. Then read it back via Sk.sysmodules.
+        const preamble = 'import sys\nif \'_pyvfs\' in sys.modules: del sys.modules[\'_pyvfs\']\nfrom _pyvfs import *\n';
         preambleLines = preamble.split('\n').length;
 
         // ── Configure Skulpt ───────────────────────────────────────────────
