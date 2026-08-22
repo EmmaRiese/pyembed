@@ -346,7 +346,7 @@
         {
           "id": "lecture08-03",
           "file": "lecture-examples/lecture08/03.json",
-          "title": "8.33 Större exempel med filläsning och felhantering"
+          "title": "8.3 Större exempel med filläsning och felhantering"
         },
         {
           "id": "lecture08-04",
@@ -396,7 +396,7 @@
         },
         {
           "file": "lecture-examples/lecture08/14.json",
-          "title": "8.12 – Dålig meny, med rekursion"
+          "title": "8.14 – Dålig meny, med rekursion"
         }
       ]
     },
@@ -1546,12 +1546,12 @@
         {
           "id": "tutorial-dd1310-02-01",
           "file": "tutorials-DD1310/tutorial02/01.json",
-          "title": "2.1"
+          "title": "2.1 Nästlade while-slingpor"
         },
         {
           "id": "tutorial-dd1310-02-02",
           "file": "tutorials-DD1310/tutorial02/02.json",
-          "title": "2.2"
+          "title": "2.2 Gruppindelning"
         },
         {
           "id": "tutorial-dd1310-02-03",
@@ -1568,7 +1568,7 @@
         {
           "id": "tutorial-dd1310-03-01",
           "file": "tutorials-DD1310/tutorial03/01.json",
-          "title": "3.1"
+          "title": "3.1 Listor"
         }
       ]
     },
@@ -1580,7 +1580,7 @@
         {
           "id": "tutorial-dd1310-04-01",
           "file": "tutorials-DD1310/tutorial04/01.json",
-          "title": "4.1"
+          "title": "4.1 Tärningskast med random"
         },
         {
           "id": "tutorial-dd1310-04-02",
@@ -1590,12 +1590,12 @@
         {
           "id": "tutorial-dd1310-04-03",
           "file": "tutorials-DD1310/tutorial04/03.json",
-          "title": "4.3"
+          "title": "4.3 Lexikon"
         },
         {
           "id": "tutorial-dd1310-04-04",
           "file": "tutorials-DD1310/tutorial04/04.json",
-          "title": "4.4"
+          "title": "4.4 Gruppindelning"
         }
       ]
     },
@@ -1607,17 +1607,17 @@
         {
           "id": "tutorial-dd1310-05-01",
           "file": "tutorials-DD1310/tutorial05/01.json",
-          "title": "5.1"
+          "title": "4.1 Läsa in från och spara till fil"
         },
         {
           "id": "tutorial-dd1310-05-02",
           "file": "tutorials-DD1310/tutorial05/02.json",
-          "title": "5.2"
+          "title": "5.2 Felhantering och repetition av funktioner"
         },
         {
           "id": "tutorial-dd1310-05-03",
           "file": "tutorials-DD1310/tutorial05/03.json",
-          "title": "5.3"
+          "title": "5.2 Gruppindelning"
         },
         {
           "id": "tutorial-dd1310-05-04",
@@ -1634,17 +1634,17 @@
         {
           "id": "tutorial-dd1310-06-01",
           "file": "tutorials-DD1310/tutorial06/01.json",
-          "title": "6.1"
+          "title": "6.1 En Bok-klass"
         },
         {
           "id": "tutorial-dd1310-06-02",
           "file": "tutorials-DD1310/tutorial06/02.json",
-          "title": "6.2"
+          "title": "6.2 En lista med Bok-objekt"
         },
         {
           "id": "tutorial-dd1310-06-03",
           "file": "tutorials-DD1310/tutorial06/03.json",
-          "title": "6.3 – Ca 35-40 minuter på 200 C"
+          "title": "6.3 Gruppindelning - kör två gånger!"
         },
         {
           "id": "tutorial-dd1310-06-04",

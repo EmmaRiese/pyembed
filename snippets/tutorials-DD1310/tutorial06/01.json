@@ -1,9 +1,9 @@
 {
-  "title": "6.1",
+  "title": "6.1 En Bok-klass",
   "files": [
     {
       "name": "main.py",
-      "content": "class Inköpslista(list):\n    \n  def __str__(self):\n    s = \"\"\n    for vara in self:\n      s += \" * \" + str(vara) + \"\\n\"\n    return s\n\ndef main():\n  lista = [\"3 Ägg\",\\\n  \"100 g Smör\",\\\n  \"15 liter Mjölk\"]\n\n  print(\"Utskrift av 'list'\")\n  print(lista)\n\n  inköpslista = Inköpslista(lista)\n  print(\"Utskrift av 'Inköpslista'\")\n  print(inköpslista)\n\n\nmain()\n"
+      "content": "class Bok:\n  \n  def __init__(self, titel, av, sidor):\n    self.titel = titel\n    self.skriven_av = av\n    self.antal_sidor = sidor\n    \n  def __str__(self):\n    return self.titel +  \", skriven av: \" + self.skriven_av + \", har \" + str(self.antal_sidor) + \" sidor.\"\n  \n  def lägg_till_förord(self, nya_sidor):\n    self.antal_sidor += nya_sidor\n  \nbok = Bok(\"Dansa min docka\", \"Anna Jansson\", 363)\nprint(\"Innan ändringing:\", bok)\nbok.lägg_till_förord(3)\nprint(\"\\nEfter ändring:\", bok)\n"
     }
   ]
 }
