@@ -1607,17 +1607,17 @@
         {
           "id": "tutorial-dd1310-05-01",
           "file": "tutorials-DD1310/tutorial05/01.json",
-          "title": "4.1 Läsa in från och spara till fil"
+          "title": "5.1 Felhantering och repetition av funktioner"
         },
         {
           "id": "tutorial-dd1310-05-02",
           "file": "tutorials-DD1310/tutorial05/02.json",
-          "title": "5.2 Felhantering och repetition av funktioner"
+          "title": "5.2 Läsa in från och spara till fil"
         },
         {
           "id": "tutorial-dd1310-05-03",
           "file": "tutorials-DD1310/tutorial05/03.json",
-          "title": "5.2 Gruppindelning"
+          "title": "5.3 Gruppindelning"
         }
       ]
     },
