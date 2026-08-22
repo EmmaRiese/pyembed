@@ -26,10 +26,11 @@ def main():
     missing = 0
 
     for cat in index['categories']:
+        kept = []
         for entry in cat['snippets']:
             snippet_path = os.path.join(SNIPPET_ROOT, entry['file'])
             if not os.path.isfile(snippet_path):
-                print('  MISSING: ' + entry['file'])
+                print('  REMOVED from index: ' + entry['file'])
                 missing += 1
                 continue
 
@@ -43,6 +44,8 @@ def main():
                 print('    new: ' + new_title)
                 entry['title'] = new_title
                 updated += 1
+            kept.append(entry)
+        cat['snippets'] = kept
 
     with open(INDEX_PATH, 'w', encoding='utf-8') as f:
         json.dump(index, f, indent=2, ensure_ascii=False)

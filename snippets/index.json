@@ -1552,11 +1552,6 @@
           "id": "tutorial-dd1310-02-02",
           "file": "tutorials-DD1310/tutorial02/02.json",
           "title": "2.2 Gruppindelning"
-        },
-        {
-          "id": "tutorial-dd1310-02-03",
-          "file": "tutorials-DD1310/tutorial02/03.json",
-          "title": "2.3"
         }
       ]
     },
@@ -1618,11 +1613,6 @@
           "id": "tutorial-dd1310-05-03",
           "file": "tutorials-DD1310/tutorial05/03.json",
           "title": "5.2 Gruppindelning"
-        },
-        {
-          "id": "tutorial-dd1310-05-04",
-          "file": "tutorials-DD1310/tutorial05/04.json",
-          "title": "5.4"
         }
       ]
     },
@@ -1645,16 +1635,33 @@
           "id": "tutorial-dd1310-06-03",
           "file": "tutorials-DD1310/tutorial06/03.json",
           "title": "6.3 Gruppindelning - kör två gånger!"
+        }
+      ]
+    },
+    {
+      "id": "tutorial-dd1310-07",
+      "name": "DD1310 Tutorial 7",
+      "folder": "tutorials-DD1310/tutorial07",
+      "snippets": [
+        {
+          "id": "tutorial-dd1310-07-01",
+          "file": "tutorials-DD1310/tutorial07/01.json",
+          "title": "7.1 Klass som ärver från inbyggd klass"
         },
         {
-          "id": "tutorial-dd1310-06-04",
-          "file": "tutorials-DD1310/tutorial06/04.json",
-          "title": "6.4"
+          "id": "tutorial-dd1310-07-02",
+          "file": "tutorials-DD1310/tutorial07/02.json",
+          "title": "7.2 Arv"
         },
         {
-          "id": "tutorial-dd1310-06-05",
-          "file": "tutorials-DD1310/tutorial06/05.json",
-          "title": "6.5"
+          "id": "tutorial-dd1310-07-03",
+          "file": "tutorials-DD1310/tutorial07/03.json",
+          "title": "7.3 – Klass"
+        },
+        {
+          "id": "tutorial-dd1310-07-04",
+          "file": "tutorials-DD1310/tutorial07/04.json",
+          "title": "7.4 Klass som ärver från set"
         }
       ]
     },
