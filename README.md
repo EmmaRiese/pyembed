@@ -318,3 +318,34 @@ Requires ES modules support (universally available since 2019).
 ## Licence
 
 Released under the [MIT License](https://opensource.org/licenses/MIT).
+
+---
+
+## Third-party code (Skulpt and CodeMirror)
+
+The widget loads Skulpt and CodeMirror from `vendor/`, next to `embed.js`,
+never from a CDN (esm.sh was down on 2026-10-30 and every snippet hung). The
+files in `vendor/` are committed, so GitHub Pages still needs no build step.
+
+- **CodeMirror** is an ordinary npm dependency: exact versions in
+  `package.json`/`package-lock.json`, bundled into `vendor/codemirror.js` by
+  `npm run vendor` (versions listed in `vendor/codemirror.json`). The names
+  `embed.js` uses are listed in `scripts/codemirror-entry.js`.
+  **Updates:** Dependabot opens one grouped pull request a month (security fixes
+  at once). The tests workflow rebuilds the bundle on that branch and runs the
+  widget tests; merge if they pass.
+- **Skulpt** publishes no releases (npm 1.2.0 is from 2022), and skulpt.org
+  serves builds of its main branch. `vendor/skulpt.min.js` and
+  `vendor/skulpt-stdlib.js` are copies of skulpt.org's build, recorded with date
+  and checksum in `vendor/skulpt.json`.
+  **Updates:** `.github/workflows/skulpt-watch.yml` checks skulpt.org every
+  Monday and opens an issue when the build has changed. Then run
+  `npm run skulpt`, run the tests and commit `vendor/`.
+
+By hand (Node 20+):
+
+```bash
+npm ci              # install the pinned versions
+npm run vendor      # rebuild vendor/codemirror.js
+npm run skulpt      # copy skulpt.org's current build into vendor/
+```

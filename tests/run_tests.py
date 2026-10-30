@@ -37,7 +37,7 @@ def main():
             module = load_case(path)
             page = browser.new_page()
             errors = []
-            page.on("console", lambda msg: errors.append(msg.text()) if msg.type == "error" else None)
+            page.on("console", lambda msg: errors.append(msg.text) if msg.type == "error" else None)
             page.on("pageerror", lambda err: errors.append(str(err)))
             try:
                 module.test(page, base_url)

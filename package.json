@@ -1,0 +1,23 @@
+{
+  "name": "pyembed",
+  "private": true,
+  "description": "Third-party code for embed.js. `npm run vendor` bundles it into vendor/ (committed, so GitHub Pages needs no build step).",
+  "type": "module",
+  "scripts": {
+    "vendor": "node scripts/vendor.mjs",
+    "skulpt": "node scripts/skulpt.mjs",
+    "skulpt:check": "node scripts/skulpt.mjs --check"
+  },
+  "dependencies": {
+    "@codemirror/commands": "6.11.1",
+    "@codemirror/lang-python": "6.2.1",
+    "@codemirror/language": "6.13.1",
+    "@codemirror/state": "6.7.6",
+    "@codemirror/view": "6.43.15",
+    "@lezer/highlight": "1.2.5",
+    "codemirror": "6.0.2"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  }
+}

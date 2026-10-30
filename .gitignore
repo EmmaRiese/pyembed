@@ -3,3 +3,4 @@
 __pycache__/
 *.pyc
 generate_lecture_snippets.py
+node_modules/

@@ -1,0 +1,41 @@
+# Widget tests (tests/) against the vendored Skulpt and CodeMirror.
+# On Dependabot's pull requests, vendor/codemirror.js is first rebuilt from the
+# new package-lock.json and committed to the branch. Elsewhere, the job fails if
+# vendor/ does not match package-lock.json (run `npm ci && npm run vendor`).
+name: tests
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npm run vendor
+      - name: Commit the rebuilt bundle (Dependabot only)
+        if: github.actor == 'dependabot[bot]'
+        run: |
+          if ! git diff --quiet vendor/; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -am "vendor/codemirror.js rebuilt for the new versions"
+            git push
+          fi
+      - name: vendor/ matches package-lock.json
+        run: git diff --exit-code vendor/
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r tests/requirements.txt && playwright install --with-deps chromium
+      - run: python3 run_tests.py
+        working-directory: tests

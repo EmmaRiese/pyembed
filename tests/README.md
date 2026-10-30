@@ -3,8 +3,9 @@
 Browser-driven regression tests for `embed.js`. These exist to catch
 behavior regressions in the widget itself (file I/O, unicode handling,
 etc.) — not part of the site, and not required by anyone just embedding
-or editing snippets. Nothing here runs automatically; run it by hand
-when you touch `embed.js` or want to check a suspected regression.
+or editing snippets. GitHub runs them on every pull request and push to
+main (`.github/workflows/tests.yml`); run them by hand when you touch
+`embed.js` or want to check a suspected regression.
 
 ## One-time setup
 

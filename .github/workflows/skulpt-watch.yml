@@ -1,0 +1,33 @@
+# Skulpt publishes no releases, so Dependabot cannot watch it. Once a week this
+# compares skulpt.org's build with our copy (vendor/skulpt.json) and opens an
+# issue when it has changed. To update: `npm run skulpt`, run the tests, commit.
+name: skulpt-watch
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - id: check
+        run: |
+          if npm run -s skulpt:check > result.txt; then cat result.txt
+          else cat result.txt; echo "changed=true" >> "$GITHUB_OUTPUT"; fi
+      - if: steps.check.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="Skulpt has a new build on skulpt.org"
+          if [ -z "$(gh issue list --state open --search "in:title \"$title\"" --json number --jq '.[].number')" ]; then
+            gh issue create --title "$title" --body "$(cat result.txt)
+
+          To update: \`npm run skulpt\`, then run the widget tests (tests/README.md) and commit vendor/."
+          fi

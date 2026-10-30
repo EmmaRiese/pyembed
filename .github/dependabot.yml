@@ -1,0 +1,20 @@
+# Opens a pull request when CodeMirror (package.json) or the GitHub Actions
+# used in .github/workflows have new versions. The tests workflow rebuilds
+# vendor/codemirror.js on Dependabot's branch and runs the widget tests:
+# merge if they pass. Security updates come at once, regardless of schedule.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      codemirror:
+        patterns: ["*"]
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      actions:
+        patterns: ["*"]

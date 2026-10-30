@@ -1,13 +1,16 @@
 /**
  * embed.js — Python Snippet Widget (Trinket-style)
  * Multi-file projects, file I/O, inline input(), syntax highlighting.
- * Powered by Skulpt + CodeMirror 6. No build step required.
+ * Powered by Skulpt + CodeMirror 6, loaded from vendor/ (`npm run vendor`).
  */
 (function () {
   'use strict';
 
   // Capture script URL now — document.currentScript is only available during sync execution
   const _embedScriptSrc = document.currentScript?.src || '';
+  // Skulpt and CodeMirror are copies in vendor/ next to this file (see
+  // package.json and scripts/), so the widget needs no CDN.
+  const VENDOR = new URL('vendor/', _embedScriptSrc || location.href).href;
 
   let _skulptPromise  = null;
   let _cmPromise      = null;
@@ -21,11 +24,11 @@
     if (_skulptPromise) return _skulptPromise;
     _skulptPromise = new Promise((resolve, reject) => {
       const s1 = document.createElement('script');
-      s1.src = 'https://skulpt.org/js/skulpt.min.js';
+      s1.src = VENDOR + 'skulpt.min.js';
       document.head.appendChild(s1);
       s1.onload = () => {
         const s2 = document.createElement('script');
-        s2.src = 'https://skulpt.org/js/skulpt-stdlib.js';
+        s2.src = VENDOR + 'skulpt-stdlib.js';
         document.head.appendChild(s2);
         s2.onload  = () => resolve(window.Sk);
         s2.onerror = () => reject(new Error('Failed to load Skulpt stdlib'));
@@ -38,18 +41,7 @@
   // ── CodeMirror 6 loader ────────────────────────────────────────────────────
   function getCodeMirror() {
     if (_cmPromise) return _cmPromise;
-    _cmPromise = Promise.all([
-      import('https://esm.sh/codemirror@6.0.1'),
-      import('https://esm.sh/@codemirror/state@6'),
-      import('https://esm.sh/@codemirror/lang-python@6'),
-      import('https://esm.sh/@codemirror/language@6'),
-      import('https://esm.sh/@lezer/highlight@1'),
-      import('https://esm.sh/@codemirror/view@6'),
-      import('https://esm.sh/@codemirror/commands@6'),
-    ]).then(([{ EditorView, basicSetup }, { EditorState }, { python }, { syntaxHighlighting, HighlightStyle }, { tags }, { ViewPlugin, Decoration, MatchDecorator, keymap }, { indentWithTab }]) => ({
-      EditorView, basicSetup, EditorState, python, syntaxHighlighting, HighlightStyle, tags,
-      ViewPlugin, Decoration, MatchDecorator, keymap, indentWithTab,
-    }));
+    _cmPromise = import(VENDOR + 'codemirror.js');
     return _cmPromise;
   }
 
